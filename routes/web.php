@@ -26,6 +26,6 @@ Route::post('login_post', [AuthController::class, 'login_post']);
 
 // Admin || HR 
 
-Route::group(['middleware' => 'admin    '], function(){
+Route::group(['middleware' => 'admin'], function(){
     Route::get('admin/dashboard', [DashboardController::class, 'dashboard']);
 });
