@@ -64,7 +64,60 @@
               </p>
             </a>
           </li>
-         
+
+          <li class="nav-item">
+            <a href="{{ url('admin/employees') }}" class="nav-link">
+              <i class="nav-icon fa fa-users"></i>
+              <p>
+                Employees
+              </p>
+            </a>
+          </li>   
+          
+          <li class="nav-item">
+            <a href="{{ url('admin/jobs') }}" class="nav-link">
+              <i class="nav-icon fa fa-briefcase"></i>
+              <p>
+                Jobs
+              </p>
+            </a>
+          </li> 
+          
+          <li class="nav-item">
+            <a href="{{ url('admin/departments') }}" class="nav-link">
+              <i class="nav-icon fa fa-building"></i>
+              <p>
+                Department
+              </p>
+            </a>
+          </li> 
+
+          <li class="nav-item">
+            <a href="{{ url('admin/countries') }}" class="nav-link">
+              <i class="nav-icon fa fa-flag"></i>
+              <p>
+                Countries
+              </p>
+            </a>
+          </li>
+          
+          <li class="nav-item">
+            <a href="{{ url('admin/locations') }}" class="nav-link">
+              <i class="nav-icon fa fa-map-marker-alt"></i>
+              <p>
+                Locations
+              </p>
+            </a>
+          </li>
+          
+          <li class="nav-item">
+            <a href="{{ url('admin/regions') }}" class="nav-link">
+              <i class="nav-icon fa fa-asterisk"></i>
+              <p>
+                Regions
+              </p>
+            </a>
+          </li>
           
         </ul>
       </nav>
