@@ -34,6 +34,62 @@
                         <form action="" class="form-horizontal" method="post" enctype="multipart/form-data">
 
                             <div class="card card-body">
+                                <div class="form-group row">
+                                    <label for="" class="col-sm-2 col-form-label">First Name 
+                                        <span style="color: red;">*</span></label>
+                                    <div class="col-sm-10">
+                                        <input type="text" name="name" class="form-control" required
+                                        placeholder="Enter First Name">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="" class="col-sm-2 col-form-label">Surname 
+                                        <span style="color: red;">  </span></label>
+                                    <div class="col-sm-10">
+                                        <input type="text" name="last_name" class="form-control"
+                                        placeholder="Enter Surname">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="" class="col-sm-2 col-form-label">Email ID 
+                                        <span style="color: red;">*</span></label>
+                                    <div class="col-sm-10">
+                                        <input type="email" name="email" class="form-control" required
+                                        placeholder="Enter Email ID">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="" class="col-sm-2 col-form-label">Phone Number 
+                                        <span style="color: red;"></span></label>
+                                    <div class="col-sm-10">
+                                        <input type="text" name="phone_number" class="form-control" 
+                                        placeholder="Enter Phone Number">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="" class="col-sm-2 col-form-label">Employment Date
+                                        <span style="color: red;">*</span></label>
+                                    <div class="col-sm-10">
+                                        <input type="date" name="hire_date" class="form-control" required
+                                        placeholder="Enter Employment Date">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="" class="col-sm-2 col-form-label">Job Title
+                                        <span style="color: red;">*</span></label>
+                                    <div class="col-sm-10">
+                                        <select name="job_id" id="" class="form-control" required>
+                                            <option value="">Select Job Title</option>
+                                            <option value="">Web Developer</option>
+                                            <option value="">Product Designer</option>
+                                        </select>
+                                    </div>
+                                </div>
 
                             </div>
                         
