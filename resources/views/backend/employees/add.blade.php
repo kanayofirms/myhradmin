@@ -31,8 +31,9 @@
                             <h3 class="card-title">Add Employees</h3>
                         </div>
 
-                        <form action="" class="form-horizontal" method="post" enctype="multipart/form-data">
-
+                        <form action="{{ url('admin/employees/add') }}" class="form-horizontal" 
+                        method="post" enctype="multipart/form-data">
+                            {{ csrf_field() }}
                             <div class="card card-body">
                                 <div class="form-group row">
                                     <label for="" class="col-sm-2 col-form-label">First Name 
@@ -91,8 +92,53 @@
                                     </div>
                                 </div>
 
+                                <div class="form-group row">
+                                    <label for="" class="col-sm-2 col-form-label">Salary 
+                                        <span style="color: red;">*</span></label>
+                                    <div class="col-sm-10">
+                                        <input type="text" name="salary" class="form-control" required
+                                        placeholder="Enter Salary">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="" class="col-sm-2 col-form-label">Commission PCT 
+                                        <span style="color: red;">*</span></label>
+                                    <div class="col-sm-10">
+                                        <input type="text" name="commission_pct" class="form-control" required
+                                        placeholder="Enter Commission PCT ">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="" class="col-sm-2 col-form-label">Manager Name
+                                        <span style="color: red;">*</span></label>
+                                    <div class="col-sm-10">
+                                        <select name="manager_id" id="" class="form-control" required>
+                                            <option value="">Select Manager Name</option>
+                                            <option value="">Emeka</option>
+                                            <option value="">Nnenna</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="" class="col-sm-2 col-form-label">Department Name
+                                        <span style="color: red;">*</span></label>
+                                    <div class="col-sm-10">
+                                        <select name="manager_id" id="" class="form-control" required>
+                                            <option value="">Select Department Name</option>
+                                            <option value="">Customer Care Department</option>
+                                            <option value="">Sales Department</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
-                        
+
+                            <div class="card-footer">
+                                <a href="{{ url('admin/employees') }}" class="btn btn-default">Cancel</a>
+                                <button type="submit" class="btn btn-primary float-right">Submit</button>
+                            </div>
                         </form>
                     </div>
                 </div>
