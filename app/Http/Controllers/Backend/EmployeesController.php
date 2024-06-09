@@ -15,6 +15,11 @@ class EmployeesController extends Controller
     {
         return view('backend.employees.add');
     }
+
+    public function add_insert(Request $request)
+    {
+        dd($request->all());
+    }
 }
 
 ?>
