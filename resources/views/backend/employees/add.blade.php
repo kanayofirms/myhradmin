@@ -31,7 +31,7 @@
                             <h3 class="card-title">Add Employees</h3>
                         </div>
 
-                        <form action="{{ url('admin/employees/add') }}" class="form-horizontal" 
+                        <form accept="{{ url('admin/employees/add') }}" class="form-horizontal" 
                         method="post" enctype="multipart/form-data">
                             {{ csrf_field() }}
                             <div class="card card-body">
@@ -84,10 +84,10 @@
                                     <label for="" class="col-sm-2 col-form-label">Job Title
                                         <span style="color: red;">*</span></label>
                                     <div class="col-sm-10">
-                                        <select name="job_id" id="" class="form-control" required>
+                                        <select name="job_id" class="form-control" required>
                                             <option value="">Select Job Title</option>
-                                            <option value="">Web Developer</option>
-                                            <option value="">Product Designer</option>
+                                            <option value="1">Web Developer</option>
+                                            <option value="2">Product Designer</option>
                                         </select>
                                     </div>
                                 </div>
@@ -114,10 +114,10 @@
                                     <label for="" class="col-sm-2 col-form-label">Manager Name
                                         <span style="color: red;">*</span></label>
                                     <div class="col-sm-10">
-                                        <select name="manager_id" id="" class="form-control" required>
+                                        <select name="manager_id" class="form-control" required>
                                             <option value="">Select Manager Name</option>
-                                            <option value="">Emeka</option>
-                                            <option value="">Nnenna</option>
+                                            <option value="1">Emeka</option>
+                                            <option value="2">Nnenna</option>
                                         </select>
                                     </div>
                                 </div>
@@ -126,10 +126,10 @@
                                     <label for="" class="col-sm-2 col-form-label">Department Name
                                         <span style="color: red;">*</span></label>
                                     <div class="col-sm-10">
-                                        <select name="manager_id" id="" class="form-control" required>
+                                        <select name="manager_id" class="form-control" required>
                                             <option value="">Select Department Name</option>
-                                            <option value="">Customer Care Department</option>
-                                            <option value="">Sales Department</option>
+                                            <option value="1">Customer Care Department</option>
+                                            <option value="2">Sales Department</option>
                                         </select>
                                     </div>
                                 </div>
