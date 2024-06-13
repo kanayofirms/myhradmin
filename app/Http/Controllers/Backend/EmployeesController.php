@@ -20,16 +20,16 @@ class EmployeesController extends Controller
     public function add_insert(Request $request)
     {
         // dd($request->all());
-        $user = request()->validate([
-            'name' => 'required',
-            'email' => 'required|unique:users',
-            'hire_date' => 'required',
-            'job_id' => 'required',
-            'salary' => 'required',
-            'commission_pct' => 'required',
-            'manager_id' => 'required',
-            'department_id' => 'required',
-        ]);
+        // $user = request()->validate([
+        //     'name' => 'required',
+        //     'email' => 'required|email|unique:users',
+        //     'hire_date' => 'required',
+        //     'job_id' => 'required',
+        //     'salary' => 'required',
+        //     'commission_pct' => 'required',
+        //     'manager_id' => 'required',
+        //     'department_id' => 'required',
+        // ]);
         $user                   = new User;
         $user->name             = trim($request->name);
         $user->last_name        = trim($request->last_name);
@@ -43,8 +43,8 @@ class EmployeesController extends Controller
         $user->department_id    = trim($request->department_id);
         $user->is_role          = 0; // 0 - Employees
         $user->save();
-        
-        return redirect('admin/employees')->with('success', "Employees successfully registerd");
+
+        return redirect('admin/employees')->with('success', 'Employees successfully registered');
     }
 }
 
