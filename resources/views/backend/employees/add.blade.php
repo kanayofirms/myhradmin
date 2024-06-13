@@ -39,7 +39,7 @@
                                     <label class="col-sm-2 col-form-label">First Name 
                                         <span style="color: red;">*</span></label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="name" class="form-control" required
+                                        <input type="text" value="{{ old('name') }}" name="name" class="form-control" required
                                         placeholder="Enter First Name">
                                     </div>
                                 </div>
@@ -48,7 +48,7 @@
                                     <label class="col-sm-2 col-form-label">Surname 
                                         <span style="color: red;">  </span></label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="last_name" class="form-control"
+                                        <input type="text" value="{{ old('last_name') }}" name="last_name" class="form-control"
                                         placeholder="Enter Surname">
                                     </div>
                                 </div>
@@ -57,8 +57,9 @@
                                     <label class="col-sm-2 col-form-label">Email ID 
                                         <span style="color: red;">*</span></label>
                                     <div class="col-sm-10">
-                                        <input type="email" name="email" class="form-control" required
-                                        placeholder="Enter Email ID">
+                                        <input type="email" value="{{ old('email') }}" name="email" 
+                                        class="form-control" placeholder="Enter Email ID" required>
+                                        <span style="color:red;">{{ $errors->first('email') }}</span>
                                     </div>
                                 </div>
 
@@ -66,8 +67,9 @@
                                     <label class="col-sm-2 col-form-label">Phone Number 
                                         <span style="color: red;"></span></label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="phone_number" class="form-control" 
-                                        placeholder="Enter Phone Number">
+                                        <input type="number" value="{{ old('phone_number') }}" name="phone_number" 
+                                        class="form-control" placeholder="Enter Phone Number">
+                                        <span style="color:red;">{{ $errors->first('phone_number') }}</span>
                                     </div>
                                 </div>
 
@@ -75,8 +77,8 @@
                                     <label class="col-sm-2 col-form-label">Employment Date
                                         <span style="color: red;">*</span></label>
                                     <div class="col-sm-10">
-                                        <input type="date" name="hire_date" class="form-control" required
-                                        placeholder="Enter Employment Date">
+                                        <input type="date" value="{{ old('hire_date') }}" name="hire_date" 
+                                        class="form-control" placeholder="Enter Employment Date" required>
                                     </div>
                                 </div>
 
@@ -96,8 +98,9 @@
                                     <label class="col-sm-2 col-form-label">Salary 
                                         <span style="color: red;">*</span></label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="salary" class="form-control" required
-                                        placeholder="Enter Salary">
+                                        <input type="number" value="{{ old('salary') }}" name="salary" 
+                                        class="form-control" placeholder="Enter Salary"  required>
+                                        <span style="color:red;">{{ $errors->first('salary') }}</span>
                                     </div>
                                 </div>
 
@@ -105,8 +108,9 @@
                                     <label class="col-sm-2 col-form-label">Commission 
                                         <span style="color: red;">*</span></label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="commission_pct" class="form-control" required
-                                        placeholder="Enter Commission PCT">
+                                        <input type="number" value="{{ old('commission_pct') }}" name="commission_pct" 
+                                        class="form-control" placeholder="Enter Commission PCT" required>
+                                        <span style="color:red;">{{ $errors->first('commission_pct') }}</span>
                                     </div>
                                 </div>
 
@@ -126,7 +130,7 @@
                                     <label class="col-sm-2 col-form-label">Department Name
                                         <span style="color: red;">*</span></label>
                                     <div class="col-sm-10">
-                                        <select name="manager_id" class="form-control" required>
+                                        <select name="department_id" class="form-control" required>
                                             <option value="">Select Department Name</option>
                                             <option value="1">Customer Care Department</option>
                                             <option value="2">Sales Department</option>
