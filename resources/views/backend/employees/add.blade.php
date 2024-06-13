@@ -36,7 +36,7 @@
                             {{ csrf_field() }}
                             <div class="card card-body">
                                 <div class="form-group row">
-                                    <label for="" class="col-sm-2 col-form-label">First Name 
+                                    <label class="col-sm-2 col-form-label">First Name 
                                         <span style="color: red;">*</span></label>
                                     <div class="col-sm-10">
                                         <input type="text" name="name" class="form-control" required
@@ -45,7 +45,7 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="" class="col-sm-2 col-form-label">Surname 
+                                    <label class="col-sm-2 col-form-label">Surname 
                                         <span style="color: red;">  </span></label>
                                     <div class="col-sm-10">
                                         <input type="text" name="last_name" class="form-control"
@@ -54,7 +54,7 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="" class="col-sm-2 col-form-label">Email ID 
+                                    <label class="col-sm-2 col-form-label">Email ID 
                                         <span style="color: red;">*</span></label>
                                     <div class="col-sm-10">
                                         <input type="email" name="email" class="form-control" required
@@ -63,7 +63,7 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="" class="col-sm-2 col-form-label">Phone Number 
+                                    <label class="col-sm-2 col-form-label">Phone Number 
                                         <span style="color: red;"></span></label>
                                     <div class="col-sm-10">
                                         <input type="text" name="phone_number" class="form-control" 
@@ -72,7 +72,7 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="" class="col-sm-2 col-form-label">Employment Date
+                                    <label class="col-sm-2 col-form-label">Employment Date
                                         <span style="color: red;">*</span></label>
                                     <div class="col-sm-10">
                                         <input type="date" name="hire_date" class="form-control" required
@@ -81,7 +81,7 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="" class="col-sm-2 col-form-label">Job Title
+                                    <label class="col-sm-2 col-form-label">Job Title
                                         <span style="color: red;">*</span></label>
                                     <div class="col-sm-10">
                                         <select name="job_id" class="form-control" required>
@@ -93,7 +93,7 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="" class="col-sm-2 col-form-label">Salary 
+                                    <label class="col-sm-2 col-form-label">Salary 
                                         <span style="color: red;">*</span></label>
                                     <div class="col-sm-10">
                                         <input type="text" name="salary" class="form-control" required
@@ -102,16 +102,16 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="" class="col-sm-2 col-form-label">Commission PCT 
+                                    <label class="col-sm-2 col-form-label">Commission 
                                         <span style="color: red;">*</span></label>
                                     <div class="col-sm-10">
                                         <input type="text" name="commission_pct" class="form-control" required
-                                        placeholder="Enter Commission PCT ">
+                                        placeholder="Enter Commission PCT">
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="" class="col-sm-2 col-form-label">Manager Name
+                                    <label class="col-sm-2 col-form-label">Manager Name
                                         <span style="color: red;">*</span></label>
                                     <div class="col-sm-10">
                                         <select name="manager_id" class="form-control" required>
@@ -123,7 +123,7 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="" class="col-sm-2 col-form-label">Department Name
+                                    <label class="col-sm-2 col-form-label">Department Name
                                         <span style="color: red;">*</span></label>
                                     <div class="col-sm-10">
                                         <select name="manager_id" class="form-control" required>
