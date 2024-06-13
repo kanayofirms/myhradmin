@@ -23,11 +23,14 @@
     <!-- /.content-header -->
 
     <section class="content">
-        <div class="container-fluid">
-            @include('_message')
+      <div class="container-fluid">
 
-            <a href="{{ url('admin/employees/add') }}" class="btn btn-primary">Add Employees</a>
 
+        @include('_message')
+
+          <a href="{{ url('admin/employees/add') }}" class="btn btn-primary">
+            Add Employees
+          </a>
             <div class="row">
                 <section class="col-lg-12">
                     <div class="card-header">
