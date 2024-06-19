@@ -56,7 +56,8 @@ class EmployeesController extends Controller
 
     public function edit($id)
     {
-        return view('backend.employees.edit');
+        $data['getRecord'] = User::find($id);
+        return view('backend.employees.edit', $data);
     }
 }
 
