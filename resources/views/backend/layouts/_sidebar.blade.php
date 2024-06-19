@@ -10,7 +10,7 @@
       <li class="nav-item">
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
-     
+
     </ul>
 
     <!-- Right navbar links -->
@@ -20,7 +20,7 @@
         <a class="nav-link" href="{{ url('logout') }}">
           <i class="fas fa-sign-out-alt"></i>
         </a>
-       
+
       </li>
 
     </ul>
@@ -52,10 +52,10 @@
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->    
-           
+               with font-awesome or any other icon font library -->
+
           <li class="nav-item">
-            <a href="{{ url('admin/dashboard') }}" class="nav-link 
+            <a href="{{ url('admin/dashboard') }}" class="nav-link
             @if (Request::segment(2) == 'dashboard') active @endif">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
@@ -65,15 +65,15 @@
           </li>
 
           <li class="nav-item">
-            <a href="{{ url('admin/employees') }}" class="nav-link 
+            <a href="{{ url('admin/employees') }}" class="nav-link
             @if (Request::segment(2) == 'employees') active @endif">
               <i class="nav-icon fa fa-users"></i>
               <p>
                 Employees
               </p>
             </a>
-          </li>   
-          
+          </li>
+
           <li class="nav-item">
             <a href="{{ url('admin/jobs') }}" class="nav-link">
               <i class="nav-icon fa fa-briefcase"></i>
@@ -81,8 +81,26 @@
                 Jobs
               </p>
             </a>
-          </li> 
-          
+          </li>
+
+          <li class="nav-item">
+            <a href="{{ url('admin/jobs') }}" class="nav-link">
+              <i class="nav-icon fa fa-history"></i>
+              <p>
+                Jobs History
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="{{ url('admin/jobs_grades') }}" class="nav-link">
+              <i class="nav-icon fa fa-star"></i>
+              <p>
+                Jobs Grade
+              </p>
+            </a>
+          </li>
+
           <li class="nav-item">
             <a href="{{ url('admin/departments') }}" class="nav-link">
               <i class="nav-icon fa fa-building"></i>
@@ -90,7 +108,7 @@
                 Department
               </p>
             </a>
-          </li> 
+          </li>
 
           <li class="nav-item">
             <a href="{{ url('admin/countries') }}" class="nav-link">
@@ -100,7 +118,7 @@
               </p>
             </a>
           </li>
-          
+
           <li class="nav-item">
             <a href="{{ url('admin/locations') }}" class="nav-link">
               <i class="nav-icon fa fa-map-marker-alt"></i>
@@ -109,7 +127,7 @@
               </p>
             </a>
           </li>
-          
+
           <li class="nav-item">
             <a href="{{ url('admin/regions') }}" class="nav-link">
               <i class="nav-icon fa fa-asterisk"></i>
@@ -118,7 +136,7 @@
               </p>
             </a>
           </li>
-          
+
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
