@@ -50,7 +50,8 @@ class EmployeesController extends Controller
 
     public static function view($id)
     {
-        return view('backend.employees.view');
+        $data['getRecord'] = User::find($id);
+        return view('backend.employees.view', $data);
     }
 }
 
