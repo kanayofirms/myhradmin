@@ -53,6 +53,11 @@ class EmployeesController extends Controller
         $data['getRecord'] = User::find($id);
         return view('backend.employees.view', $data);
     }
+
+    public function edit($id)
+    {
+        return view('backend.employees.edit');
+    }
 }
 
 ?>
