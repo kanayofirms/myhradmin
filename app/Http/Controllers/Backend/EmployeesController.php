@@ -47,6 +47,11 @@ class EmployeesController extends Controller
 
         return redirect('admin/employees')->with('success', 'Employees successfully registered');
     }
+
+    public static function view($id)
+    {
+        return view('backend.employees.view');
+    }
 }
 
 ?>
