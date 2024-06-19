@@ -27,7 +27,7 @@ Route::post('checkemail', [AuthController::class, 'CheckEmail']);
 
 Route::post('login_post', [AuthController::class, 'login_post']);
 
-// Admin || HR 
+// Admin || HR
 
 Route::group(['middleware' => 'admin'], function(){
     Route::get('admin/dashboard', [DashboardController::class, 'dashboard']);
@@ -35,6 +35,7 @@ Route::group(['middleware' => 'admin'], function(){
     Route::get('admin/employees', [EmployeesController::class, 'index']);
     Route::get('admin/employees/add', [EmployeesController::class, 'add']);
     Route::post('admin/employees/add', [EmployeesController::class, 'add_insert']);
+    Route::get('admin/employees/view/{id}', [EmployeesController::class, 'view']);
 
 });
 
