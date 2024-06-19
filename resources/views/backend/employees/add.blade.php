@@ -139,7 +139,7 @@
                                 </div>
 
                                 <div class="card-footer">
-                                    <a href="{{ url('admin/employees') }}" class="btn btn-default">Cancel</a>
+                                    <a href="{{ url('admin/employees') }}" class="btn btn-default">Back</a>
                                     <button type="submit" class="btn btn-primary float-right">Submit</button>
                                 </div>
                             </form>
