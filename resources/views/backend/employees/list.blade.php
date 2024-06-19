@@ -90,7 +90,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($getRecord as $value)
+                                        @forelse ($getRecord as $value)
                                         <tr>
                                             <td>{{ $value->id }}</td>
                                             <td>{{ $value->name }}</td>
@@ -103,7 +103,11 @@
                                                 <a href="" class="btn btn-danger">Delete</a>
                                             </td>
                                         </tr>
-                                        @endforeach
+                                        @empty
+                                        <tr>
+                                            <td colspan="100%">No Record Found.</td>
+                                        </tr>
+                                        @endforelse
                                     </tbody>
                                 </table>
                                 <div style="padding:10px; float:right;">
