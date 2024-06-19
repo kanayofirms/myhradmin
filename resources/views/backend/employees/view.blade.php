@@ -12,7 +12,7 @@
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Add</a></li>
+                            <li class="breadcrumb-item"><a href="#">View</a></li>
                             <li class="breadcrumb-item active">Employees</li>
                         </ol>
                     </div><!-- /.col -->
@@ -45,9 +45,105 @@
 
                                     <div class="form-group row">
                                         <label class="col-sm-2 col-form-label">First Name
-                                            <span style="color: red;">*</span></label>
+                                            <span style="color: red;"></span></label>
                                         <div class="col-sm-10">
                                             {{ $getRecord->name }}
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label">Surname
+                                            <span style="color: red;"></span></label>
+                                        <div class="col-sm-10">
+                                            {{ $getRecord->last_name }}
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label">Email ID
+                                            <span style="color: red;"></span></label>
+                                        <div class="col-sm-10">
+                                            {{ $getRecord->email }}
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label">Phone Number
+                                            <span style="color: red;"></span></label>
+                                        <div class="col-sm-10">
+                                            {{ $getRecord->phone_number }}
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label">Employment Date
+                                            <span style="color: red;"></span></label>
+                                        <div class="col-sm-10">
+                                            {{ date('d-m-Y', strtotime($getRecord->hire_date)) }}
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label">Job ID
+                                            <span style="color: red;"></span></label>
+                                        <div class="col-sm-10">
+                                            {{ ($getRecord->job_id) }}
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label">Salary
+                                            <span style="color: red;"></span></label>
+                                        <div class="col-sm-10">
+                                            {{ ($getRecord->salary) }}
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label">Commission
+                                            <span style="color: red;"></span></label>
+                                        <div class="col-sm-10">
+                                            {{ ($getRecord->commission_pct) }}
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label">Manager Name
+                                            <span style="color: red;"></span></label>
+                                        <div class="col-sm-10">
+                                            {{ ($getRecord->manager_id) }}
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label">Department Name
+                                            <span style="color: red;"></span></label>
+                                        <div class="col-sm-10">
+                                            {{ ($getRecord->department_id) }}
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label">Role
+                                            <span style="color: red;"></span></label>
+                                        <div class="col-sm-10">
+                                            {{ !empty($getRecord->is_role) ? 'HR' : 'Employee'}}
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label">Created Date
+                                            <span style="color: red;"></span></label>
+                                        <div class="col-sm-10">
+                                            {{ date('d-m-Y H:i A', strtotime($getRecord->created_at)) }}
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label">Updated Date
+                                            <span style="color: red;"></span></label>
+                                        <div class="col-sm-10">
+                                            {{ date('d-m-Y H:i A', strtotime($getRecord->updated_at)) }}
                                         </div>
                                     </div>
 
