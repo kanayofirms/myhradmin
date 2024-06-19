@@ -37,6 +37,7 @@ Route::group(['middleware' => 'admin'], function(){
     Route::post('admin/employees/add', [EmployeesController::class, 'add_insert']);
     Route::get('admin/employees/view/{id}', [EmployeesController::class, 'view']);
     Route::get('admin/employees/edit/{id}', [EmployeesController::class, 'edit']);
+    Route::post('admin/employees/edit/{id}', [EmployeesController::class, 'edit_update']);
 
 });
 
