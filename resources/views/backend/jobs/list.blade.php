@@ -85,6 +85,9 @@
                                         <tr>
                                             <th>ID</th>
                                             <th>Job Title</th>
+                                            <th>Min Salary</th>
+                                            <th>Max Salary</th>
+                                            <th>Created At</th>
 
                                             <th>Action</th>
                                         </tr>
@@ -94,6 +97,9 @@
                                             <tr>
                                                 <td>1</td>
                                                 <td>Developer Operations</td>
+                                                <td>200000</td>
+                                                <td>2000000</td>
+                                                <td>12-12-2024</td>
                                                 <td>
                                                     <a href=""
                                                         class="btn btn-info">View</a>
