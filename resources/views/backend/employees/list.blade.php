@@ -38,24 +38,26 @@
 
                                         <div class="form-group col-md-1">
                                             <label for="">ID</label>
-                                            <input type="text" name="id" class="form-control" value="{{ Request()->id }}"
-                                                placeholder="ID">
+                                            <input type="text" name="id" class="form-control"
+                                                value="{{ Request()->id }}" placeholder="ID">
                                         </div>
 
                                         <div class="form-group col-md-3">
                                             <label for="">First Name</label>
-                                            <input type="text" value="{{ Request()->name }}" name="name" class="form-control"
-                                                placeholder="John">
+                                            <input type="text" value="{{ Request()->name }}" name="name"
+                                                class="form-control" placeholder="John">
                                         </div>
 
                                         <div class="form-group col-md-3">
                                             <label for="">Surname</label>
-                                            <input type="text" value="{{ Request()->last_name }}" name="last_name" class="form-control" placeholder="Doe">
+                                            <input type="text" value="{{ Request()->last_name }}" name="last_name"
+                                                class="form-control" placeholder="Doe">
                                         </div>
 
                                         <div class="form-group col-md-3">
                                             <label for="">Email ID</label>
-                                            <input type="email" value="{{ Request()->email }}" name="email" class="form-control" placeholder="johndoe@mailnator.com">
+                                            <input type="email" value="{{ Request()->email }}" name="email"
+                                                class="form-control" placeholder="johndoe@mailnator.com">
                                         </div>
 
                                         <div class="form-group col-md-2">
@@ -91,22 +93,26 @@
                                     </thead>
                                     <tbody>
                                         @forelse ($getRecord as $value)
-                                        <tr>
-                                            <td>{{ $value->id }}</td>
-                                            <td>{{ $value->name }}</td>
-                                            <td>{{ $value->last_name }}</td>
-                                            <td>{{ $value->email }}</td>
-                                            <td>{{ !empty($value->is_role) ? 'HR' : 'Employee' }}</td>
-                                            <td>
-                                                <a href="{{ url('admin/employees/view/'.$value->id) }}" class="btn btn-info">View</a>
-                                                <a href="{{ url('admin/employees/edit/'.$value->id) }}" class="btn btn-primary">Edit</a>
-                                                <a href="" class="btn btn-danger">Delete</a>
-                                            </td>
-                                        </tr>
+                                            <tr>
+                                                <td>{{ $value->id }}</td>
+                                                <td>{{ $value->name }}</td>
+                                                <td>{{ $value->last_name }}</td>
+                                                <td>{{ $value->email }}</td>
+                                                <td>{{ !empty($value->is_role) ? 'HR' : 'Employee' }}</td>
+                                                <td>
+                                                    <a href="{{ url('admin/employees/view/' . $value->id) }}"
+                                                        class="btn btn-info">View</a>
+                                                    <a href="{{ url('admin/employees/edit/' . $value->id) }}"
+                                                        class="btn btn-primary">Edit</a>
+                                                    <a href="{{ url('admin/employees/delete/' . $value->id) }}"
+                                                        onclick="return confirm('Are you sure you want to delete?')"
+                                                        class="btn btn-danger">Delete</a>
+                                                </td>
+                                            </tr>
                                         @empty
-                                        <tr>
-                                            <td colspan="100%">No Record Found.</td>
-                                        </tr>
+                                            <tr>
+                                                <td colspan="100%">No Record Found.</td>
+                                            </tr>
                                         @endforelse
                                     </tbody>
                                 </table>
