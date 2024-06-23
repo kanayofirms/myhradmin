@@ -82,6 +82,13 @@ class EmployeesController extends Controller
 
         return redirect('admin/employees')->with('success', 'Employees successfully Updated.');
     }
+
+    public function delete($id)
+    {
+        $recordDelete = User::find($id);
+        $recordDelete->delete();
+        return redirect()->back()->with('error','User successfully deleted.');
+    }
 }
 
 ?>
