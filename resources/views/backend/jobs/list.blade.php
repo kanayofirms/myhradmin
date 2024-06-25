@@ -101,7 +101,7 @@
                                                 <td>{{ $value->max_salary }}</td>
                                                 <td>{{ date('d-m-Y H:i A', strtotime($value->updated_at)) }}</td>
                                                 <td>
-                                                    <a href=""
+                                                    <a href="{{ url('admin/jobs/view/'.$value->id) }}"
                                                         class="btn btn-info">View</a>
                                                     <a href=""
                                                         class="btn btn-primary">Edit</a>
