@@ -30,15 +30,52 @@
                                 <h3 class="card-title">Add Jobs</h3>
                             </div>
 
-                            <form accept="{{ url('admin/employees/add') }}" class="form-horizontal" method="post"
+                            <form action="{{ url('admin/jobs/add') }}" class="form-horizontal" method="post"
                                 enctype="multipart/form-data">
                                 {{ csrf_field() }}
                                 <div class="card card-body">
                                     <div class="form-group row">
-                                        <label class="col-sm-2 col-form-label">First Name
+                                        <label class="col-sm-2 col-form-label">Job Title
                                             <span style="color: red;">*</span></label>
                                         <div class="col-sm-10">
-                                            <input type="text" value="{{ old('name') }}" name="name"
-                                                class="form-control" required placeholder="Enter First Name">
+                                            <input type="text" value="{{ old('job_title') }}" name="job_title"
+                                                class="form-control" required placeholder="Developer Operation">
                                         </div>
                                     </div>
+
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label">Min Salary
+                                            <span style="color: red;">*</span></label>
+                                        <div class="col-sm-10">
+                                            <input type="number" value="{{ old('min_salary') }}" name="min_salary"
+                                                class="form-control" required placeholder="100000">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label">Max Salary
+                                            <span style="color: red;">*</span></label>
+                                        <div class="col-sm-10">
+                                            <input type="text" value="{{ old('max_salary') }}" name="max_salary"
+                                                class="form-control" required placeholder="1000000">
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="card-footer">
+                                    <a href="{{ url('admin/employees') }}" class="btn btn-default">Back</a>
+                                    <button type="submit" class="btn btn-primary float-right">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+@endsection
+
