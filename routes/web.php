@@ -44,6 +44,7 @@ Route::group(['middleware' => 'admin'], function(){
     //Job Side
 
     Route::get('admin/jobs', [JobsController::class,'index']);
+    Route::get('admin/jobs/add', [JobsController::class,'add']);
 
 });
 
