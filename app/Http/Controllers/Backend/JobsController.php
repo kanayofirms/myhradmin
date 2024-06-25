@@ -13,4 +13,9 @@ class JobsController extends Controller
     {
         return view('backend.jobs.list');
     }
+
+    public function add()
+    {
+        return view('backend.jobs.add');
+    }
 }
