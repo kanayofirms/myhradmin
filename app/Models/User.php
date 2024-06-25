@@ -59,7 +59,7 @@ class User extends Authenticatable
 
                     if(!empty(Request::get('name')))
                     {
-                        $return = $return->where('name', 'LIKE', '%' .Request::get('name'). '%');
+                        $return = $return->where('name', 'LIKE', '%'.Request::get('name').'%');
                     }
 
                     if(!empty(Request::get('last_name')))
@@ -69,7 +69,7 @@ class User extends Authenticatable
 
                     if(!empty(Request::get('email')))
                     {
-                        $return = $return->where('email', 'LIKE', '%'.Request::get('email'). '%');
+                        $return = $return->where('email', 'LIKE', '%'.Request::get('email').'%');
                     }
                 //search box end
 
