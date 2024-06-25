@@ -37,4 +37,9 @@ class JobsController extends Controller
 
         return redirect('admin/jobs')->with('success', 'Jobs successfully registered.');
     }
+
+    public function view($id, Request $request)
+    {
+        return view('backend.jobs.view');
+    }
 }
