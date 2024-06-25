@@ -40,6 +40,7 @@ class JobsController extends Controller
 
     public function view($id, Request $request)
     {
-        return view('backend.jobs.view');
+        $data['getRecord'] = JobsModel::find($id);
+        return view('backend.jobs.view', $data);
     }
 }
