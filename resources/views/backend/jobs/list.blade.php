@@ -93,13 +93,13 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-
+                                        @forelse ($getRecord as $value)
                                             <tr>
-                                                <td>1</td>
-                                                <td>Developer Operations</td>
-                                                <td>200000</td>
-                                                <td>2000000</td>
-                                                <td>12-12-2024</td>
+                                                <td>{{ $value->id }}</td>
+                                                <td>{{ $value->job_title }}</td>
+                                                <td>{{ $value->min_salary }}</td>
+                                                <td>{{ $value->max_salary }}</td>
+                                                <td>{{ date('d-m-Y H:i A', strtotime($value->updated_at)) }}</td>
                                                 <td>
                                                     <a href=""
                                                         class="btn btn-info">View</a>
@@ -110,10 +110,14 @@
                                                         class="btn btn-danger">Delete</a>
                                                 </td>
                                             </tr>
+                                        @empty
+                                        <tr>
+                                            <td colspan="100%">No Record Found.</td>
+                                        </tr>
+                                        @endforelse
 
-                                            <tr>
-                                                <td colspan="100%">No Record Found.</td>
-                                            </tr>
+
+
 
                                     </tbody>
                                 </table>
