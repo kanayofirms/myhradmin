@@ -28,10 +28,11 @@ class JobsController extends Controller
             'min_salary' => 'required',
             'max_salary' => 'required',
         ]);
+
         $user                   = new JobsModel;
-        $user->job_title             = trim($request->job_title);
-        $user->min_salary        = trim($request->min_salary);
-        $user->max_salary            = trim($request->max_salary);
+        $user->job_title        = trim($request->job_title);
+        $user->min_salary       = trim($request->min_salary);
+        $user->max_salary       = trim($request->max_salary);
 
         $user->save();
 
@@ -48,5 +49,25 @@ class JobsController extends Controller
     {
         $data['getRecord'] = JobsModel::find($id);
         return view('backend.jobs.edit', $data);
+    }
+
+    public function edit_update(Request $request, $id)
+    {
+
+        $user = request()->validate([
+            'job_title' => 'required',
+            'min_salary' => 'required',
+            'max_salary' => 'required',
+        ]);
+
+        $user                   = JobsModel::find($id);
+
+        $user->job_title        = trim($request->job_title);
+        $user->min_salary       = trim($request->min_salary);
+        $user->max_salary       = trim($request->max_salary);
+
+        $user->save();
+
+        return redirect('admin/jobs')->with('success', 'Jobs successfully Updated.');
     }
 }
