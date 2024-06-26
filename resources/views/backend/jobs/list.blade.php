@@ -36,7 +36,7 @@
                                 <div class="card-body">
                                     <div class="row">
 
-                                        <div class="form-group col-md-1">
+                                        <div class="form-group col-md-3">
                                             <label for="">ID</label>
                                             <input type="text" name="id" class="form-control"
                                                 value="{{ Request()->id }}" placeholder="ID">
@@ -58,6 +58,18 @@
                                             <label for="">Max Salary</label>
                                             <input type="number" value="{{ Request()->max_salary }}" name="max_salary"
                                                 class="form-control" placeholder="2,000,000">
+                                        </div>
+
+                                        <div class="form-group col-md-3">
+                                            <label for="">From (Start Date)</label>
+                                            <input type="date" value="{{ Request()->start_date }}" name="start_date"
+                                                class="form-control">
+                                        </div>
+
+                                        <div class="form-group col-md-3">
+                                            <label for="">To (End Date)</label>
+                                            <input type="date" value="{{ Request()->end_date }}" name="end_date"
+                                                class="form-control">
                                         </div>
 
                                         <div class="form-group col-md-2">
