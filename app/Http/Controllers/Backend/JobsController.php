@@ -43,4 +43,9 @@ class JobsController extends Controller
         $data['getRecord'] = JobsModel::find($id);
         return view('backend.jobs.view', $data);
     }
+
+    public function edit($id)
+    {
+        return view('backend.jobs.edit');
+    }
 }
