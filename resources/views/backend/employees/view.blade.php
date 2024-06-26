@@ -30,8 +30,7 @@
                                 <h3 class="card-title">View Employees</h3>
                             </div>
 
-                            <form class="form-horizontal" method="post"
-                                enctype="multipart/form-data">
+                            <form class="form-horizontal" method="post" enctype="multipart/form-data">
 
                                 <div class="card card-body">
 
@@ -87,7 +86,8 @@
                                         <label class="col-sm-2 col-form-label">Job ID
                                             <span style="color: red;"></span></label>
                                         <div class="col-sm-10">
-                                            {{ ($getRecord->job_id) }}
+                                            {{ !empty($getRecord->get_job_single->job_title) ?
+                                            $getRecord->get_job_single->job_title : '' }}
                                         </div>
                                     </div>
 
@@ -95,7 +95,7 @@
                                         <label class="col-sm-2 col-form-label">Salary
                                             <span style="color: red;"></span></label>
                                         <div class="col-sm-10">
-                                            {{ ($getRecord->salary) }}
+                                            {{ $getRecord->salary }}
                                         </div>
                                     </div>
 
@@ -103,7 +103,7 @@
                                         <label class="col-sm-2 col-form-label">Commission
                                             <span style="color: red;"></span></label>
                                         <div class="col-sm-10">
-                                            {{ ($getRecord->commission_pct) }}
+                                            {{ $getRecord->commission_pct }}
                                         </div>
                                     </div>
 
@@ -111,7 +111,7 @@
                                         <label class="col-sm-2 col-form-label">Manager Name
                                             <span style="color: red;"></span></label>
                                         <div class="col-sm-10">
-                                            {{ ($getRecord->manager_id) }}
+                                            {{ $getRecord->manager_id }}
                                         </div>
                                     </div>
 
@@ -119,7 +119,7 @@
                                         <label class="col-sm-2 col-form-label">Department Name
                                             <span style="color: red;"></span></label>
                                         <div class="col-sm-10">
-                                            {{ ($getRecord->department_id) }}
+                                            {{ $getRecord->department_id }}
                                         </div>
                                     </div>
 
@@ -127,7 +127,7 @@
                                         <label class="col-sm-2 col-form-label">Role
                                             <span style="color: red;"></span></label>
                                         <div class="col-sm-10">
-                                            {{ !empty($getRecord->is_role) ? 'HR' : 'Employee'}}
+                                            {{ !empty($getRecord->is_role) ? 'HR' : 'Employee' }}
                                         </div>
                                     </div>
 
@@ -160,7 +160,7 @@
             </div>
         </section>
 
-         <!-- /.content -->
+        <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
 @endsection
