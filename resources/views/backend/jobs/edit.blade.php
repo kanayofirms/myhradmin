@@ -8,12 +8,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Employees</h1>
+                        <h1 class="m-0">Jobs</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Add</a></li>
-                            <li class="breadcrumb-item active">Employees</li>
+                            <li class="breadcrumb-item"><a href="#">Edit</a></li>
+                            <li class="breadcrumb-item active">Jobs</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -27,10 +27,10 @@
                     <div class="col-md-12">
                         <div class="card card-info">
                             <div class="card-header">
-                                <h3 class="card-title">Add Jobs</h3>
+                                <h3 class="card-title">Edit Jobs</h3>
                             </div>
 
-                            <form action="{{ url('admin/jobs/add') }}" class="form-horizontal" method="post"
+                            <form action="" class="form-horizontal" method="post"
                                 enctype="multipart/form-data">
                                 {{ csrf_field() }}
                                 <div class="card card-body">
@@ -38,7 +38,7 @@
                                         <label class="col-sm-2 col-form-label">Job Title
                                             <span style="color: red;">*</span></label>
                                         <div class="col-sm-10">
-                                            <input type="text" value="{{ old('job_title') }}" name="job_title"
+                                            <input type="text" value="{{ $getRecord->job_title }}" name="job_title"
                                                 class="form-control" required placeholder="Developer Operation">
                                         </div>
                                     </div>
@@ -47,7 +47,7 @@
                                         <label class="col-sm-2 col-form-label">Min Salary
                                             <span style="color: red;">*</span></label>
                                         <div class="col-sm-10">
-                                            <input type="number" value="{{ old('min_salary') }}" name="min_salary"
+                                            <input type="number" value="{{ $getRecord->min_salary }}" name="min_salary"
                                                 class="form-control" required placeholder="100000">
                                         </div>
                                     </div>
@@ -56,7 +56,7 @@
                                         <label class="col-sm-2 col-form-label">Max Salary
                                             <span style="color: red;">*</span></label>
                                         <div class="col-sm-10">
-                                            <input type="text" value="{{ old('max_salary') }}" name="max_salary"
+                                            <input type="text" value="{{ $getRecord->max_salary }}" name="max_salary"
                                                 class="form-control" required placeholder="1000000">
                                         </div>
                                     </div>
@@ -64,8 +64,8 @@
                                 </div>
 
                                 <div class="card-footer">
-                                    <a href="{{ url('admin/employees') }}" class="btn btn-default">Back</a>
-                                    <button type="submit" class="btn btn-primary float-right">Submit</button>
+                                    <a href="{{ url('admin/jobs') }}" class="btn btn-default">Back</a>
+                                    <button type="submit" class="btn btn-primary float-right">Update</button>
                                 </div>
                             </form>
                         </div>
