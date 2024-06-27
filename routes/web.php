@@ -50,6 +50,7 @@ Route::group(['middleware' => 'admin'], function(){
     Route::get('admin/jobs/edit/{id}', [JobsController::class, 'edit']);
     Route::post('admin/jobs/edit/{id}', [JobsController::class,'edit_update']);
     Route::get('admin/jobs/delete/{id}', [JobsController::class, 'delete']);
+    Route::get('admin/jobs_export', [JobsController::class, 'job_export']);
 
 });
 
