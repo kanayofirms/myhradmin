@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\JobsModel;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\JobsExport;
-use App\Models\User;
+
 
 
 class JobsController extends Controller
