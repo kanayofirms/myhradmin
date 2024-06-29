@@ -4,15 +4,16 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\JobsModel;
-use MaatWebsite\Excel\Facades\Excel;
+use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\JobsExport;
+use App\Models\User;
 
 
 class JobsController extends Controller
 {
     public function index(Request $request)
     {
-        $data['getRecord'] = JobsModel::getRecord();
+        $data['getRecord'] = JobsModel::getRecord($request);
         return view('backend.jobs.list', $data);
     }
 
