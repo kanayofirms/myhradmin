@@ -57,7 +57,7 @@ Route::group(['middleware' => 'admin'], function(){
 
     //Job History
 
-    Route::get('admin/jobs_history', [JobHistoryController::class,'index']);
+    Route::get('admin/job_history', [JobHistoryController::class,'index']);
 
 });
 
