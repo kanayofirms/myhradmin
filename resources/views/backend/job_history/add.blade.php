@@ -77,7 +77,10 @@
                                             <span style="color: red;">*</span></label>
                                         <div class="col-sm-10">
                                            <select name="job_id" id="" class="form-control">
-                                            <option value="">Employees</option>
+                                            <option value="">Select Job Name</option>
+                                            @foreach ($getJobs as $value_job)
+                                            <option value="{{ $value_job->id }}">{{ $value_job->job_title }}</option>
+                                            @endforeach
                                            </select>
                                         </div>
                                     </div>
