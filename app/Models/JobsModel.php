@@ -12,7 +12,7 @@ class JobsModel extends Model
 
     protected $table = 'jobs';
 
-    static public function getRecord()
+    static public function getRecord($request)
     {
         // $return = self::select('jobs.*')
         //         ->orderBy('id', 'desc')
