@@ -18,6 +18,7 @@ class JobHistoryController extends Controller
 
     public function add()
     {
-        return view('backend.job_history.add');
+        $data['getJobs'] = JobsModel::get();
+        return view('backend.job_history.add', $data);
     }
 }
