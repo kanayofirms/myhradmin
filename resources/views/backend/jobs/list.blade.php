@@ -16,7 +16,7 @@
                             <input type="hidden" name="start_date" value="{{ Request()->start_date }}">
                             <input type="hidden" name="end_date" value="{{ Request()->end_date }}">
                             <a class="btn btn-success"
-                                href="{{ url('admin/jobs_export?start_date=' . Request::get('start_date') . '&end_date' . Request::get('end_date')) }}">Excel
+                                href="{{ url('admin/jobs_export?start_date=' . Request::get('start_date') . '&end_date=' . Request::get('end_date')) }}">Excel
                                 Export</a>
                         </form>
 
