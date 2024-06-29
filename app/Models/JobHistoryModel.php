@@ -9,7 +9,7 @@ class JobHistoryModel extends Model
 {
     use HasFactory;
 
-    protected $table = 'job_history ';
+    protected $table = 'job_history';
 
 
 }
