@@ -5,6 +5,9 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\EmployeesController;
 use App\Http\Controllers\Backend\JobsController;
+use App\Http\Controllers\Backend\JobHistoryController;
+
+
 
 
 
@@ -51,6 +54,10 @@ Route::group(['middleware' => 'admin'], function(){
     Route::post('admin/jobs/edit/{id}', [JobsController::class,'edit_update']);
     Route::get('admin/jobs/delete/{id}', [JobsController::class, 'delete']);
     Route::get('admin/jobs_export', [JobsController::class, 'jobs_export']);
+
+    //Job History
+
+    Route::get('admin/jobs_history', [JobHistoryController::class,'index']);
 
 });
 
