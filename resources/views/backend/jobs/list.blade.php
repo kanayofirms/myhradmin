@@ -138,10 +138,6 @@
                                                 <td colspan="100%">No Record Found.</td>
                                             </tr>
                                         @endforelse
-
-
-
-
                                     </tbody>
                                 </table>
                                 <div style="padding:10px; float:right;">
