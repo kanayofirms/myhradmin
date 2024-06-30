@@ -21,6 +21,56 @@
         </div>
         <!-- /.content-header -->
 
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <section class="col-md-12">
+
+                        @include('_message')
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Job History List</h3>
+                            </div>
+                            <div class="card-body p-0">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Employee Name (Employee ID)</th>
+                                            <th>Start Date</th>
+                                            <th>End Date</th>
+                                            <th>Job Name (Job ID)</th>
+                                            <th>Department Name (Department ID)</th>
+                                            <th>Created At</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @forelse ($getRecord as $value)
+                                        <tr>
+                                            <td>{{ $value->id }}</td>
+                                            <td>{{ $value->employee_id }}</td>
+                                            <td>{{ date('d-m-Y', strtotime($value->start_date)) }}</td>
+                                            <td>{{ date('d-m-Y', strtotime($value->end_date)) }}</td>
+                                            <td>{{ $value->job_id }}</td>
+                                            <td>{{ $value->department_id }}</td>
+                                            <td>{{ date('d-m-Y H:i A', strtotime($value->created_at)) }}</td>
+                                        </tr>
+                                        @empty
+                                        <tr colspan="100%">
+                                            No Record Found.
+                                        </tr>
+                                        @endforelse
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+        </section>
+
 
         <!-- /.content -->
     </div>
