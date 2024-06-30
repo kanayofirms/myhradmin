@@ -36,27 +36,28 @@
                                     <div class="row">
                                         <div class="form-group col-md-3">
                                             <label for="">ID</label>
-                                            <input type="text" class="form-control" name="id" placeholder="ID">
+                                            <input type="text" class="form-control" name="id" placeholder="ID"
+                                            value="{{ Request()->id }}">
                                         </div>
 
                                         <div class="form-group col-md-3">
                                             <label for="">Employee Name</label>
-                                            <input type="text" class="form-control" name="name" placeholder="John Doe">
+                                            <input type="text" class="form-control" name="name" placeholder="John" value="{{ Request()->name }}">
                                         </div>
 
                                         <div class="form-group col-md-3">
                                             <label for="">Start Date</label>
-                                            <input type="date" class="form-control" name="start_date">
+                                            <input type="date" class="form-control" name="start_date" value="{{ Request()->start_date }}">
                                         </div>
 
                                         <div class="form-group col-md-3">
                                             <label for="">End Date</label>
-                                            <input type="date" class="form-control" name="end_date">
+                                            <input type="date" class="form-control" name="end_date" value="{{ Request()->end_date }}">
                                         </div>
 
                                         <div class="form-group col-md-3">
                                             <label for="">Job Name</label>
-                                            <input type="text" class="form-control" name="job_title" placeholder="Cloud Engineer">
+                                            <input type="text" class="form-control" name="job_title" placeholder="Cloud Engineer" value="{{ Request()->job_title }}">
                                         </div>
 
                                         <div class="form-group col-md-2">
