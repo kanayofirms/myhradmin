@@ -21,40 +21,38 @@ class JobHistoryModel extends Model
         // return $return;
 
         $return = self::select('job_history.*', 'users.name', 'jobs.job_title')
-                ->join('users','users.id','=','job_history.employee_id')
-                ->join('jobs','jobs.id','=','job_history.job_id')
-                ->orderBy('job_history.id','desc');
+            ->join('users', 'users.id', '=', 'job_history.employee_id')
+            ->join('jobs', 'jobs.id', '=', 'job_history.job_id')
+            ->orderBy('job_history.id', 'desc');
 
-                if(!empty(Request::get('id')))
-                {
-                    $return = $return->where('job_history.id', Request::get('id'));
-                }
+        if (!empty(Request::get('id'))) {
+            $return = $return->where('job_history.id', Request::get('id'));
+        }
 
-                if(!empty(Request::get('name')))
-                {
-                    $return = $return->where('users.name', 'like', '%'.Request::get('name').'%');
-                }
+        if (!empty(Request::get('name'))) {
+            $return = $return->where('users.name', 'like', '%' . Request::get('name') . '%');
+        }
 
-                if(!empty(Request::get('start_date')))
-                {
-                    $return = $return->where('job_history.start_date', Request::get(
-                        'start_date'));
+        if (!empty(Request::get('start_date'))) {
+            $return = $return->where(
+                'job_history.start_date',
+                Request::get(
+                    'start_date'
+                )
+            );
 
-                }
+        }
 
-                if(!empty(Request::get('end_date')))
-                {
-                    $return = $return->where('job_history.start_date', Request::get(
-                        'end_date'));
+        if (!empty(Request::get('end_date'))) {
+            $return = $return->where('job_history.start_date', Request::get('end_date'));
 
-                }
+        }
 
-                if(!empty(Request::get('job_title')))
-                {
-                    $return = $return->where('jobs.job_title', 'like', '%'.Request::get('job_title').'%');
-                }
+        if (!empty(Request::get('job_title'))) {
+            $return = $return->where('jobs.job_title', 'like', '%' . Request::get('job_title') . '%');
+        }
 
-                $return = $return->paginate(20);
+        $return = $return->paginate(20);
         return $return;
     }
 
@@ -65,6 +63,6 @@ class JobHistoryModel extends Model
 
     public function get_job_single()
     {
-        return $this->belongsTo(JobsModel::class,'job_id');
+        return $this->belongsTo(JobsModel::class, 'job_id');
     }
 }
