@@ -26,6 +26,49 @@
                 <div class="row">
                     <section class="col-md-12">
 
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Search Job History</h3>
+                            </div>
+
+                            <form action="" method="GET">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="form-group col-md-3">
+                                            <label for="">ID</label>
+                                            <input type="text" class="form-control" name="id" placeholder="ID">
+                                        </div>
+
+                                        <div class="form-group col-md-3">
+                                            <label for="">Employee Name</label>
+                                            <input type="text" class="form-control" name="name" placeholder="John Doe">
+                                        </div>
+
+                                        <div class="form-group col-md-3">
+                                            <label for="">Start Date</label>
+                                            <input type="date" class="form-control" name="start_date">
+                                        </div>
+
+                                        <div class="form-group col-md-3">
+                                            <label for="">End Date</label>
+                                            <input type="date" class="form-control" name="end_date">
+                                        </div>
+
+                                        <div class="form-group col-md-3">
+                                            <label for="">Job Name</label>
+                                            <input type="text" class="form-control" name="job_title" placeholder="Cloud Engineer">
+                                        </div>
+
+                                        <div class="form-group col-md-2">
+                                            <button class="btn btn-primary" type="submit" style="margin-top: 30px;">Search</button>
+                                            <a href="{{ url('admin/job_history') }}" class="btn btn-success" style="margin-top: 30px;">Reset</a>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
                         @include('_message')
 
                         <div class="card">
@@ -63,8 +106,8 @@
                                             <td>{{ date('d-m-Y H:i A', strtotime($value->created_at)) }}</td>
                                         </tr>
                                         @empty
-                                        <tr colspan="100%">
-                                            No Record Found.
+                                        <tr>
+                                            <td colspan="100%">No Record Found.</td>
                                         </tr>
                                         @endforelse
                                     </tbody>
