@@ -37,32 +37,38 @@
                                         <div class="form-group col-md-3">
                                             <label for="">ID</label>
                                             <input type="text" class="form-control" name="id" placeholder="ID"
-                                            value="{{ Request()->id }}">
+                                                value="{{ Request()->id }}">
                                         </div>
 
                                         <div class="form-group col-md-3">
                                             <label for="">Employee Name</label>
-                                            <input type="text" class="form-control" name="name" placeholder="John" value="{{ Request()->name }}">
+                                            <input type="text" class="form-control" name="name" placeholder="John"
+                                                value="{{ Request()->name }}">
                                         </div>
 
                                         <div class="form-group col-md-3">
                                             <label for="">Start Date</label>
-                                            <input type="date" class="form-control" name="start_date" value="{{ Request()->start_date }}">
+                                            <input type="date" class="form-control" name="start_date"
+                                                value="{{ Request()->start_date }}">
                                         </div>
 
                                         <div class="form-group col-md-3">
                                             <label for="">End Date</label>
-                                            <input type="date" class="form-control" name="end_date" value="{{ Request()->end_date }}">
+                                            <input type="date" class="form-control" name="end_date"
+                                                value="{{ Request()->end_date }}">
                                         </div>
 
                                         <div class="form-group col-md-3">
                                             <label for="">Job Name</label>
-                                            <input type="text" class="form-control" name="job_title" placeholder="Cloud Engineer" value="{{ Request()->job_title }}">
+                                            <input type="text" class="form-control" name="job_title"
+                                                placeholder="Cloud Engineer" value="{{ Request()->job_title }}">
                                         </div>
 
                                         <div class="form-group col-md-2">
-                                            <button class="btn btn-primary" type="submit" style="margin-top: 30px;">Search</button>
-                                            <a href="{{ url('admin/job_history') }}" class="btn btn-success" style="margin-top: 30px;">Reset</a>
+                                            <button class="btn btn-primary" type="submit"
+                                                style="margin-top: 30px;">Search</button>
+                                            <a href="{{ url('admin/job_history') }}" class="btn btn-success"
+                                                style="margin-top: 30px;">Reset</a>
 
                                         </div>
                                     </div>
@@ -91,25 +97,28 @@
                                     </thead>
                                     <tbody>
                                         @forelse ($getRecord as $value)
-                                        <tr>
-                                            <td>{{ $value->id }}</td>
-                                            <td>{{ !empty($value->get_user_name_single->name) ? $value->get_user_name_single->name : '' }} {{ !empty($value->get_user_name_single->last_name) ? $value->get_user_name_single->last_name : '' }}</td>
-                                            <td>{{ date('d-m-Y', strtotime($value->start_date)) }}</td>
-                                            <td>{{ date('d-m-Y', strtotime($value->end_date)) }}</td>
-                                            <td>{{ !empty($value->get_job_single->job_title) ? $value->get_job_single->job_title : '' }}</td>
-                                            <td>
-                                                @if(!@empty($value->department_id == 1))
-                                                Customer Care Department
-                                                @else
-                                                Sales Department
-                                                @endif
-                                            </td>
-                                            <td>{{ date('d-m-Y H:i A', strtotime($value->created_at)) }}</td>
-                                        </tr>
+                                            <tr>
+                                                <td>{{ $value->id }}</td>
+                                                <td>{{ !empty($value->get_user_name_single->name) ? $value->get_user_name_single->name : '' }}
+                                                    {{ !empty($value->get_user_name_single->last_name) ? $value->get_user_name_single->last_name : '' }}
+                                                </td>
+                                                <td>{{ date('d-m-Y', strtotime($value->start_date)) }}</td>
+                                                <td>{{ date('d-m-Y', strtotime($value->end_date)) }}</td>
+                                                <td>{{ !empty($value->get_job_single->job_title) ? $value->get_job_single->job_title : '' }}
+                                                </td>
+                                                <td>
+                                                    @if (!@empty($value->department_id == 1))
+                                                        Customer Care Department
+                                                    @else
+                                                        Sales Department
+                                                    @endif
+                                                </td>
+                                                <td>{{ date('d-m-Y H:i A', strtotime($value->created_at)) }}</td>
+                                            </tr>
                                         @empty
-                                        <tr>
-                                            <td colspan="100%">No Record Found.</td>
-                                        </tr>
+                                            <tr>
+                                                <td colspan="100%">No Record Found.</td>
+                                            </tr>
                                         @endforelse
                                     </tbody>
                                 </table>
@@ -126,4 +135,3 @@
     </div>
     <!-- /.content-wrapper -->
 @endsection
-
