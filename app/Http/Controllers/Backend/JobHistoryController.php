@@ -14,7 +14,9 @@ class JobHistoryController extends Controller
 {
     public function index(Request $request)
     {
-        return view('backend.job_history.list');
+        // die("SS");
+        $data['getRecord'] = JobHistoryModel::getRecord($request);
+        return view('backend.job_history.list', $data);
     }
 
     public function add()
