@@ -49,11 +49,17 @@
                                         @forelse ($getRecord as $value)
                                         <tr>
                                             <td>{{ $value->id }}</td>
-                                            <td>{{ $value->employee_id }}</td>
+                                            <td>{{ !empty($value->get_user_name_single->name) ? $value->get_user_name_single->name : '' }} {{ !empty($value->get_user_name_single->last_name) ? $value->get_user_name_single->last_name : '' }}</td>
                                             <td>{{ date('d-m-Y', strtotime($value->start_date)) }}</td>
                                             <td>{{ date('d-m-Y', strtotime($value->end_date)) }}</td>
-                                            <td>{{ $value->job_id }}</td>
-                                            <td>{{ $value->department_id }}</td>
+                                            <td>{{ !empty($value->get_job_single->job_title) ? $value->get_job_single->job_title : '' }}</td>
+                                            <td>
+                                                @if(!@empty($value->department_id == 1))
+                                                Customer Care Department
+                                                @else
+                                                Sales Department
+                                                @endif
+                                            </td>
                                             <td>{{ date('d-m-Y H:i A', strtotime($value->created_at)) }}</td>
                                         </tr>
                                         @empty
