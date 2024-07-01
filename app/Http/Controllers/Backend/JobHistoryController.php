@@ -56,4 +56,17 @@ class JobHistoryController extends Controller
         $data['getRecord'] = JobHistoryModel::find($id);
         return view('backend.job_history.edit', $data);
     }
+
+    public function edit_update(Request $request, $id)
+    {
+        $user = JobHistoryModel::find($id);
+        $user->employee_id = trim($request->employee_id);
+        $user->start_date = trim($request->start_date);
+        $user->end_date = trim($request->end_date);
+        $user->job_id = trim($request->job_id);
+        $user->department_id = trim($request->department_id);
+        $user->save();
+
+        return redirect('admin/job_history')->with('success', 'Job history successfully updated.');
+    }
 }
