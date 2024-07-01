@@ -51,6 +51,8 @@ class JobHistoryController extends Controller
 
     public function edit($id)
     {
-        return view('backend.job_history.edit');
+        $data['getEmployee'] = User::where('is_role', '=', 0)->get();
+        $data['getJobs'] = JobsModel::get();
+        return view('backend.job_history.edit', $data);
     }
 }
