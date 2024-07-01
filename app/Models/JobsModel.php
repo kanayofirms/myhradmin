@@ -23,7 +23,7 @@ class JobsModel extends Model
 
         //search box start
         if (!empty(Request::get('id'))) {
-            $return = $return->where('id', Request::get('id'));
+            $return = $return->where('id', '=', Request::get('id'));
         }
 
         if (!empty(Request::get('job_title'))) {
@@ -40,7 +40,7 @@ class JobsModel extends Model
 
         if (!empty(Request::get('start_date')) && !empty(Request::get('end_date'))) {
             $return = $return->where('jobs.created_at', '>=', Request::get('start_date'))
-            ->where('jobs.created_at', '<=', Request::get('end_date'));
+                ->where('jobs.created_at', '<=', Request::get('end_date'));
         }
         //search box end
 
