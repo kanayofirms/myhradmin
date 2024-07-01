@@ -53,6 +53,7 @@ class JobHistoryController extends Controller
     {
         $data['getEmployee'] = User::where('is_role', '=', 0)->get();
         $data['getJobs'] = JobsModel::get();
+        $data['getRecord'] = JobHistoryModel::find($id);
         return view('backend.job_history.edit', $data);
     }
 }
