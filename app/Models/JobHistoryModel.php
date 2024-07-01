@@ -20,7 +20,7 @@ class JobHistoryModel extends Model
         //     ->paginate(20);
         // return $return;
 
-        $return = self::select('job_history.*', 'users.name', 'jobs.job_title')
+        $return = self::select('job_history.*', 'users.name', 'jobs.job_title', 'users.last_name')
             ->join('users', 'users.id', '=', 'job_history.employee_id')
             ->join('jobs', 'jobs.id', '=', 'job_history.job_id')
             ->orderBy('job_history.id', 'desc');
