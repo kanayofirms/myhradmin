@@ -73,6 +73,7 @@ Route::group(['middleware' => 'admin'], function () {
     //Job Grades
 
     Route::get('admin/job_grades', [JobGradesController::class, 'index']);
+    Route::get('admin/job_grades/add', [JobGradesController::class, 'add']);
 
 });
 
