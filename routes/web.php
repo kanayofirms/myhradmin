@@ -6,6 +6,10 @@ use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\EmployeesController;
 use App\Http\Controllers\Backend\JobsController;
 use App\Http\Controllers\Backend\JobHistoryController;
+use App\Http\Controllers\Backend\JobGradesController;
+
+
+
 
 
 
@@ -65,6 +69,10 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('admin/job_history/delete/{id}', [JobHistoryController::class, 'delete']);
 
     Route::get('admin/job_history_export', [JobHistoryController::class, 'job_history_export']);
+
+    //Job Grades
+
+    Route::get('admin/job_grades', [JobGradesController::class, 'index']);
 
 });
 
