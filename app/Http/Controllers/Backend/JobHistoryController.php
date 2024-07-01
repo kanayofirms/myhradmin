@@ -7,6 +7,9 @@ use App\Http\Controllers\Controller;
 use App\Models\JobsModel;
 use App\Models\User;
 use App\Models\JobHistoryModel;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\JobHistoryExport;
+
 
 
 
@@ -75,5 +78,10 @@ class JobHistoryController extends Controller
         $user = JobHistoryModel::find($id);
         $user->delete();
         return redirect()->back()->with('error', 'Record successfully deleted.');
+    }
+
+    public function job_history_export(Request $request)
+    {
+        return Excel::download(new JobHistoryExport, 'job_history_export.xlsx');
     }
 }
