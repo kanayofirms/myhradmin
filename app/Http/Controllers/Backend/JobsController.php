@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Backend;
+
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\JobsModel;
@@ -37,10 +38,10 @@ class JobsController extends Controller
             'max_salary' => 'required',
         ]);
 
-        $user                   = new JobsModel;
-        $user->job_title        = trim($request->job_title);
-        $user->min_salary       = trim($request->min_salary);
-        $user->max_salary       = trim($request->max_salary);
+        $user = new JobsModel;
+        $user->job_title = trim($request->job_title);
+        $user->min_salary = trim($request->min_salary);
+        $user->max_salary = trim($request->max_salary);
 
         $user->save();
 
@@ -68,11 +69,11 @@ class JobsController extends Controller
             'max_salary' => 'required',
         ]);
 
-        $user                   = JobsModel::find($id);
+        $user = JobsModel::find($id);
 
-        $user->job_title        = trim($request->job_title);
-        $user->min_salary       = trim($request->min_salary);
-        $user->max_salary       = trim($request->max_salary);
+        $user->job_title = trim($request->job_title);
+        $user->min_salary = trim($request->min_salary);
+        $user->max_salary = trim($request->max_salary);
 
         $user->save();
 
