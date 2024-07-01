@@ -33,7 +33,7 @@ Route::post('login_post', [AuthController::class, 'login_post']);
 
 // Admin || HR
 
-Route::group(['middleware' => 'admin'], function(){
+Route::group(['middleware' => 'admin'], function () {
     Route::get('admin/dashboard', [DashboardController::class, 'dashboard']);
 
     Route::get('admin/employees', [EmployeesController::class, 'index']);
@@ -46,20 +46,21 @@ Route::group(['middleware' => 'admin'], function(){
 
     //Job Side
 
-    Route::get('admin/jobs', [JobsController::class,'index']);
-    Route::get('admin/jobs/add', [JobsController::class,'add']);
-    Route::post('admin/jobs/add', [JobsController::class,'add_post']);
+    Route::get('admin/jobs', [JobsController::class, 'index']);
+    Route::get('admin/jobs/add', [JobsController::class, 'add']);
+    Route::post('admin/jobs/add', [JobsController::class, 'add_post']);
     Route::get('admin/jobs/view/{id}', [JobsController::class, 'view']);
     Route::get('admin/jobs/edit/{id}', [JobsController::class, 'edit']);
-    Route::post('admin/jobs/edit/{id}', [JobsController::class,'edit_update']);
+    Route::post('admin/jobs/edit/{id}', [JobsController::class, 'edit_update']);
     Route::get('admin/jobs/delete/{id}', [JobsController::class, 'delete']);
     Route::get('admin/jobs_export', [JobsController::class, 'jobs_export']);
 
     //Job History
 
-    Route::get('admin/job_history', [JobHistoryController::class,'index']);
-    Route::get('admin/job_history/add', [JobHistoryController::class,'add']);
-    Route::post('admin/job_history/add', [JobHistoryController::class,'add_post']);
+    Route::get('admin/job_history', [JobHistoryController::class, 'index']);
+    Route::get('admin/job_history/add', [JobHistoryController::class, 'add']);
+    Route::post('admin/job_history/add', [JobHistoryController::class, 'add_post']);
+    Route::get('admin/job_history/edit/{id}', [JobHistoryController::class, 'edit']);
 
 });
 
