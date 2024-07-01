@@ -27,7 +27,7 @@
                     <div class="col-md-12">
                         <div class="card card-info">
                             <div class="card-header">
-                                <h3 class="card-title">Add History</h3>
+                                <h3 class="card-title">Add Job History</h3>
                             </div>
 
                             <form action="{{ url('admin/job_history/add') }}" class="form-horizontal" method="post"
@@ -38,13 +38,13 @@
                                         <label class="col-sm-2 col-form-label">Employee Name
                                             <span style="color: red;">*</span></label>
                                         <div class="col-sm-10">
-                                           <select name="employee_id" id="" class="form-control">
-                                            <option value="">Select Employee Name</option>
-                                            @foreach ($getEmployee as $value_employee)
-                                            <option value="{{ $value_employee->id }}">{{ $value_employee->name }} {{ $value_employee->last_name }}</option>
-
-                                            @endforeach
-                                           </select>
+                                            <select name="employee_id" id="" class="form-control">
+                                                <option value="">Select Employee Name</option>
+                                                @foreach ($getEmployee as $value_employee)
+                                                    <option value="{{ $value_employee->id }}">{{ $value_employee->name }}
+                                                        {{ $value_employee->last_name }}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                     </div>
 
@@ -70,12 +70,13 @@
                                         <label class="col-sm-2 col-form-label">Job Name (Job ID)
                                             <span style="color: red;">*</span></label>
                                         <div class="col-sm-10">
-                                           <select name="job_id" id="" class="form-control">
-                                            <option value="">Select Job Name</option>
-                                            @foreach ($getJobs as $value_job)
-                                            <option value="{{ $value_job->id }}">{{ $value_job->job_title }}</option>
-                                            @endforeach
-                                           </select>
+                                            <select name="job_id" id="" class="form-control">
+                                                <option value="">Select Job Name</option>
+                                                @foreach ($getJobs as $value_job)
+                                                    <option value="{{ $value_job->id }}">{{ $value_job->job_title }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                     </div>
 
@@ -83,11 +84,11 @@
                                         <label class="col-sm-2 col-form-label">Department Name (Department ID)
                                             <span style="color: red;">*</span></label>
                                         <div class="col-sm-10">
-                                           <select name="department_id" id="" class="form-control">
-                                            <option value="">Select Department Name</option>
-                                            <option value="1">Customer Care Department</option>
-                                            <option value="2">Sales Department</option>
-                                           </select>
+                                            <select name="department_id" id="" class="form-control">
+                                                <option value="">Select Department Name</option>
+                                                <option value="1">Customer Care Department</option>
+                                                <option value="2">Sales Department</option>
+                                            </select>
                                         </div>
                                     </div>
 
@@ -108,4 +109,3 @@
     </div>
     <!-- /.content-wrapper -->
 @endsection
-
