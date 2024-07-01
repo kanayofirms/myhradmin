@@ -69,4 +69,11 @@ class JobHistoryController extends Controller
 
         return redirect('admin/job_history')->with('success', 'Job history successfully updated.');
     }
+
+    public function delete($id)
+    {
+        $user = JobHistoryModel::find($id);
+        $user->delete();
+        return redirect()->back()->with('error', 'Record successfully deleted.');
+    }
 }
