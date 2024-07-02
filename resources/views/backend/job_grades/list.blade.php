@@ -35,7 +35,14 @@
                             <div class="card-body p-0">
                                 <table class="table table-striped">
                                     <thead>
-
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Grade Level</th>
+                                            <th>Lowest Salary</th>
+                                            <th>Highest Salary</th>
+                                            <th>Created At</th>
+                                            <th>Updated At</th>
+                                        </tr>
                                     </thead>
                                     <tbody>
 
