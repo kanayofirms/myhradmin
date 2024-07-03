@@ -56,4 +56,12 @@ class JobGradesController extends Controller
 
         return redirect('admin/job_grades')->with('success', 'Job Grades successfully updated.');
     }
+
+    public function delete($id)
+    {
+        $user = JobGradesModel::find($id);
+        $user->delete();
+
+        return redirect()->back()->with('error', 'Record successfully deleted.');
+    }
 }
