@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Backend;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\JobGradesModel;
+use Illuminate\Http\Request;
+
 
 
 class JobGradesController extends Controller
