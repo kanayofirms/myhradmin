@@ -38,36 +38,38 @@
                                     <div class="row">
                                         <div class="form-group col-md-1">
                                             <label for="">ID</label>
-                                            <input type="text" name="id" class="form-control" value=""
-                                                placeholder="ID">
+                                            <input type="text" name="id" class="form-control"
+                                                value="{{ Request()->id }}" placeholder="ID">
                                         </div>
 
                                         <div class="form-group col-md-3">
                                             <label for="">Grade Level</label>
-                                            <input type="text" name="grade_level" class="form-control" value=""
-                                                placeholder="A">
+                                            <input type="text" name="grade_level" class="form-control"
+                                                value="{{ Request()->grade_level }}" placeholder="A">
                                         </div>
 
                                         <div class="form-group col-md-2">
                                             <label for="">Lowest Salary</label>
-                                            <input type="number" name="lowest_sal" class="form-control" value=""
-                                                placeholder="1000">
+                                            <input type="number" name="lowest_sal" class="form-control"
+                                                value="{{ Request()->lowest_sal }}" placeholder="1000">
                                         </div>
 
                                         <div class="form-group col-md-2">
                                             <label for="">Highest Salary</label>
-                                            <input type="number" name="highest_sal" class="form-control" value=""
-                                                placeholder="5000">
+                                            <input type="number" name="highest_sal" class="form-control"
+                                                value="{{ Request()->highest_sal }}" placeholder="5000">
                                         </div>
 
                                         <div class="form-group col-md-2">
                                             <label for="">Created At</label>
-                                            <input type="date" name="created_at" class="form-control" value="">
+                                            <input type="date" name="created_at" class="form-control"
+                                                value="{{ Request()->created_at }}">
                                         </div>
 
                                         <div class="form-group col-md-2">
                                             <label for="">Updated At</label>
-                                            <input type="date" name="updated_at" class="form-control" value="">
+                                            <input type="date" name="updated_at" class="form-control"
+                                                value="{{ Request()->updated_at }}">
                                         </div>
 
                                         <div class="form-group col-md-2">
@@ -98,6 +100,7 @@
                                             <th>Highest Salary</th>
                                             <th>Created At</th>
                                             <th>Updated At</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
