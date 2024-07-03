@@ -83,6 +83,7 @@ Route::group(['middleware' => 'admin'], function () {
     //Regions
 
     Route::get('admin/regions', [RegionsController::class, 'index']);
+    Route::get('admin/regions/add', [RegionsController::class, 'add']);
 
 });
 
