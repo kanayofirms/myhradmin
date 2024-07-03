@@ -45,7 +45,20 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-
+                                        @forelse ($getRecord as $value)
+                                            <tr>
+                                                <td>{{ $value->id }}</td>
+                                                <td>{{ $value->grade_level }}</td>
+                                                <td>{{ $value->lowest_sal }}</td>
+                                                <td>{{ $value->highest_sal }}</td>
+                                                <td>{{ date('d-m-Y H:i A', strtotime($value->created_at)) }}</td>
+                                                <td>{{ date('d-m-Y H:i A', strtotime($value->updated_at)) }}</td>
+                                            </tr>
+                                        @empty
+                                            <tr>
+                                                <td colspan="100%">No Record Found.</td>
+                                            </tr>
+                                        @endforelse
                                     </tbody>
                                 </table>
                             </div>
