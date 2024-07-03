@@ -38,4 +38,10 @@ class JobGradesController extends Controller
 
         return redirect('admin/job_grades')->with('success', 'Job grades successfully added.');
     }
+
+    public function edit($id)
+    {
+        $data['getRecord'] = JobGradesModel::find($id);
+        return view('backend.job_grades.edit', $data);
+    }
 }
