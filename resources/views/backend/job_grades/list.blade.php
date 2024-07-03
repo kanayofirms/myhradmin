@@ -62,6 +62,7 @@
                                     </tbody>
                                 </table>
                             </div>
+                            {!! $getRecord->appends(Illuminate\Support\Facades\Request::except('page'))->links() !!}
                         </div>
                     </section>
                 </div>
