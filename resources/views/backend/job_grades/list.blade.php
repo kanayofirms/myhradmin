@@ -26,6 +26,62 @@
                 <div class="row">
                     <section class="col-md-12">
 
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">
+                                    Search Job Grades
+                                </h3>
+                            </div>
+
+                            <form action="" method="get">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="form-group col-md-1">
+                                            <label for="">ID</label>
+                                            <input type="text" name="id" class="form-control" value=""
+                                                placeholder="ID">
+                                        </div>
+
+                                        <div class="form-group col-md-3">
+                                            <label for="">Grade Level</label>
+                                            <input type="text" name="grade_level" class="form-control" value=""
+                                                placeholder="A">
+                                        </div>
+
+                                        <div class="form-group col-md-2">
+                                            <label for="">Lowest Salary</label>
+                                            <input type="number" name="lowest_sal" class="form-control" value=""
+                                                placeholder="1000">
+                                        </div>
+
+                                        <div class="form-group col-md-2">
+                                            <label for="">Highest Salary</label>
+                                            <input type="number" name="highest_sal" class="form-control" value=""
+                                                placeholder="5000">
+                                        </div>
+
+                                        <div class="form-group col-md-2">
+                                            <label for="">Created At</label>
+                                            <input type="date" name="created_at" class="form-control" value="">
+                                        </div>
+
+                                        <div class="form-group col-md-2">
+                                            <label for="">Updated At</label>
+                                            <input type="date" name="updated_at" class="form-control" value="">
+                                        </div>
+
+                                        <div class="form-group col-md-2">
+                                            <button class="btn btn-primary" type="submit" style="margin-top: 30px;">Search
+                                            </button>
+                                            <a href="{{ url('admin/job_grades') }}" class="btn btn-success"
+                                                style="margin-top: 30px;">Reset</a>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
                         @include('_message')
 
                         <div class="card">
