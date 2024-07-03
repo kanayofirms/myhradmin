@@ -112,6 +112,13 @@
                                                 <td>{{ $value->highest_sal }}</td>
                                                 <td>{{ date('d-m-Y H:i A', strtotime($value->created_at)) }}</td>
                                                 <td>{{ date('d-m-Y H:i A', strtotime($value->updated_at)) }}</td>
+                                                <td>
+                                                    <a href="{{ url('admin/job_grades/edit/' . $value->id) }}"
+                                                        class="btn btn-primary">Edit</a>
+                                                    <a href="{{ url('admin/job_grades/delete/' . $value->id) }}"
+                                                        class="btn btn-danger"
+                                                        onclick="return confirm('Are you sure you want to delete?')">Delete</a>
+                                                </td>
                                             </tr>
                                         @empty
                                             <tr>
