@@ -13,4 +13,9 @@ class RegionsController extends Controller
         $data['getRecord'] = RegionsModel::getRecord($request);
         return view('backend.regions.list', $data);
     }
+
+    public function add(Request $request)
+    {
+        return view('backend.regions.add');
+    }
 }
