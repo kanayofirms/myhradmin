@@ -36,7 +36,7 @@
                             <form action="" method="get">
                                 <div class="card-body">
                                     <div class="row">
-                                        <div class="form-group col-md-1">
+                                        <div class="form-group col-md-3">
                                             <label for="">ID</label>
                                             <input type="text" name="id" class="form-control"
                                                 value="{{ Request()->id }}" placeholder="ID">
@@ -48,34 +48,11 @@
                                                 value="{{ Request()->region_name }}" placeholder="Region Name">
                                         </div>
 
-                                        <div class="form-group col-md-2">
-                                            <label for="">Lowest Salary</label>
-                                            <input type="number" name="lowest_sal" class="form-control"
-                                                value="{{ Request()->lowest_sal }}" placeholder="1000">
-                                        </div>
-
-                                        <div class="form-group col-md-2">
-                                            <label for="">Highest Salary</label>
-                                            <input type="number" name="highest_sal" class="form-control"
-                                                value="{{ Request()->highest_sal }}" placeholder="5000">
-                                        </div>
-
-                                        <div class="form-group col-md-2">
-                                            <label for="">Created At</label>
-                                            <input type="date" name="created_at" class="form-control"
-                                                value="{{ Request()->created_at }}">
-                                        </div>
-
-                                        <div class="form-group col-md-2">
-                                            <label for="">Updated At</label>
-                                            <input type="date" name="updated_at" class="form-control"
-                                                value="{{ Request()->updated_at }}">
-                                        </div>
 
                                         <div class="form-group col-md-2">
                                             <button class="btn btn-primary" type="submit" style="margin-top: 30px;">Search
                                             </button>
-                                            <a href="{{ url('admin/job_grades') }}" class="btn btn-success"
+                                            <a href="{{ url('admin/regions') }}" class="btn btn-success"
                                                 style="margin-top: 30px;">Reset</a>
 
                                         </div>
