@@ -18,4 +18,18 @@ class RegionsController extends Controller
     {
         return view('backend.regions.add');
     }
+
+    public function add_post(Request $request)
+    {
+        $user = request()->validate([
+            'region_name' => 'required'
+        ]);
+
+        $user = new RegionsModel;
+        $user->region_name = trim($request->region_name);
+
+        $user->save();
+
+        return redirect('admin/regions')->with('success', 'Regions successfully added.');
+    }
 }
