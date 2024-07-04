@@ -85,6 +85,7 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('admin/regions', [RegionsController::class, 'index']);
     Route::get('admin/regions/add', [RegionsController::class, 'add']);
     Route::post('admin/regions/add', [RegionsController::class, 'add_post']);
+    Route::get('admin/regions/edit/{id}', [RegionsController::class, 'edit']);
 
 });
 
