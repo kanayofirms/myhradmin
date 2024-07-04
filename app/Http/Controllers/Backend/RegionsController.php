@@ -32,4 +32,10 @@ class RegionsController extends Controller
 
         return redirect('admin/regions')->with('success', 'Regions successfully added.');
     }
+
+    public function edit(Request $request, $id)
+    {
+        $data['getRecord'] = RegionsModel::getRecord($id);
+        return view('backend.regions.edit', $data);
+    }
 }
