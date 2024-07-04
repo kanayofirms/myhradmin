@@ -35,7 +35,23 @@ class RegionsController extends Controller
 
     public function edit(Request $request, $id)
     {
-        $data['getRecord'] = RegionsModel::getRecord($id);
+        $data['getRecord'] = RegionsModel::find($id);
         return view('backend.regions.edit', $data);
     }
+
+    public function edit_update(Request $request, $id)
+    {
+        $user = request()->validate([
+            'region_name' => 'required'
+        ]);
+
+        $user = RegionsModel::find($id);
+        $user->region_name = trim($request->region_name);
+
+        $user->save();
+
+        return redirect('admin/regions')->with('success', 'Regions successfully updated.');
+    }
+
+
 }
