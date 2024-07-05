@@ -53,5 +53,11 @@ class RegionsController extends Controller
         return redirect('admin/regions')->with('success', 'Regions successfully updated.');
     }
 
+    public function delete($id)
+    {
+        $deleteUser = RegionsModel::find($id);
+        $deleteUser->delete();
 
+        return redirect()->back()->with('error', 'Record successfully deleted.');
+    }
 }
