@@ -27,6 +27,8 @@
                 <div class="row">
                     <section class="col-md-12">
 
+                        @include('_message')
+
                     </section>
 
                 </div>
