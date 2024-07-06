@@ -9,9 +9,10 @@ use App\Models\RegionsModel;
 
 class CountriesController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return view('backend.countries.list');
+        $data['getRecord'] = CountriesModel::getRecord($request);
+        return view('backend.countries.list', $data);
     }
 
     public function add(Request $request)
