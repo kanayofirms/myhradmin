@@ -20,5 +20,18 @@ class CountriesController extends Controller
         return view('backend.countries.add', $data);
     }
 
+    public function add_post(Request $request)
+    {
+        $insertData = request()->validate([
+            'country_name' => 'required',
+            'regions_id' => 'required'
+        ]);
 
+        $insertData = new CountriesModel;
+        $insertData->country_name = $request->country_name;
+        $insertData->regions_id = $request->regions_id;
+        $insertData->save();
+
+        return redirect('admin/countries')->with('success', 'Countries successfully added.');
+    }
 }
