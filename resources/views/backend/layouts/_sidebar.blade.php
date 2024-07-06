@@ -123,7 +123,8 @@
                  </li>
 
                  <li class="nav-item">
-                     <a href="{{ url('admin/countries') }}" class="nav-link">
+                     <a href="{{ url('admin/countries') }}"
+                         class="nav-link @if (Request::segment(2) == 'countries') active @endif">
                          <i class="nav-icon fa fa-flag"></i>
                          <p>
                              Countries
