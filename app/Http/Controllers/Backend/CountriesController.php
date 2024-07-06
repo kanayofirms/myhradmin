@@ -12,4 +12,9 @@ class CountriesController extends Controller
     {
         return view('backend.countries.list');
     }
+
+    public function add(Request $request)
+    {
+        return view('backend.countries.add');
+    }
 }
