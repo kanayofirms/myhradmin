@@ -123,19 +123,19 @@
                  </li>
 
                  <li class="nav-item">
-                     <a href="{{ url('admin/departments') }}" class="nav-link">
-                         <i class="nav-icon fa fa-building"></i>
+                     <a href="{{ url('admin/countries') }}" class="nav-link">
+                         <i class="nav-icon fa fa-flag"></i>
                          <p>
-                             Department
+                             Countries
                          </p>
                      </a>
                  </li>
 
                  <li class="nav-item">
-                     <a href="{{ url('admin/countries') }}" class="nav-link">
-                         <i class="nav-icon fa fa-flag"></i>
+                     <a href="{{ url('admin/departments') }}" class="nav-link">
+                         <i class="nav-icon fa fa-building"></i>
                          <p>
-                             Countries
+                             Department
                          </p>
                      </a>
                  </li>
