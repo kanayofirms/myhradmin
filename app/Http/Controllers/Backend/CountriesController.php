@@ -10,6 +10,6 @@ class CountriesController extends Controller
 {
     public function index()
     {
-        $countries = CountriesModel::all();
+        return view('backend.countries.list');
     }
 }
