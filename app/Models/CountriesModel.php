@@ -4,8 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Request;
 
 class CountriesModel extends Model
 {
     use HasFactory;
+
+    protected $table = 'countries';
 }
