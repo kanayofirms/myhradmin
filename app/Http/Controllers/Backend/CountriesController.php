@@ -17,7 +17,7 @@ class CountriesController extends Controller
 
     public function add(Request $request)
     {
-        $data['getCountries'] = RegionsModel::get();
+        $data['getRegions'] = RegionsModel::get();
         return view('backend.countries.add', $data);
     }
 
@@ -39,6 +39,7 @@ class CountriesController extends Controller
     public function edit($id)
     {
         $data['getRecord'] = CountriesModel::find($id);
+        $data['getRegions'] = RegionsModel::get();
         return view('backend.countries.edit', $data);
     }
 }
