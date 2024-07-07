@@ -20,4 +20,9 @@ class CountriesModel extends Model
             ->paginate(20);
         return $return;
     }
+
+    public function get_region_name()
+    {
+        return $this->belongsTo(RegionsModel::class, 'regions_id');
+    }
 }
