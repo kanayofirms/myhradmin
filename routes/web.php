@@ -100,6 +100,8 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('admin/countries/edit/{id}', [CountriesController::class, 'edit']);
     Route::post('admin/countries/edit/{id}', [CountriesController::class, 'edit_update']);
     Route::get('admin/countries/delete/{id}', [CountriesController::class, 'delete']);
+    //Excel Export
+    Route::get('admin/countries_export', [CountriesController::class, 'countries_export']);
 
 
 });
