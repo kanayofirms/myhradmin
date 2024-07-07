@@ -14,10 +14,15 @@ class CountriesModel extends Model
 
     static public function getRecord($request)
     {
-        $return = self::select('countries.*');
+        $return = self::select('countries.*')
+            ->orderBy('id', 'desc');
+        //Search start
+        if (!empty(Request::get('id'))) {
+            $return = $return->where('countries.id', '=', Request::get('id'));
+        }
 
-        $return = $return->orderBy('id', 'desc')
-            ->paginate(20);
+        //Search end
+        $return = $return->paginate(20);
         return $return;
     }
 
