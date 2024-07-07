@@ -30,6 +30,10 @@ class CountriesModel extends Model
             $return = $return->where('regions.region_name', 'like', '%' . Request::get('region_name') . '%');
         }
 
+        if (!empty(Request::get('start_date')) && !empty(Request::get('end_date'))) {
+            $return = $return->where('countries.created_at', '>=', Request::get('start_date'))
+                ->where('countries.created_at', '<=', Request::get('end_date'));
+        }
         //Search end
         $return = $return->paginate(20);
         return $return;
