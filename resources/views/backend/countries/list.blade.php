@@ -27,6 +27,41 @@
                 <div class="row">
                     <section class="col-md-12">
 
+                        {{-- Search Box Start --}}
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Search Countries List></h3>
+                            </div>
+
+                            <form action="" method="get">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="form-group col-md-3">
+                                            <label for="">ID</label>
+                                            <input type="text" name="id" class="form-control" value=""
+                                                placeholder="ID">
+                                        </div>
+
+                                        <div class="form-group col-md-3">
+                                            <label for="">Country Name</label>
+                                            <input type="text" name="country_name" class="form-control" value=""
+                                                placeholder="Ghana">
+                                        </div>
+
+                                        <div class="form-group col-md-2">
+                                            <button class="btn btn-primary" type="submit" style="margin-top: 30px;">Search
+                                            </button>
+                                            <a href="{{ url('admin/countries') }}" class="btn btn-success"
+                                                style="margin-top: 30px;">Reset</a>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        {{-- Search Box End --}}
+
                         @include('_message')
 
                         <div class="card">
