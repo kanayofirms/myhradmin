@@ -99,6 +99,8 @@ Route::group(['middleware' => 'admin'], function () {
     Route::post('admin/countries/add', [CountriesController::class, 'add_post']);
     Route::get('admin/countries/edit/{id}', [CountriesController::class, 'edit']);
     Route::post('admin/countries/edit/{id}', [CountriesController::class, 'edit_update']);
+    Route::get('admin/countries/delete/{id}', [CountriesController::class, 'delete']);
+
 
 });
 
