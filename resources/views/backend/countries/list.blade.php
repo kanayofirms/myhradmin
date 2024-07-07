@@ -38,14 +38,14 @@
                                     <div class="row">
                                         <div class="form-group col-md-3">
                                             <label for="">ID</label>
-                                            <input type="text" name="id" class="form-control" value=""
-                                                placeholder="ID">
+                                            <input type="text" name="id" class="form-control"
+                                                value="{{ Request()->id }}" placeholder="ID">
                                         </div>
 
                                         <div class="form-group col-md-3">
                                             <label for="">Country Name</label>
-                                            <input type="text" name="country_name" class="form-control" value=""
-                                                placeholder="Ghana">
+                                            <input type="text" name="country_name" class="form-control"
+                                                value="{{ Request()->country_name }}" placeholder="Ghana">
                                         </div>
 
                                         <div class="form-group col-md-2">
