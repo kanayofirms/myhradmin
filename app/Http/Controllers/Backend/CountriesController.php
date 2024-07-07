@@ -42,4 +42,20 @@ class CountriesController extends Controller
         $data['getRegions'] = RegionsModel::get();
         return view('backend.countries.edit', $data);
     }
+
+    public function edit_update(Request $request, $id)
+    {
+        $updateData = request()->validate([
+            'country_name' => 'required',
+            'regions_id' => 'required'
+        ]);
+
+        $updateData = RegionsModel::finc($id);
+        $updateData->country_name = $request->country_name;
+        $updateData->regions_id = $request->regions_id;
+
+        $updateData->save();
+
+        return redirect('admin/countries')->with('success', 'Countries successfully updated.');
+    }
 }
