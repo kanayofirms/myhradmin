@@ -21,6 +21,10 @@ class CountriesModel extends Model
             $return = $return->where('countries.id', '=', Request::get('id'));
         }
 
+        if (!empty(Request::get('country_name'))) {
+            $return = $return->where('countries.country_name', 'like', '%' . Request::get('country_name') . '%');
+        }
+
         //Search end
         $return = $return->paginate(20);
         return $return;
