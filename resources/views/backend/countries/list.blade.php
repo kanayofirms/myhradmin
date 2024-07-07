@@ -49,7 +49,8 @@
                                             <tr>
                                                 <td>{{ $value->id }}</td>
                                                 <td>{{ $value->country_name }}</td>
-                                                <td>{{ $value->regions_id }}</td>
+                                                <td>{{ !empty($value->get_region_name->region_name) ? $value->get_region_name->region_name : '' }}
+                                                </td>
                                                 <td>{{ date('d-m-Y H:i A', strtotime($value->created_at)) }}</td>
                                                 <td>{{ date('d-m-Y H:i A', strtotime($value->updated_at)) }}</td>
                                             </tr>
