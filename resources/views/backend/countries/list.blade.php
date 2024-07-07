@@ -36,25 +36,37 @@
                             <form action="" method="get">
                                 <div class="card-body">
                                     <div class="row">
-                                        <div class="form-group col-md-3">
+                                        <div class="form-group col-md-4">
                                             <label for="">ID</label>
                                             <input type="text" name="id" class="form-control"
                                                 value="{{ Request()->id }}" placeholder="ID">
                                         </div>
 
-                                        <div class="form-group col-md-3">
+                                        <div class="form-group col-md-4">
                                             <label for="">Country Name</label>
                                             <input type="text" name="country_name" class="form-control"
                                                 value="{{ Request()->country_name }}" placeholder="Ghana">
                                         </div>
 
-                                        <div class="form-group col-md-3">
+                                        <div class="form-group col-md-4">
                                             <label for="">Regions Name</label>
                                             <input type="text" name="region_name" class="form-control"
                                                 value="{{ Request()->region_name }}" placeholder="Upper Volta">
                                         </div>
 
-                                        <div class="form-group col-md-2">
+                                        <div class="form-group col-md-4">
+                                            <label for="">From Date (Start Date)</label>
+                                            <input type="date" name="start_date" class="form-control"
+                                                value="{{ Request()->start_date }}">
+                                        </div>
+
+                                        <div class="form-group col-md-4">
+                                            <label for="">To Date (End Date)</label>
+                                            <input type="date" name="end_date" class="form-control"
+                                                value="{{ Request()->end_date }}">
+                                        </div>
+
+                                        <div class="form-group col-md-4">
                                             <button class="btn btn-primary" type="submit" style="margin-top: 30px;">Search
                                             </button>
                                             <a href="{{ url('admin/countries') }}" class="btn btn-success"
