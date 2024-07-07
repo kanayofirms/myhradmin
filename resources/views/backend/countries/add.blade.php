@@ -49,7 +49,7 @@
                                         <div class="col-sm-10">
                                             <select class="form-control" name="regions_id" id="" required>
                                                 <option value="">Select Regions Name</option>
-                                                @foreach ($getCountries as $value)
+                                                @foreach ($getRegions as $value)
                                                     <option value="{{ $value->id }}">{{ $value->region_name }}</option>
                                                 @endforeach
                                             </select>
