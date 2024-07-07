@@ -14,7 +14,8 @@ class CountriesModel extends Model
 
     static public function getRecord($request)
     {
-        $return = self::select('countries.*')
+        $return = self::select('countries.*', 'regions.region_name')
+            ->join('regions', 'regions.id', '=', 'countries.regions_id')
             ->orderBy('id', 'desc');
         //Search start
         if (!empty(Request::get('id'))) {
@@ -23,6 +24,10 @@ class CountriesModel extends Model
 
         if (!empty(Request::get('country_name'))) {
             $return = $return->where('countries.country_name', 'like', '%' . Request::get('country_name') . '%');
+        }
+
+        if (!empty(Request::get('region_name'))) {
+            $return = $return->where('regions.region_name', 'like', '%' . Request::get('region_name') . '%');
         }
 
         //Search end
