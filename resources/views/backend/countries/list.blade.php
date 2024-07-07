@@ -48,6 +48,12 @@
                                                 value="{{ Request()->country_name }}" placeholder="Ghana">
                                         </div>
 
+                                        <div class="form-group col-md-3">
+                                            <label for="">Regions Name</label>
+                                            <input type="text" name="region_name" class="form-control"
+                                                value="{{ Request()->region_name }}" placeholder="Upper Volta">
+                                        </div>
+
                                         <div class="form-group col-md-2">
                                             <button class="btn btn-primary" type="submit" style="margin-top: 30px;">Search
                                             </button>
