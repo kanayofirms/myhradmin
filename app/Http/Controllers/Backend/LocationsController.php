@@ -11,4 +11,9 @@ class LocationsController extends Controller
     {
         return view("backend.locations.list");
     }
+
+    public function add(Request $request)
+    {
+        return view("backend.locations.add");
+    }
 }
