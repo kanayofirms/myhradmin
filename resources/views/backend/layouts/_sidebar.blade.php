@@ -133,7 +133,8 @@
                  </li>
 
                  <li class="nav-item">
-                     <a href="{{ url('admin/locations') }}" class="nav-link">
+                     <a href="{{ url('admin/locations') }}"
+                         class="nav-link @if (Request::segment(2) == 'locations') active @endif">
                          <i class="nav-icon fa fa-map-marker-alt"></i>
                          <p>
                              Locations
