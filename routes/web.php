@@ -9,6 +9,9 @@ use App\Http\Controllers\Backend\JobHistoryController;
 use App\Http\Controllers\Backend\JobGradesController;
 use App\Http\Controllers\Backend\RegionsController;
 use App\Http\Controllers\Backend\CountriesController;
+use App\Http\Controllers\Backend\LocationsController;
+
+
 
 
 
@@ -103,7 +106,9 @@ Route::group(['middleware' => 'admin'], function () {
     //Excel Export
     Route::get('admin/countries_export', [CountriesController::class, 'countries_export']);
 
+    //Locations
 
+    Route::get('admin/locations', [LocationsController::class, 'index']);
 });
 
 Route::get('logout', [AuthController::class, 'logout']);
