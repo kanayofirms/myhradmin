@@ -20,13 +20,16 @@ class CountriesExport implements FromCollection, WithMapping, ShouldAutoSize, Wi
     protected $index = 0;
     public function map($user): array
     {
-        $CreatedAtFormat = date('d-m-Y', strtotime($user->created_at));
+        $CreatedAtFormat = date('d-m-Y H:i A', strtotime($user->created_at));
+        $UpdatedAtFormat = date('d-m-Y H:i A', strtotime($user->updated_at));
+
         return [
             ++$this->index,
             $user->id,
             $user->country_name,
             $user->region_name,
-            $CreatedAtFormat
+            $CreatedAtFormat,
+            $UpdatedAtFormat
         ];
     }
 
@@ -37,7 +40,8 @@ class CountriesExport implements FromCollection, WithMapping, ShouldAutoSize, Wi
             'Table ID',
             'Country Name',
             'Region Name',
-            'Created At'
+            'Created At',
+            'Updated At'
         ];
     }
 }
