@@ -8,12 +8,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Jobs</h1>
+                        <h1>Locations</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6" style="text-align:right;">
 
-                        <a href="{{ url('admin/jobs/add') }}" class="btn btn-primary">
-                            Add Jobs
+                        <a href="{{ url('admin/locations/add') }}" class="btn btn-primary">
+                            Add Locations
                         </a>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -33,7 +33,7 @@
 
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">Jobs List</h3>
+                                <h3 class="card-title">Locations List</h3>
                             </div>
 
                             <div class="card-body p-0">
@@ -41,9 +41,11 @@
                                     <thead>
                                         <tr>
                                             <th>ID</th>
-                                            <th>Job Title</th>
-                                            <th>Min Salary</th>
-                                            <th>Max Salary</th>
+                                            <th>Street Address</th>
+                                            <th>Postal Code</th>
+                                            <th>City</th>
+                                            <th>State/Province</th>
+                                            <th>Country</th>
                                             <th>Created At</th>
 
                                             <th>Action</th>
