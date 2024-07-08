@@ -133,15 +133,6 @@
                  </li>
 
                  <li class="nav-item">
-                     <a href="{{ url('admin/departments') }}" class="nav-link">
-                         <i class="nav-icon fa fa-building"></i>
-                         <p>
-                             Department
-                         </p>
-                     </a>
-                 </li>
-
-                 <li class="nav-item">
                      <a href="{{ url('admin/locations') }}" class="nav-link">
                          <i class="nav-icon fa fa-map-marker-alt"></i>
                          <p>
@@ -150,6 +141,14 @@
                      </a>
                  </li>
 
+                 <li class="nav-item">
+                     <a href="{{ url('admin/departments') }}" class="nav-link">
+                         <i class="nav-icon fa fa-building"></i>
+                         <p>
+                             Department
+                         </p>
+                     </a>
+                 </li>
 
 
              </ul>
