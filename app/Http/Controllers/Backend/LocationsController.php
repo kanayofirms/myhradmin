@@ -11,9 +11,10 @@ use App\Models\LocationsModel;
 
 class LocationsController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return view("backend.locations.list");
+        $data['getRecord'] = LocationsModel::getRecord($request);
+        return view("backend.locations.list", $data);
     }
 
     public function add(Request $request)
