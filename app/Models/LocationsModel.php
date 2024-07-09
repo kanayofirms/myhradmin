@@ -14,9 +14,11 @@ class LocationsModel extends Model
 
     static public function getRecord($request)
     {
-        $return = self::select('locations.*')
-            ->orderBy('id', 'desc')
-            ->paginate(20);
+        $return = self::select('locations.*', 'countries.country_name')
+            ->join('countries', 'countries.id', '=', 'locations.countries_id')
+            ->orderBy('id', 'desc');
+
+        $return = $return->paginate(20);
 
         return $return;
     }
