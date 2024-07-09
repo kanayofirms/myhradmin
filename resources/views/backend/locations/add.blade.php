@@ -48,7 +48,7 @@
                                         <label class="col-sm-2 col-form-label">Postal Code
                                             <span style="color: red;">*</span></label>
                                         <div class="col-sm-10">
-                                            <input type="text" value="{{ old('postal_code') }}" name="postal_code"
+                                            <input type="number" value="{{ old('postal_code') }}" name="postal_code"
                                                 class="form-control" placeholder="Enter Postal Code" required>
                                         </div>
                                     </div>
