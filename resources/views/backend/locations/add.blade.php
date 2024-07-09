@@ -76,7 +76,7 @@
                                         <label class="col-sm-2 col-form-label">Country (Countries ID)
                                             <span style="color: red;">*</span></label>
                                         <div class="col-sm-10">
-                                            <select name="department_id" id="" class="form-control" required>
+                                            <select name="countries_id" id="" class="form-control" required>
                                                 <option value="">Select Country</option>
                                                 @foreach ($getCountries as $countries)
                                                     <option value="{{ $countries->id }}">{{ $countries->country_name }}
