@@ -58,7 +58,7 @@
                                                 <td>{{ $value->postal_code }}</td>
                                                 <td>{{ $value->city }}</td>
                                                 <td>{{ $value->state_province }}</td>
-                                                <td>{{ $value->countries_id }}</td>
+                                                <td>{{ $value->country_name }}</td>
                                                 <td>{{ date('d-m-Y H:i A', strtotime($value->created_at)) }}</td>
                                             </tr>
                                         @empty
