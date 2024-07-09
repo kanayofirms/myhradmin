@@ -84,7 +84,7 @@
                                         <label class="col-sm-2 col-form-label">Department Name (Department ID)
                                             <span style="color: red;">*</span></label>
                                         <div class="col-sm-10">
-                                            <select name="department_id" id="" class="form-control">
+                                            <select name="department_id" id="" class="form-control" required>
                                                 <option value="">Select Department Name</option>
                                                 <option value="1">Customer Care Department</option>
                                                 <option value="2">Sales Department</option>
