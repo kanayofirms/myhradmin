@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\CountriesModel;
 
 class LocationsController extends Controller
 {
@@ -14,6 +15,7 @@ class LocationsController extends Controller
 
     public function add(Request $request)
     {
-        return view("backend.locations.add");
+        $data['getCountries'] = CountriesModel::get();
+        return view("backend.locations.add", $data);
     }
 }
