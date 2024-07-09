@@ -110,6 +110,7 @@ Route::group(['middleware' => 'admin'], function () {
 
     Route::get('admin/locations', [LocationsController::class, 'index']);
     Route::get('admin/locations/add', [LocationsController::class, 'add']);
+    Route::post('admin/locations/add', [LocationsController::class, 'add_post']);
 });
 
 Route::get('logout', [AuthController::class, 'logout']);
