@@ -27,7 +27,90 @@
                 <div class="row">
                     <section class="col-md-12">
 
-                        {{-- Search --}}
+                        {{-- Search start --}}
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Search Locations</h3>
+                            </div>
+
+                            <form action="" method="get">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="form-group col-md-3">
+                                            <label for="">ID</label>
+                                            <input type="text" name="id" value="{{ Request()->id }}"
+                                                class="form-control" placeholder="ID">
+                                        </div>
+
+                                        <div class="form-group col-md-3">
+                                            <label for="">Street Address</label>
+                                            <input type="text" name="street_address"
+                                                value="{{ Request()->street_address }}" class="form-control"
+                                                placeholder="Enter Street Address">
+                                        </div>
+
+                                        <div class="form-group col-md-3">
+                                            <label for="">Postal Code</label>
+                                            <input type="number" name="postal_code" value="{{ Request()->postal_code }}"
+                                                class="form-control" placeholder="Enter Postal Code">
+                                        </div>
+
+                                        <div class="form-group col-md-3">
+                                            <label for="">City</label>
+                                            <input type="text" name="city" value="{{ Request()->city }}"
+                                                class="form-control" placeholder="Enter City">
+                                        </div>
+
+                                        <div class="form-group col-md-3">
+                                            <label for="">State/Province</label>
+                                            <input type="text" name="state_province"
+                                                value="{{ Request()->state_province }}" class="form-control"
+                                                placeholder="Enter State/Province">
+                                        </div>
+
+                                        <div class="form-group col-md-3">
+                                            <label for="">Country</label>
+                                            <input type="text" name="country_name" value="{{ Request()->country_name }}"
+                                                class="form-control" placeholder="Enter Country">
+                                        </div>
+
+                                        <div class="form-group col-md-3">
+                                            <label for="">Created At</label>
+                                            <input type="date" name="created_at" value="{{ Request()->created_at }}"
+                                                class="form-control">
+                                        </div>
+
+                                        <div class="form-group col-md-3">
+                                            <label for="">Updated At</label>
+                                            <input type="date" name="updated_at" value="{{ Request()->updated_at }}"
+                                                class="form-control">
+                                        </div>
+
+                                        <div class="form-group col-md-3">
+                                            <label for="">From Date (Start Date)</label>
+                                            <input type="date" name="start_date" value="{{ Request()->start_date }}"
+                                                class="form-control">
+                                        </div>
+
+                                        <div class="form-group col-md-3">
+                                            <label for="">To Date (End Date)</label>
+                                            <input type="date" name="end_date" value="{{ Request()->end_date }}"
+                                                class="form-control">
+                                        </div>
+
+                                        <div class="form-group col-md-2">
+                                            <button class="btn btn-primary" type="submit" style="margin-top: 30px;">Search
+                                            </button>
+                                            <a href="{{ url('admin/locations') }}" class="btn btn-success"
+                                                style="margin-top: 30px;">Reset</a>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        {{-- Search end --}}
 
                         @include('_message')
 
@@ -47,6 +130,7 @@
                                             <th>State/Province</th>
                                             <th>Country</th>
                                             <th>Created At</th>
+                                            <th>Updated At</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -60,6 +144,10 @@
                                                 <td>{{ $value->state_province }}</td>
                                                 <td>{{ $value->country_name }}</td>
                                                 <td>{{ date('d-m-Y H:i A', strtotime($value->created_at)) }}</td>
+                                                <td>{{ date('d-m-Y H:i A', strtotime($value->updated_at)) }}</td>
+                                                <td>
+
+                                                </td>
                                             </tr>
                                         @empty
                                             <tr>
