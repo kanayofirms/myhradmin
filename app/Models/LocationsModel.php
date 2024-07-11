@@ -51,6 +51,10 @@ class LocationsModel extends Model
             $return = $return->where('locations.updated_at', 'like', '%' . Request::get('updated_at') . '%');
         }
 
+        if (!empty(Request::get('start_date')) && !empty(Request::get('end_date'))) {
+            $return = $return->where('locations.created_at', '>=', Request::get('start_date'))->where('locations.created_at', '<=', Request::get('end_date'));
+        }
+
         $return = $return->paginate(20);
 
         return $return;
