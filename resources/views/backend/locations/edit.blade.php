@@ -79,8 +79,11 @@
                                             <span style="color: red;">*</span></label>
                                         <div class="col-sm-10">
                                             <select name="countries_id" id="" class="form-control" required>
-                                                <option value="">Select Country</option>
-
+                                                @foreach ($getCountries as $value)
+                                                    <option {{ $value->id == $getRecord->countries_id ? 'selected' : '' }}
+                                                        value="{{ $value->id }}">
+                                                        {{ $value->country_name }}</option>
+                                                @endforeach
 
                                             </select>
                                         </div>
