@@ -44,4 +44,10 @@ class LocationsController extends Controller
 
         return redirect('admin/locations')->with('success', 'Locations successfully added.');
     }
+
+    public function edit(Request $request, $id)
+    {
+        $data['getRecord'] = LocationsModel::find($id);
+        return view('backend.locations.edit', $data);
+    }
 }
