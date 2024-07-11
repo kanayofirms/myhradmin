@@ -113,6 +113,7 @@ Route::group(['middleware' => 'admin'], function () {
     Route::post('admin/locations/add', [LocationsController::class, 'add_post']);
     Route::get('admin/locations/edit/{id}', [LocationsController::class, 'edit']);
     Route::post('admin/locations/edit/{id}', [LocationsController::class, 'edit_update']);
+    Route::get('admin/locations/delete/{id}', [LocationsController::class, 'delete']);
 });
 
 Route::get('logout', [AuthController::class, 'logout']);
