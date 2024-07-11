@@ -48,6 +48,7 @@ class LocationsController extends Controller
     public function edit(Request $request, $id)
     {
         $data['getRecord'] = LocationsModel::find($id);
+        $data['getCountries'] = CountriesModel::get();
         return view('backend.locations.edit', $data);
     }
 }
