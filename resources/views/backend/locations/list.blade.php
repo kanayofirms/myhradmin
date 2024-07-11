@@ -146,6 +146,15 @@
                                                 <td>{{ date('d-m-Y H:i A', strtotime($value->created_at)) }}</td>
                                                 <td>{{ date('d-m-Y H:i A', strtotime($value->updated_at)) }}</td>
                                                 <td>
+                                                    <p>
+                                                        <a href="{{ url('admin/locations/edit/' . $value->id) }}"
+                                                            class="btn btn-primary">Edit</a>
+                                                    </p>
+                                                    <p>
+                                                        <a href="{{ url('admin/locations/delete/' . $value->id) }}"
+                                                            class="btn btn-danger"
+                                                            onclick="return confirm('Are you sure you want to delete?')">Delete</a>
+                                                    </p>
 
                                                 </td>
                                             </tr>
