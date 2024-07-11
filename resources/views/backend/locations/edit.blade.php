@@ -30,7 +30,7 @@
                                 <h3 class="card-title">Edit Locations</h3>
                             </div>
 
-                            <form action="{{ url('admin/locations/add' . $getRecord->id) }}" class="form-horizontal"
+                            <form action="{{ url('admin/locations/edit/' . $getRecord->id) }}" class="form-horizontal"
                                 method="post" enctype="multipart/form-data">
                                 {{ csrf_field() }}
                                 <div class="card card-body">
