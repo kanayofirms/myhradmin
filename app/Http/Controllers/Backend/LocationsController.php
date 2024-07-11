@@ -51,4 +51,18 @@ class LocationsController extends Controller
         $data['getCountries'] = CountriesModel::get();
         return view('backend.locations.edit', $data);
     }
+
+    public function edit_update(Request $request, $id)
+    {
+        $user = LocationsModel::find($id);
+        $user->street_address = trim($request->street_address);
+        $user->postal_code = trim($request->postal_code);
+        $user->city = trim($request->city);
+        $user->state_province = trim($request->state_province);
+        $user->countries_id = trim($request->countries_id);
+        $user->save();
+
+        return redirect('admin/locations')->with('success', 'Locations successfully Updated.');
+
+    }
 }
