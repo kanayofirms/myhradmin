@@ -65,4 +65,12 @@ class LocationsController extends Controller
         return redirect('admin/locations')->with('success', 'Locations successfully Updated.');
 
     }
+
+    public function delete($id)
+    {
+        $user = LocationsModel::find($id);
+        $user->delete();
+
+        return redirect()->back()->with('error', 'Record successfully deleted.');
+    }
 }
