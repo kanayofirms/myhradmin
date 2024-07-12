@@ -12,6 +12,14 @@
                     </div><!-- /.col -->
                     <div class="col-sm-6" style="text-align:right;">
 
+                        <form action="{{ url('admin/locations_export') }}" method="get">
+                            <input type="hidden" name="start_date" value="{{ Request()->start_date }}">
+                            <input type="hidden" name="end_date" value="{{ Request()->end_date }}">
+                            <a href="{{ url('admin/locations_export?start_date=' . Request()->start_date . '&end_date=' . Request()->end_date) }}"
+                                class="btn btn-success">Excel
+                                Export</a>
+                        </form>
+                        <br>
                         <a href="{{ url('admin/locations/add') }}" class="btn btn-primary">
                             Add Locations
                         </a>
