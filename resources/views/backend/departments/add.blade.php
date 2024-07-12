@@ -59,12 +59,15 @@
                                     </div>
 
                                     <div class="form-group row">
-                                        <label class="col-sm-2 col-form-label">Locations Name (Locations ID)
+                                        <label class="col-sm-2 col-form-label">Location (Locations ID)
                                             <span style="color: red;">*</span></label>
                                         <div class="col-sm-10">
                                             <select name="locations_id" class="form-control" required>
                                                 <option value="">Select Location</option>
-
+                                                @foreach ($getLocation as $value)
+                                                    <option value="{{ $value->id }}">{{ $value->street_address }}
+                                                    </option>
+                                                @endforeach
                                             </select>
                                         </div>
                                     </div>
