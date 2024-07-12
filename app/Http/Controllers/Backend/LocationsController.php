@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\CountriesModel;
 use App\Models\LocationsModel;
+use App\Exports\LocationsExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 
 
@@ -72,5 +74,10 @@ class LocationsController extends Controller
         $user->delete();
 
         return redirect()->back()->with('error', 'Record successfully deleted.');
+    }
+
+    public function locations_export(Request $request)
+    {
+        return Excel::download(new LocationsExport, 'locations.xlsx');
     }
 }
