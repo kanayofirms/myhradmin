@@ -114,6 +114,8 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('admin/locations/edit/{id}', [LocationsController::class, 'edit']);
     Route::post('admin/locations/edit/{id}', [LocationsController::class, 'edit_update']);
     Route::get('admin/locations/delete/{id}', [LocationsController::class, 'delete']);
+    //Excel Export
+    Route::get('admin/locations_export', [LocationsController::class, 'locations_export']);
 });
 
 Route::get('logout', [AuthController::class, 'logout']);
