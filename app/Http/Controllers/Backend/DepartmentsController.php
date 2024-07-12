@@ -10,6 +10,11 @@ class DepartmentsController extends Controller
 {
     public function index(Request $request)
     {
-        return view("backend.departments.list");
+        return view('backend.departments.list');
+    }
+
+    public function add(Request $request)
+    {
+        return view('backend.departments.add');
     }
 }
