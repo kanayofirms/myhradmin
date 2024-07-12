@@ -121,6 +121,7 @@ Route::group(['middleware' => 'admin'], function () {
     //Departments
 
     Route::get('admin/departments', [DepartmentsController::class, 'index']);
+    Route::get('admin/departments/add', [DepartmentsController::class, 'add']);
 });
 
 Route::get('logout', [AuthController::class, 'logout']);
