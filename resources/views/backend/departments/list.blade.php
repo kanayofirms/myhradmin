@@ -39,11 +39,26 @@
                                     <thead>
                                         <tr>
                                             <th>ID</th>
-
+                                            <th>Department Name</th>
+                                            <th>Manager Name</th>
+                                            <th>Locations Name</th>
+                                            <th>Created At</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-
+                                        @forelse ($getRecord as $value)
+                                            <tr>
+                                                <td>{{ $value->id }}</td>
+                                                <td>{{ $value->department_name }}</td>
+                                                <td>{{ $value->manager_id }}</td>
+                                                <td>{{ $value->locations_id }}</td>
+                                                <td>{{ date('d-m-Y H:i A', strtotime($value->created_at)) }}</td>
+                                            </tr>
+                                        @empty
+                                            <tr>
+                                                <td colspan="100%">No Record Found.</td>
+                                            </tr>
+                                        @endforelse
                                     </tbody>
                                 </table>
                                 <div style="padding:10px; float:right;">
