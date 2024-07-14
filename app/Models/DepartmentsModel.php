@@ -12,4 +12,13 @@ class DepartmentsModel extends Model
 
     protected $table = "departments";
 
+    static public function getRecord($request)
+    {
+        $return = self::select('departments.*')
+            ->orderBy('id', 'desc')
+            ->paginate(20);
+
+        return $return;
+    }
+
 }
