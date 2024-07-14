@@ -24,6 +24,20 @@ class DepartmentsModel extends Model
             ->join('locations', 'locations.id', '=', 'departments.locations_id')
             ->orderBy('id', 'desc');
 
+        // Search Start
+        if (!empty(Request::get('id'))) {
+            $return = $return->where('departments.id', '=', Request::get('id'));
+        }
+
+        if (!empty(Request::get('department_name'))) {
+            $return = $return->where('departments.department_name', 'like', '%' . Request::get('department_name') . '%');
+        }
+
+        if (!empty(Request::get('street_address'))) {
+            $return = $return->where('locations.street_address', 'like', '%' . Request::get('street_address') . '%');
+        }
+        //Search End
+
         $return = $return->paginate(20);
 
         return $return;
