@@ -14,9 +14,17 @@ class DepartmentsModel extends Model
 
     static public function getRecord($request)
     {
-        $return = self::select('departments.*')
-            ->orderBy('id', 'desc')
-            ->paginate(20);
+        // $return = self::select('departments.*')
+        //     ->orderBy('id', 'desc')
+        //     ->paginate(20);
+
+        // return $return;
+
+        $return = self::select('departments.*', 'locations.street_address')
+            ->join('locations', 'locations.id', '=', 'departments.locations_id')
+            ->orderBy('id', 'desc');
+
+        $return = $return->paginate(20);
 
         return $return;
     }
