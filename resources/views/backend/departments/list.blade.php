@@ -50,7 +50,13 @@
                                             <tr>
                                                 <td>{{ $value->id }}</td>
                                                 <td>{{ $value->department_name }}</td>
-                                                <td>{{ $value->manager_id }}</td>
+                                                <td>
+                                                    @if ($value->manager_id == 1)
+                                                        ChiChi
+                                                    @else
+                                                        Emeka
+                                                    @endif
+                                                </td>
                                                 <td>{{ $value->locations_id }}</td>
                                                 <td>{{ date('d-m-Y H:i A', strtotime($value->created_at)) }}</td>
                                             </tr>
@@ -62,6 +68,7 @@
                                     </tbody>
                                 </table>
                                 <div style="padding:10px; float:right;">
+                                    {!! $getRecord->appends(Illuminate\Support\Facades\Request::except('page'))->links() !!}
 
                                 </div>
                             </div>
