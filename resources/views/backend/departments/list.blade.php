@@ -57,7 +57,7 @@
                                                         Emeka
                                                     @endif
                                                 </td>
-                                                <td>{{ $value->locations_id }}</td>
+                                                <td>{{ $value->street_address }}</td>
                                                 <td>{{ date('d-m-Y H:i A', strtotime($value->created_at)) }}</td>
                                             </tr>
                                         @empty
