@@ -48,10 +48,9 @@
                                             <span style="color: red;">*</span></label>
                                         <div class="col-sm-10">
                                             <select class="form-control" name="regions_id" id="" required>
-                                                <option value="">Select Regions Name</option>
                                                 @foreach ($getRegions as $value)
                                                     <option value="{{ $value->id }}"
-                                                        {{ ($value->id == $getRecord->regions_id) ? 'selected' : '' }}>
+                                                        {{ $value->id == $getRecord->regions_id ? 'selected' : '' }}>
                                                         {{ $value->region_name }}</option>
                                                 @endforeach
                                             </select>
