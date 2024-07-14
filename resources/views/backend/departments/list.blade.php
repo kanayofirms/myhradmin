@@ -84,6 +84,7 @@
                                             <th>Manager Name</th>
                                             <th>Locations Name</th>
                                             <th>Created At</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -100,6 +101,13 @@
                                                 </td>
                                                 <td>{{ $value->street_address }}</td>
                                                 <td>{{ date('d-m-Y H:i A', strtotime($value->created_at)) }}</td>
+                                                <td>
+                                                    <a href="{{ url('admin/departments/edit/' . $value->id) }}"
+                                                        class="btn btn-primary">Edit</a>
+                                                    <a href="{{ url('admin/departments/delete/' . $value->id) }}"
+                                                        onclick="return confirm('Are you sure you want to delete?')"
+                                                        class="btn btn-danger">Delete</a>
+                                                </td>
                                             </tr>
                                         @empty
                                             <tr>
