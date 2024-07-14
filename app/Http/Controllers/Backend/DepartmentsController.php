@@ -38,4 +38,10 @@ class DepartmentsController extends Controller
 
         return redirect('admin/departments')->with('success', 'Departments successfully added.');
     }
+
+    public function edit(Request $request, $id)
+    {
+        $data['getRecord'] = DepartmentsModel::find($id);
+        return view('backend.departments.edit', $data);
+    }
 }
