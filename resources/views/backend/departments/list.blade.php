@@ -26,6 +26,47 @@
 
                 <div class="row">
                     <section class="col-md-12">
+                        {{-- Search start --}}
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Search Departments</h3>
+                            </div>
+
+                            <form action="" method="GET">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="form-group col-md-3">
+                                            <label for="">ID</label>
+                                            <input type="text" class="form-control" name="id" placeholder="ID"
+                                                value="{{ Request()->id }}">
+                                        </div>
+
+                                        <div class="form-group col-md-3">
+                                            <label for="">Department Name</label>
+                                            <input type="text" class="form-control" name="department_name"
+                                                placeholder="Enter Department Name"
+                                                value="{{ Request()->department_name }}">
+                                        </div>
+
+                                        <div class="form-group col-md-3">
+                                            <label for="">Locations Name</label>
+                                            <input type="text" class="form-control" name="street_address"
+                                                placeholder="Enter Locations Name" value="{{ Request()->street_address }}">
+                                        </div>
+
+                                        <div class="form-group col-md-2">
+                                            <button class="btn btn-primary" type="submit"
+                                                style="margin-top: 30px;">Search</button>
+                                            <a href="{{ url('admin/departments') }}" class="btn btn-success"
+                                                style="margin-top: 30px;">Reset</a>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        {{-- Search end --}}
 
                         @include('_message')
 
