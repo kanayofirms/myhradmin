@@ -11,7 +11,8 @@ class DepartmentsController extends Controller
 {
     public function index(Request $request)
     {
-        return view('backend.departments.list');
+        $data['getRecord'] = DepartmentsModel::getRecord($request);
+        return view('backend.departments.list', $data);
     }
 
     public function add(Request $request)
