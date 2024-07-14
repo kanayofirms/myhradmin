@@ -25,6 +25,8 @@ class JobHistoryModel extends Model
             ->join('jobs', 'jobs.id', '=', 'job_history.job_id')
             ->orderBy('job_history.id', 'desc');
 
+        // Search Start
+
         if (!empty(Request::get('id'))) {
             $return = $return->where('job_history.id', '=', Request::get('id'));
         }
@@ -56,6 +58,8 @@ class JobHistoryModel extends Model
         if (!empty(Request::get('start_date')) && !empty(Request::get('end_date'))) {
             $return = $return->where('job_history.start_date', '>=', Request::get('start_date'))->where('job_history.end_date', '<=', Request::get('end_date'));
         }
+
+        // Search End
 
         $return = $return->paginate(20);
         return $return;
