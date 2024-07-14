@@ -54,8 +54,8 @@
                                                 <option value="">Select Manager</option>
                                                 <option {{ $getRecord->manager_id == 1 ? 'selected' : '' }} value="1">
                                                     ChiChi</option>
-                                                <option {{ $getRecord->manager_id == 2 ? 'selected' : '' }}
-                                                    value="2">Emeka</option>
+                                                <option {{ $getRecord->manager_id == 2 ? 'selected' : '' }} value="2">
+                                                    Emeka</option>
                                             </select>
                                         </div>
                                     </div>
@@ -65,8 +65,10 @@
                                             <span style="color: red;">*</span></label>
                                         <div class="col-sm-10">
                                             <select name="locations_id" class="form-control" required>
-                                                <option value="">Select Location</option>
-
+                                                @foreach ($getLocation as $value)
+                                                    <option value="{{ $value->id }}">{{ $value->street_address }}
+                                                    </option>
+                                                @endforeach
                                             </select>
                                         </div>
                                     </div>
