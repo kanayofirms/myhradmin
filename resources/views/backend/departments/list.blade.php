@@ -12,7 +12,16 @@
                     </div><!-- /.col -->
                     <div class="col-sm-6" style="text-align:right;">
 
-                        <a href="{{ url('admin/departments/add') }}" class="btn btn-primary">
+                        <form action="{{ url('admin/departments_export') }}" method="get">
+                            <input type="hidden" name="start_date" value="{{ Request()->start_date }}">
+                            <input type="hidden" name="end_date" value="{{ Request()->end_date }}">
+                            <a href="{{ url('admin/departments_export?start_date=' . Request()->start_date . '&end_date=' . Request()->end_date) }}"
+                                class="btn btn-success">Excel
+                                Export</a>
+                        </form>
+                        {{-- <br> --}}
+
+                        <a href="{{ url('admin/departments/add') }}" class="btn btn-primary" style="margin-top: 5px;">
                             Add Departments
                         </a>
                     </div><!-- /.col -->
@@ -35,23 +44,35 @@
                             <form action="" method="GET">
                                 <div class="card-body">
                                     <div class="row">
-                                        <div class="form-group col-md-3">
+                                        <div class="form-group col-md-4">
                                             <label for="">ID</label>
                                             <input type="text" class="form-control" name="id" placeholder="ID"
                                                 value="{{ Request()->id }}">
                                         </div>
 
-                                        <div class="form-group col-md-3">
+                                        <div class="form-group col-md-4">
                                             <label for="">Department Name</label>
                                             <input type="text" class="form-control" name="department_name"
                                                 placeholder="Enter Department Name"
                                                 value="{{ Request()->department_name }}">
                                         </div>
 
-                                        <div class="form-group col-md-3">
+                                        <div class="form-group col-md-4">
                                             <label for="">Locations Name</label>
                                             <input type="text" class="form-control" name="street_address"
                                                 placeholder="Enter Locations Name" value="{{ Request()->street_address }}">
+                                        </div>
+
+                                        <div class="form-group col-md-3">
+                                            <label for="">From Date (Start Date)</label>
+                                            <input type="date" class="form-control" name="start_date"
+                                                value="{{ Request()->start_date }}">
+                                        </div>
+
+                                        <div class="form-group col-md-3">
+                                            <label for="">To Date (End Date)</label>
+                                            <input type="date" class="form-control" name="end_date"
+                                                value="{{ Request()->end_date }}">
                                         </div>
 
                                         <div class="form-group col-md-2">
