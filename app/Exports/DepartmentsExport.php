@@ -22,13 +22,18 @@ class DepartmentsExport implements FromCollection, WithMapping, ShouldAutoSize, 
 
     public function map($user): array
     {
-        $createdAtFormat = date('d-m-Y', strtotime($user->created_at));
+        if ($user->manager_id == 1) {
+            $manager_id = 'ChiChi';
+        } else {
+            $manager_id = 'Emeka';
+        }
+        $createdAtFormat = date('d-m-Y H:i A', strtotime($user->created_at));
         return [
             ++$this->index,
             $user->id,
             $user->department_name,
-            $user->manager_id,
-            $user->locations_id,
+            $manager_id,
+            $user->street_address,
             $createdAtFormat
         ];
     }
