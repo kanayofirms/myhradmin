@@ -21,9 +21,9 @@
                                 Export</a>
                         </form>
 
-                        <br>
+                        {{-- <br> --}}
 
-                        <a href="{{ url('admin/countries/add') }}" class="btn btn-primary">
+                        <a href="{{ url('admin/countries/add') }}" class="btn btn-primary" style="margin-top: 5px;">
                             Add Countries
                         </a>
                     </div><!-- /.col -->
