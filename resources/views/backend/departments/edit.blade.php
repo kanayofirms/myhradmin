@@ -66,7 +66,9 @@
                                         <div class="col-sm-10">
                                             <select name="locations_id" class="form-control" required>
                                                 @foreach ($getLocation as $value)
-                                                    <option value="{{ $value->id }}">{{ $value->street_address }}
+                                                    <option {{ $value->id == $getRecord->locations_id ? 'selected' : '' }}
+                                                        value="{{ $value->id }}">
+                                                        {{ $value->street_address }}
                                                     </option>
                                                 @endforeach
                                             </select>
@@ -77,7 +79,7 @@
 
                                 <div class="card-footer">
                                     <a href="{{ url('admin/departments') }}" class="btn btn-default">Back</a>
-                                    <button type="submit" class="btn btn-primary float-right">Submit</button>
+                                    <button type="submit" class="btn btn-primary float-right">Update</button>
                                 </div>
                             </form>
                         </div>
