@@ -19,8 +19,8 @@
                                 class="btn btn-success">Excel
                                 Export</a>
                         </form>
-                        <br>
-                        <a href="{{ url('admin/locations/add') }}" class="btn btn-primary">
+                        {{-- <br> --}}
+                        <a href="{{ url('admin/locations/add') }}" class="btn btn-primary" style="margin-top: 5px;">
                             Add Locations
                         </a>
                     </div><!-- /.col -->
