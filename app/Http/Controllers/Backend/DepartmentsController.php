@@ -58,4 +58,12 @@ class DepartmentsController extends Controller
 
         return redirect('admin/departments')->with('success', 'Departments successfully updated.');
     }
+
+    public function delete($id)
+    {
+        $user = DepartmentsModel::find($id);
+        $user->delete();
+
+        return redirect()->back()->with('error', 'Record successfully deleted.');
+    }
 }
