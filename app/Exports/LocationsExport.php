@@ -22,7 +22,7 @@ class LocationsExport implements FromCollection, WithMapping, ShouldAutoSize, Wi
 
     public function map($user): array
     {
-        $createdAtFormat = date('d-m-Y', strtotime($user->created_at));
+        $createdAtFormat = date('d-m-Y H:i A', strtotime($user->created_at));
         return [
             ++$this->index,
             $user->id,
