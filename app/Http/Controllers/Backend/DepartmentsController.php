@@ -45,4 +45,17 @@ class DepartmentsController extends Controller
         $data['getLocation'] = LocationsModel::get();
         return view('backend.departments.edit', $data);
     }
+
+    public function edit_update(Request $request, $id)
+    {
+        // dd($request->all());
+
+        $user = DepartmentsModel::find($id);
+        $user->department_name = trim($request->department_name);
+        $user->manager_id = trim($request->manager_id);
+        $user->locations_id = trim($request->locations_id);
+        $user->save();
+
+        return redirect('admin/departments')->with('success', 'Departments successfully updated.');
+    }
 }
