@@ -44,4 +44,15 @@ class ManagerController extends Controller
         $data['getRecord'] = ManagerModel::find($id);
         return view('backend.manager.edit', $data);
     }
+
+    public function edit_update(Request $request, $id)
+    {
+        $user = ManagerModel::find($id);
+        $user->manager_name = trim($request->manager_name);
+        $user->manager_email = trim($request->manager_email);
+        $user->manager_phone = trim($request->manager_phone);
+        $user->save();
+
+        return redirect('admin/manager')->with('success', 'Manager successfully updated.');
+    }
 }
