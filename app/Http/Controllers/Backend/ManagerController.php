@@ -55,4 +55,12 @@ class ManagerController extends Controller
 
         return redirect('admin/manager')->with('success', 'Manager successfully updated.');
     }
+
+    public function delete($id)
+    {
+        $user = ManagerModel::find($id);
+        $user->delete();
+
+        return redirect()->back()->with('error', 'Record successfully deleted.');
+    }
 }
