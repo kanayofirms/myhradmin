@@ -18,4 +18,23 @@ class ManagerController extends Controller
     {
         return view("backend.manager.add");
     }
+
+    public function add_post(Request $request)
+    {
+        // dd($request->all());
+
+        $user = request()->validate([
+            'manager_name' => 'required|unique:manager',
+            'manager_email' => 'required',
+            'manager_phone' => 'required'
+        ]);
+
+        $user = new ManagerModel;
+        $user->manager_name = trim($request->manager_name);
+        $user->manager_email = trim($request->manager_email);
+        $user->manager_phone = trim($request->manager_phone);
+        $user->save();
+
+        return redirect('admin/manager')->with('success', 'Manager successfully added.');
+    }
 }
