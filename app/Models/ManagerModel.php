@@ -12,5 +12,12 @@ class ManagerModel extends Model
 
     protected $table = "manager";
 
+    static public function getRecord($request)
+    {
+        $return = self::select('manager.*')
+            ->orderBy('id', 'desc')
+            ->paginate(20);
 
+        return $return;
+    }
 }
