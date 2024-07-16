@@ -59,7 +59,7 @@
 
                                         <div class="form-group col-md-3">
                                             <label for="">Manager Email</label>
-                                            <input type="number" value="{{ Request()->min_salary }}" name="min_salary"
+                                            <input type="email" value="{{ Request()->min_salary }}" name="min_salary"
                                                 class="form-control" placeholder="200,000">
                                         </div>
 
