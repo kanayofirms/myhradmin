@@ -30,7 +30,7 @@
                                 <h3 class="card-title">Add Manager</h3>
                             </div>
 
-                            <form action="{{ url('admin/jobs/add') }}" class="form-horizontal" method="post"
+                            <form action="{{ url('admin/manager/add') }}" class="form-horizontal" method="post"
                                 enctype="multipart/form-data">
                                 {{ csrf_field() }}
                                 <div class="card card-body">
@@ -40,6 +40,7 @@
                                         <div class="col-sm-10">
                                             <input type="text" value="{{ old('manager_name') }}" name="manager_name"
                                                 class="form-control" required placeholder="John Doe">
+                                            <span style="color:red;">{{ $errors->first('manager_name') }}</span>
                                         </div>
                                     </div>
 
@@ -47,7 +48,7 @@
                                         <label class="col-sm-2 col-form-label">Manager Email
                                             <span style="color: red;">*</span></label>
                                         <div class="col-sm-10">
-                                            <input type="text" value="{{ old('manager_email') }}" name="manager_email"
+                                            <input type="email" value="{{ old('manager_email') }}" name="manager_email"
                                                 class="form-control" required placeholder="managerceo@mailnator.com">
                                         </div>
                                     </div>
