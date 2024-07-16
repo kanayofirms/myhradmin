@@ -133,6 +133,7 @@ Route::group(['middleware' => 'admin'], function () {
     // Manager
 
     Route::get('admin/manager', [ManagerController::class, 'index']);
+    Route::get('admin/manager/add', [ManagerController::class, 'add']);
 });
 
 Route::get('logout', [AuthController::class, 'logout']);
