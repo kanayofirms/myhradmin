@@ -53,20 +53,20 @@
 
                                         <div class="form-group col-md-3">
                                             <label for="">Manager Name</label>
-                                            <input type="text" value="{{ Request()->job_title }}" name="job_title"
-                                                class="form-control" placeholder="Developer Operations">
+                                            <input type="text" value="{{ Request()->manager_name }}" name="manager_name"
+                                                class="form-control" placeholder="John Doe">
                                         </div>
 
                                         <div class="form-group col-md-3">
                                             <label for="">Manager Email</label>
-                                            <input type="email" value="{{ Request()->min_salary }}" name="min_salary"
-                                                class="form-control" placeholder="200,000">
+                                            <input type="email" value="{{ Request()->manager_email }}"
+                                                name="manager_email" class="form-control" placeholder="johndoe@gmail.com">
                                         </div>
 
                                         <div class="form-group col-md-3">
                                             <label for="">Manager Phone</label>
-                                            <input type="number" value="{{ Request()->max_salary }}" name="max_salary"
-                                                class="form-control" placeholder="2,000,000">
+                                            <input type="number" value="{{ Request()->manager_phone }}"
+                                                name="manager_phone" class="form-control" placeholder="08083093091">
                                         </div>
 
                                         <div class="form-group col-md-3">
@@ -84,7 +84,7 @@
                                         <div class="form-group col-md-2">
                                             <button class="btn btn-primary" type="submit"
                                                 style="margin-top: 30px;">Search</button>
-                                            <a href="{{ url('admin/jobs') }}" class="btn btn-success"
+                                            <a href="{{ url('admin/manager') }}" class="btn btn-success"
                                                 style="margin-top: 30px;">Reset</a>
                                         </div>
 
