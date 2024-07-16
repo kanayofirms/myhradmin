@@ -11,7 +11,8 @@ class ManagerController extends Controller
 {
     public function index(Request $request)
     {
-        return view("backend.manager.list");
+        $data['getRecord'] = ManagerModel::getRecord($request);
+        return view("backend.manager.list", $data);
     }
 
     public function add(Request $request)
