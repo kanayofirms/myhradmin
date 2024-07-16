@@ -121,7 +121,11 @@
                                                 <td>{{ $value->manager_phone }}</td>
                                                 <td>{{ $value->created_at }}</td>
                                                 <td>
-
+                                                    <a href="{{ url('admin/manager/edit/' . $value->id) }}"
+                                                        class="btn btn-primary">Edit</a>
+                                                    <a href="{{ url('admin/manager/delete/' . $value->id) }}"
+                                                        onclick="return confirm('Are you sure you want to delete?')"
+                                                        class="btn btn-danger">Delete</a>
                                                 </td>
                                             </tr>
                                         @empty
