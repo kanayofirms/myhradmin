@@ -108,11 +108,27 @@
                                             <th>Manager Name</th>
                                             <th>Manager email</th>
                                             <th>Manager Phone</th>
+                                            <th>Created At</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        @forelse ($getRecord as $value)
+                                            <tr>
+                                                <td>{{ $value->id }}</td>
+                                                <td>{{ $value->manager_name }}</td>
+                                                <td>{{ $value->manager_email }}</td>
+                                                <td>{{ $value->manager_phone }}</td>
+                                                <td>{{ $value->created_at }}</td>
+                                                <td>
 
+                                                </td>
+                                            </tr>
+                                        @empty
+                                            <tr>
+                                                <td colspan="100%">Record Not Found.</td>
+                                            </tr>
+                                        @endforelse
                                     </tbody>
                                 </table>
                                 <div style="padding:10px; float:right;">
