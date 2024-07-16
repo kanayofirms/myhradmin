@@ -41,6 +41,7 @@ class ManagerController extends Controller
 
     public function edit(Request $request, $id)
     {
-        return view('backend.manager.edit');
+        $data['getRecord'] = ManagerModel::find($id);
+        return view('backend.manager.edit', $data);
     }
 }
