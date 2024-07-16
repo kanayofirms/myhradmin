@@ -152,6 +152,15 @@
                      </a>
                  </li>
 
+                 <li class="nav-item">
+                     <a href="{{ url('admin/manager') }}"
+                         class="nav-link @if (Request::segment(2) == 'manager') active @endif">
+                         <i class="nav-icon fa fa-user"></i>
+                         <p>
+                             Manager
+                         </p>
+                     </a>
+                 </li>
 
              </ul>
          </nav>
