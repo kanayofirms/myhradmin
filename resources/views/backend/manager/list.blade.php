@@ -20,9 +20,7 @@
                                 Export</a>
                         </form>
 
-                        <br>
-
-                        <a href="{{ url('admin/manager/add') }}" class="btn btn-primary">
+                        <a href="{{ url('admin/manager/add') }}" class="btn btn-primary" style="margin-top: 5px;">
                             Add Manager
                         </a>
                     </div><!-- /.col -->
