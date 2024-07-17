@@ -12,6 +12,9 @@ use App\Http\Controllers\Backend\CountriesController;
 use App\Http\Controllers\Backend\LocationsController;
 use App\Http\Controllers\Backend\DepartmentsController;
 use App\Http\Controllers\Backend\ManagerController;
+use App\Http\Controllers\Backend\MyAccountController;
+
+
 
 
 
@@ -140,6 +143,9 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('admin/manager/delete/{id}', [ManagerController::class, 'delete']);
     //Excel Export
     Route::get('admin/manager_export', [ManagerController::class, 'manager_export']);
+
+    //My Account
+    Route::get('admin/my_account', [MyAccountController::class, 'my_account']);
 });
 
 Route::get('logout', [AuthController::class, 'logout']);
