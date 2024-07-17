@@ -30,7 +30,7 @@
                                 <h3 class="card-title">My Account</h3>
                             </div>
 
-                            <form action="{{ url('') }}" class="form-horizontal" method="post"
+                            <form action="{{ url('admin/my_account/update') }}" class="form-horizontal" method="post"
                                 enctype="multipart/form-data">
                                 {{ csrf_field() }}
                                 <div class="card card-body">
@@ -38,7 +38,7 @@
                                         <label class="col-sm-2 col-form-label">Manager Name
                                             <span style="color: red;">*</span></label>
                                         <div class="col-sm-10">
-                                            <input type="text" value="{{ old('name') }}" name="name"
+                                            <input type="text" value="{{ $getRecord->name }}" name="name"
                                                 class="form-control" required placeholder="John Doe">
                                             <span style="color:red;">{{ $errors->first('name') }}</span>
                                         </div>
@@ -48,7 +48,7 @@
                                         <label class="col-sm-2 col-form-label">Email
                                             <span style="color: red;">*</span></label>
                                         <div class="col-sm-10">
-                                            <input type="email" value="{{ old('email') }}" name="email"
+                                            <input type="email" value="{{ $getRecord->email }}" name="email"
                                                 class="form-control" required placeholder="managerceo@mailnator.com">
                                         </div>
                                     </div>
