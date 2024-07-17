@@ -138,6 +138,8 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('admin/manager/edit/{id}', [ManagerController::class, 'edit']);
     Route::post('admin/manager/edit/{id}', [ManagerController::class, 'edit_update']);
     Route::get('admin/manager/delete/{id}', [ManagerController::class, 'delete']);
+    //Excel Export
+    Route::get('admin/manager_export', [ManagerController::class, 'manager_export']);
 });
 
 Route::get('logout', [AuthController::class, 'logout']);
