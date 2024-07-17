@@ -12,11 +12,11 @@
                     </div><!-- /.col -->
                     <div class="col-sm-6" style="text-align:right;">
 
-                        <form action="{{ url('admin/jobs_export') }}" method="get">
+                        <form action="{{ url('admin/manager_export') }}" method="get">
                             <input type="hidden" name="start_date" value="{{ Request()->start_date }}">
                             <input type="hidden" name="end_date" value="{{ Request()->end_date }}">
                             <a class="btn btn-success"
-                                href="{{ url('admin/jobs_export?start_date=' . Request::get('start_date') . '&end_date=' . Request::get('end_date')) }}">Excel
+                                href="{{ url('admin/manager_export?start_date=' . Request::get('start_date') . '&end_date=' . Request::get('end_date')) }}">Excel
                                 Export</a>
                         </form>
 
@@ -119,7 +119,7 @@
                                                 <td>{{ $value->manager_name }}</td>
                                                 <td>{{ $value->manager_email }}</td>
                                                 <td>{{ $value->manager_phone }}</td>
-                                                <td>{{ $value->created_at }}</td>
+                                                <td>{{ date('d-m-Y H:i A', strtotime($value->created_at)) }}</td>
                                                 <td>
                                                     <a href="{{ url('admin/manager/edit/' . $value->id) }}"
                                                         class="btn btn-primary">Edit</a>
