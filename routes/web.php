@@ -146,6 +146,7 @@ Route::group(['middleware' => 'admin'], function () {
 
     //My Account
     Route::get('admin/my_account', [MyAccountController::class, 'my_account']);
+    Route::post('admin/my_account/update', [MyAccountController::class, 'edit_update']);
 });
 
 Route::get('logout', [AuthController::class, 'logout']);
