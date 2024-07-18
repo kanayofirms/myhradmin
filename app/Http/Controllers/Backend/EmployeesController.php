@@ -66,6 +66,8 @@ class EmployeesController extends Controller
 
     public function edit($id)
     {
+        $data['getManagers'] = ManagerModel::get();
+        $data['getDepartments'] = DepartmentsModel::get();
         $data['getRecord'] = User::find($id);
         $data['getJobs'] = JobsModel::get();
         return view('backend.employees.edit', $data);
