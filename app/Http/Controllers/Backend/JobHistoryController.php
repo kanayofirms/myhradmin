@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\Models\DepartmentsModel;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\JobsModel;
@@ -25,6 +26,7 @@ class JobHistoryController extends Controller
 
     public function add()
     {
+        $data['getDepartments'] = DepartmentsModel::get();
         $data['getEmployee'] = User::where('is_role', '=', 0)->get();
         $data['getJobs'] = JobsModel::get();
         return view('backend.job_history.add', $data);
