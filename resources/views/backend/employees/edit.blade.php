@@ -141,7 +141,7 @@
                                                 <option value="">Select Department Name</option>
                                                 @foreach ($getDepartments as $valueD)
                                                     <option
-                                                        {{ $valueM->id == $getRecord->department_id ? 'selected' : '' }}
+                                                        {{ $valueD->id == $getRecord->department_id ? 'selected' : '' }}
                                                         value="{{ $valueD->id }}">{{ $valueD->department_name }}
                                                     </option>
                                                 @endforeach
