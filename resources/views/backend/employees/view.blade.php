@@ -86,8 +86,7 @@
                                         <label class="col-sm-2 col-form-label">Job ID
                                             <span style="color: red;"></span></label>
                                         <div class="col-sm-10">
-                                            {{ !empty($getRecord->get_job_single->job_title) ?
-                                            $getRecord->get_job_single->job_title : '' }}
+                                            {{ !empty($getRecord->get_job_single->job_title) ? $getRecord->get_job_single->job_title : '' }}
                                         </div>
                                     </div>
 
@@ -111,7 +110,7 @@
                                         <label class="col-sm-2 col-form-label">Manager Name
                                             <span style="color: red;"></span></label>
                                         <div class="col-sm-10">
-                                            {{ $getRecord->manager_id }}
+                                            {{ !empty($getRecord->get_manager_name_single->manager_name) ? $getRecord->get_manager_name_single->manager_name : '' }}
                                         </div>
                                     </div>
 
