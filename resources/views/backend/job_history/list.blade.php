@@ -21,8 +21,8 @@
                             <a href="{{ url('admin/job_history_export?start_date=' . Request::get('start_date') . '&end_date=' . Request::get('end_date')) }}"
                                 class="btn btn-success">Excel Export</a>
                         </form>
-                        <br>
-                        <a href="{{ url('admin/job_history/add') }}" class="btn btn-primary">
+                        {{-- <br> --}}
+                        <a href="{{ url('admin/job_history/add') }}" class="btn btn-primary" style="margin-top: 5px;">
                             Add Job History
                         </a>
                     </div><!-- /.col -->
@@ -118,11 +118,7 @@
                                                 <td>{{ !empty($value->get_job_single->job_title) ? $value->get_job_single->job_title : '' }}
                                                 </td>
                                                 <td>
-                                                    @if (!@empty($value->department_id == 1))
-                                                        Customer Care Department
-                                                    @else
-                                                        Sales Department
-                                                    @endif
+                                                    {{ !empty($value->get_departments_name_single->department_name) ? $value->get_departments_name_single->department_name : '' }}
                                                 </td>
                                                 <td>{{ date('d-m-Y H:i A', strtotime($value->created_at)) }}</td>
                                                 <td>
