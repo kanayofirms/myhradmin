@@ -122,8 +122,11 @@
                                             <span style="color: red;">*</span></label>
                                         <div class="col-sm-10">
                                             <select name="manager_id" class="form-control" required>
+                                                <option value="">Select Manager Name</option>
                                                 @foreach ($getManagers as $valueM)
-                                                    <option value="">{{ $valueM->manager_name }}
+                                                    <option {{ $valueM->id == $getRecord->manager_id ? 'selected' : '' }}
+                                                        value="{{ $valueM->id }}">
+                                                        {{ $valueM->manager_name }}
                                                     </option>
                                                 @endforeach
                                             </select>
@@ -136,10 +139,12 @@
                                         <div class="col-sm-10">
                                             <select name="department_id" class="form-control" required>
                                                 <option value="">Select Department Name</option>
-                                                <option {{ $getRecord->department_id == 1 ? 'selected' : '' }}
-                                                    value="1">Customer Care Department</option>
-                                                <option {{ $getRecord->department_id == 2 ? 'selected' : '' }}
-                                                    value="2">Sales Department</option>
+                                                @foreach ($getDepartments as $valueD)
+                                                    <option
+                                                        {{ $valueM->id == $getRecord->department_id ? 'selected' : '' }}
+                                                        value="{{ $valueD->id }}">{{ $valueD->department_name }}
+                                                    </option>
+                                                @endforeach
                                             </select>
                                         </div>
                                     </div>
