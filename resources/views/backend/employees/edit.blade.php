@@ -30,8 +30,8 @@
                                 <h3 class="card-title">Edit Employees</h3>
                             </div>
 
-                            <form action="{{ url('admin/employees/edit/'.$getRecord->id) }}" class="form-horizontal" method="post"
-                                enctype="multipart/form-data">
+                            <form action="{{ url('admin/employees/edit/' . $getRecord->id) }}" class="form-horizontal"
+                                method="post" enctype="multipart/form-data">
                                 {{ csrf_field() }}
                                 <div class="card card-body">
                                     <div class="form-group row">
@@ -88,7 +88,8 @@
                                             <select name="job_id" class="form-control" required>
 
                                                 @foreach ($getJobs as $value_job)
-                                                    <option {{ ($value_job->id == $getRecord->job_id) ? 'selected' : '' }} value="{{ $value_job->id }}">{{ $value_job->job_title }}
+                                                    <option {{ $value_job->id == $getRecord->job_id ? 'selected' : '' }}
+                                                        value="{{ $value_job->id }}">{{ $value_job->job_title }}
                                                     </option>
                                                 @endforeach
                                             </select>
@@ -109,8 +110,9 @@
                                         <label class="col-sm-2 col-form-label">Commission
                                             <span style="color: red;">*</span></label>
                                         <div class="col-sm-10">
-                                            <input type="number" value="{{ $getRecord->commission_pct }}" name="commission_pct"
-                                                class="form-control" placeholder="Enter Commission PCT" required>
+                                            <input type="number" value="{{ $getRecord->commission_pct }}"
+                                                name="commission_pct" class="form-control"
+                                                placeholder="Enter Commission PCT" required>
                                             <span style="color:red;">{{ $errors->first('commission_pct') }}</span>
                                         </div>
                                     </div>
@@ -120,9 +122,10 @@
                                             <span style="color: red;">*</span></label>
                                         <div class="col-sm-10">
                                             <select name="manager_id" class="form-control" required>
-                                                <option value="">Select Manager Name</option>
-                                                <option {{ ($getRecord->manager_id == 1) ? 'selected' : '' }} value="1">Emeka</option>
-                                                <option {{ ($getRecord->manager_id == 2) ? 'selected' : '' }} value="2">Nnenna</option>
+                                                @foreach ($getManagers as $valueM)
+                                                    <option value="">{{ $valueM->manager_name }}
+                                                    </option>
+                                                @endforeach
                                             </select>
                                         </div>
                                     </div>
@@ -133,8 +136,10 @@
                                         <div class="col-sm-10">
                                             <select name="department_id" class="form-control" required>
                                                 <option value="">Select Department Name</option>
-                                                <option {{ ($getRecord->department_id == 1) ? 'selected' : '' }} value="1">Customer Care Department</option>
-                                                <option {{ ($getRecord->department_id == 2) ? 'selected' : '' }} value="2">Sales Department</option>
+                                                <option {{ $getRecord->department_id == 1 ? 'selected' : '' }}
+                                                    value="1">Customer Care Department</option>
+                                                <option {{ $getRecord->department_id == 2 ? 'selected' : '' }}
+                                                    value="2">Sales Department</option>
                                             </select>
                                         </div>
                                     </div>
