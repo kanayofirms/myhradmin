@@ -43,7 +43,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    static public function getRecord(){
+    static public function getRecord()
+    {
         // $return = self::select('users.*')
         //         ->orderBy('id', 'desc')
         //         ->paginate(20);
@@ -51,36 +52,37 @@ class User extends Authenticatable
         //         return $return;
         $return = self::select('users.*');
 
-                //search box start
-                    if(!empty(Request::get('id')))
-                    {
-                        $return = $return->where('id', Request::get('id'));
-                    }
+        //search box start
+        if (!empty(Request::get('id'))) {
+            $return = $return->where('id', Request::get('id'));
+        }
 
-                    if(!empty(Request::get('name')))
-                    {
-                        $return = $return->where('name', 'LIKE', '%'.Request::get('name').'%');
-                    }
+        if (!empty(Request::get('name'))) {
+            $return = $return->where('name', 'LIKE', '%' . Request::get('name') . '%');
+        }
 
-                    if(!empty(Request::get('last_name')))
-                    {
-                        $return = $return->where('last_name', 'LIKE', '%'.Request::get('last_name').'%');
-                    }
+        if (!empty(Request::get('last_name'))) {
+            $return = $return->where('last_name', 'LIKE', '%' . Request::get('last_name') . '%');
+        }
 
-                    if(!empty(Request::get('email')))
-                    {
-                        $return = $return->where('email', 'LIKE', '%'.Request::get('email').'%');
-                    }
-                //search box end
+        if (!empty(Request::get('email'))) {
+            $return = $return->where('email', 'LIKE', '%' . Request::get('email') . '%');
+        }
+        //search box end
 
-                $return = $return->orderBy('id','desc')
-                ->paginate(20);
+        $return = $return->orderBy('id', 'desc')
+            ->paginate(20);
         return $return;
     }
 
     public function get_job_single()
     {
-        return $this->belongsTo(JobsModel::class,'job_id');
+        return $this->belongsTo(JobsModel::class, 'job_id');
+    }
+
+    public function get_manager_name_single()
+    {
+        return $this->belongsTo(ManagerModel::class, 'manager_id');
     }
 
 }
