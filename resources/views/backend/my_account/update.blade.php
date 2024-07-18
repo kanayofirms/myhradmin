@@ -25,6 +25,9 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12">
+
+                        @include('_message')
+
                         <div class="card card-info">
                             <div class="card-header">
                                 <h3 class="card-title">My Account</h3>
@@ -50,6 +53,8 @@
                                         <div class="col-sm-10">
                                             <input type="email" value="{{ $getRecord->email }}" name="email"
                                                 class="form-control" required placeholder="managerceo@mailnator.com">
+                                            <span style="color:red;">{{ $errors->first('email') }}</span>
+
                                         </div>
                                     </div>
 
