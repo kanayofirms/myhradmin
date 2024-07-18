@@ -1,10 +1,16 @@
 <?php
 
 namespace App\Http\Controllers\Backend;
+
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\JobsModel;
+use App\Models\ManagerModel;
+use App\Models\DepartmentsModel;
+
+
+
 
 class EmployeesController extends Controller
 {
@@ -16,6 +22,8 @@ class EmployeesController extends Controller
 
     public function add(Request $request)
     {
+        $data['getManagers'] = ManagerModel::get();
+        $data['getDepartments'] = DepartmentsModel::get();
         $data['getJobs'] = JobsModel::get();
         return view('backend.employees.add', $data);
     }
@@ -33,18 +41,18 @@ class EmployeesController extends Controller
             'manager_id' => 'required',
             'department_id' => 'required',
         ]);
-        $user                   = new User;
-        $user->name             = trim($request->name);
-        $user->last_name        = trim($request->last_name);
-        $user->email            = trim($request->email);
-        $user->phone_number     = trim($request->phone_number);
-        $user->hire_date        = trim($request->hire_date);
-        $user->job_id           = trim($request->job_id);
-        $user->salary           = trim($request->salary);
-        $user->commission_pct   = trim($request->commission_pct);
-        $user->manager_id       = trim($request->manager_id);
-        $user->department_id    = trim($request->department_id);
-        $user->is_role          = 0; // 0 - Employees
+        $user = new User;
+        $user->name = trim($request->name);
+        $user->last_name = trim($request->last_name);
+        $user->email = trim($request->email);
+        $user->phone_number = trim($request->phone_number);
+        $user->hire_date = trim($request->hire_date);
+        $user->job_id = trim($request->job_id);
+        $user->salary = trim($request->salary);
+        $user->commission_pct = trim($request->commission_pct);
+        $user->manager_id = trim($request->manager_id);
+        $user->department_id = trim($request->department_id);
+        $user->is_role = 0; // 0 - Employees
         $user->save();
 
         return redirect('admin/employees')->with('success', 'Employees successfully registered.');
@@ -66,21 +74,21 @@ class EmployeesController extends Controller
     public function edit_update($id, Request $request)
     {
         $user = request()->validate([
-            'email' => 'required|unique:users,email,'.$id
+            'email' => 'required|unique:users,email,' . $id
         ]);
 
         $user = User::find($id);
-        $user->name             = trim($request->name);
-        $user->last_name        = trim($request->last_name);
-        $user->email            = trim($request->email);
-        $user->phone_number     = trim($request->phone_number);
-        $user->hire_date        = trim($request->hire_date);
-        $user->job_id           = trim($request->job_id);
-        $user->salary           = trim($request->salary);
-        $user->commission_pct   = trim($request->commission_pct);
-        $user->manager_id       = trim($request->manager_id);
-        $user->department_id    = trim($request->department_id);
-        $user->is_role          = 0; // 0 - Employees
+        $user->name = trim($request->name);
+        $user->last_name = trim($request->last_name);
+        $user->email = trim($request->email);
+        $user->phone_number = trim($request->phone_number);
+        $user->hire_date = trim($request->hire_date);
+        $user->job_id = trim($request->job_id);
+        $user->salary = trim($request->salary);
+        $user->commission_pct = trim($request->commission_pct);
+        $user->manager_id = trim($request->manager_id);
+        $user->department_id = trim($request->department_id);
+        $user->is_role = 0; // 0 - Employees
         $user->save();
 
         return redirect('admin/employees')->with('success', 'Employees successfully Updated.');
@@ -90,7 +98,7 @@ class EmployeesController extends Controller
     {
         $recordDelete = User::find($id);
         $recordDelete->delete();
-        return redirect()->back()->with('error','User successfully deleted.');
+        return redirect()->back()->with('error', 'User successfully deleted.');
     }
 }
 
