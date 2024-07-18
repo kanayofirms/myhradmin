@@ -91,10 +91,12 @@
                                         <div class="col-sm-10">
                                             <select name="department_id" class="form-control">
                                                 <option value="">Select Department Name</option>
-                                                <option {{ $getRecord->department_id == 1 ? 'selected' : '' }}
-                                                    value="1">Customer Care Department</option>
-                                                <option {{ $getRecord->department_id == 2 ? 'selected' : '' }}
-                                                    value="2">Sales Department</option>
+                                                @foreach ($getDepartments as $valueD)
+                                                    <option
+                                                        {{ $valueD->id == $getRecord->department_id ? 'selected' : '' }}
+                                                        value="{{ $valueD->id }}">{{ $valueD->department_name }}
+                                                    </option>
+                                                @endforeach
                                             </select>
                                         </div>
                                     </div>
