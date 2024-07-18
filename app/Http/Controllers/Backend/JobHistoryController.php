@@ -56,6 +56,7 @@ class JobHistoryController extends Controller
 
     public function edit($id)
     {
+        $data['getDepartments'] = DepartmentsModel::get();
         $data['getEmployee'] = User::where('is_role', '=', 0)->get();
         $data['getJobs'] = JobsModel::get();
         $data['getRecord'] = JobHistoryModel::find($id);
