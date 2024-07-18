@@ -118,7 +118,7 @@
                                         <label class="col-sm-2 col-form-label">Department Name
                                             <span style="color: red;"></span></label>
                                         <div class="col-sm-10">
-                                            {{ $getRecord->department_id }}
+                                            {{ !empty($getRecord->get_departament_name_single->department_name) ? $getRecord->get_departament_name_single->department_name : '' }}
                                         </div>
                                     </div>
 
