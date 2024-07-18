@@ -74,4 +74,9 @@ class JobHistoryModel extends Model
     {
         return $this->belongsTo(JobsModel::class, 'job_id');
     }
+
+    public function get_departments_name_single()
+    {
+        return $this->belongsTo(DepartmentsModel::class, 'department_id');
+    }
 }
