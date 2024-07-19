@@ -6,8 +6,11 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\DepartmentsModel;
 use App\Models\LocationsModel;
+use App\Models\ManagerModel;
 use App\Exports\DepartmentsExport;
 use Maatwebsite\Excel\Facades\Excel;
+
+
 
 class DepartmentsController extends Controller
 {
@@ -19,6 +22,7 @@ class DepartmentsController extends Controller
 
     public function add(Request $request)
     {
+        $data['getManager'] = ManagerModel::get();
         $data['getLocation'] = LocationsModel::get();
         return view('backend.departments.add', $data);
     }
