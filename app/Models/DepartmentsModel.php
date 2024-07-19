@@ -20,8 +20,9 @@ class DepartmentsModel extends Model
 
         // return $return;
 
-        $return = self::select('departments.*', 'locations.street_address')
+        $return = self::select('departments.*', 'locations.street_address', 'manager.manager_name')
             ->join('locations', 'locations.id', '=', 'departments.locations_id')
+            ->join('manager', 'manager.id', '=', 'departments.manager_id')
             ->orderBy('id', 'desc');
 
         // Search Start
