@@ -87,6 +87,7 @@
                                             <th>First Name</th>
                                             <th>Surname</th>
                                             <th>Email</th>
+                                            <th>Profile Image</th>
                                             <th>Role</th>
                                             <th>Action</th>
                                         </tr>
@@ -98,6 +99,14 @@
                                                 <td>{{ $value->name }}</td>
                                                 <td>{{ $value->last_name }}</td>
                                                 <td>{{ $value->email }}</td>
+                                                <td>
+                                                    @if (!@empty($value->profile_image))
+                                                        @if (file_exists('upload/' . $value->profile_image))
+                                                            <img src="{{ url('upload/' . $value->profile_image) }}"
+                                                                style="height: 70px; width: 70px;">
+                                                        @endif
+                                                    @endif
+                                                </td>
                                                 <td>{{ !empty($value->is_role) ? 'HR' : 'Employee' }}</td>
                                                 <td>
                                                     <a href="{{ url('admin/employees/view/' . $value->id) }}"
