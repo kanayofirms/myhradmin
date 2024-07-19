@@ -73,6 +73,14 @@
                                     </div>
 
                                     <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label">Profile Image
+                                            <span style="color: red;"></span></label>
+                                        <div class="col-sm-10">
+                                            <input type="file" name="profile_image" class="form-control">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
                                         <label class="col-sm-2 col-form-label">Employment Date
                                             <span style="color: red;">*</span></label>
                                         <div class="col-sm-10">
@@ -109,8 +117,9 @@
                                         <label class="col-sm-2 col-form-label">Commission
                                             <span style="color: red;">*</span></label>
                                         <div class="col-sm-10">
-                                            <input type="number" value="{{ old('commission_pct') }}" name="commission_pct"
-                                                class="form-control" placeholder="Enter Commission PCT" required>
+                                            <input type="number" value="{{ old('commission_pct') }}"
+                                                name="commission_pct" class="form-control"
+                                                placeholder="Enter Commission PCT" required>
                                             <span style="color:red;">{{ $errors->first('commission_pct') }}</span>
                                         </div>
                                     </div>
