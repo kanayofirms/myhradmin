@@ -47,6 +47,7 @@ class DepartmentsController extends Controller
 
     public function edit(Request $request, $id)
     {
+        $data['getManager'] = ManagerModel::get();
         $data['getRecord'] = DepartmentsModel::find($id);
         $data['getLocation'] = LocationsModel::get();
         return view('backend.departments.edit', $data);
