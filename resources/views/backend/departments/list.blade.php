@@ -113,13 +113,7 @@
                                             <tr>
                                                 <td>{{ $value->id }}</td>
                                                 <td>{{ $value->department_name }}</td>
-                                                <td>
-                                                    @if ($value->manager_id == 1)
-                                                        ChiChi
-                                                    @else
-                                                        Emeka
-                                                    @endif
-                                                </td>
+                                                <td>{{ $value->manager_name }}</td>
                                                 <td>{{ $value->street_address }}</td>
                                                 <td>{{ date('d-m-Y H:i A', strtotime($value->created_at)) }}</td>
                                                 <td>
