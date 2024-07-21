@@ -64,8 +64,10 @@
                                         <div class="col-sm-10">
                                             <input type="file" name="profile_image" class="form-control">
                                             @if (!empty($getRecord->profile_image))
-                                                <img src="{{ url('upload/' . $getRecord->profile_image) }}"
-                                                    style="height: 90px; width: 90px;">
+                                                @if (file_exists('upload/' . $getRecord->profile_image))
+                                                    <img src="{{ url('upload/' . $getRecord->profile_image) }}"
+                                                        style="height: 90px; width: 90px;">
+                                                @endif
                                             @endif
 
                                         </div>
