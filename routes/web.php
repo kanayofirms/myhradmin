@@ -13,6 +13,9 @@ use App\Http\Controllers\Backend\LocationsController;
 use App\Http\Controllers\Backend\DepartmentsController;
 use App\Http\Controllers\Backend\ManagerController;
 use App\Http\Controllers\Backend\MyAccountController;
+use App\Http\Controllers\Backend\PayrollController;
+
+
 
 
 
@@ -147,6 +150,9 @@ Route::group(['middleware' => 'admin'], function () {
     //My Account
     Route::get('admin/my_account', [MyAccountController::class, 'my_account']);
     Route::post('admin/my_account/update', [MyAccountController::class, 'edit_update']);
+
+    //Pay Roll
+    Route::get('admin/payroll', [PayrollController::class, 'index']);
 });
 
 Route::get('logout', [AuthController::class, 'logout']);
