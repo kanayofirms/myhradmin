@@ -8,7 +8,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Job History</h1>
+                        <h1>Pay Roll</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6" style="text-align:right;">
 
@@ -22,8 +22,8 @@
                                 class="btn btn-success">Excel Export</a>
                         </form>
                         {{-- <br> --}}
-                        <a href="{{ url('admin/job_history/add') }}" class="btn btn-primary" style="margin-top: 5px;">
-                            Add Job History
+                        <a href="{{ url('admin/payroll/add') }}" class="btn btn-primary" style="margin-top: 5px;">
+                            Add Pay Roll
                         </a>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -38,7 +38,7 @@
 
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">Search Job History</h3>
+                                <h3 class="card-title">Search Pay Roll</h3>
                             </div>
 
                             <form action="" method="GET">
@@ -90,18 +90,14 @@
 
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">Job History List</h3>
+                                <h3 class="card-title">Pay Roll List</h3>
                             </div>
                             <div class="card-body p-0">
                                 <table class="table table-striped">
                                     <thead>
                                         <tr>
                                             <th>ID</th>
-                                            <th>Employee Name (Employee ID)</th>
-                                            <th>Start Date</th>
-                                            <th>End Date</th>
-                                            <th>Job Name (Job ID)</th>
-                                            <th>Department Name (Department ID)</th>
+
                                             <th>Created At</th>
                                             <th>Action</th>
                                         </tr>
