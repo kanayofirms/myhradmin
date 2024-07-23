@@ -41,7 +41,9 @@
                                         <div class="col-sm-10">
                                             <select name="employee_id" id="" class="form-control">
                                                 <option value="">Select Employee Name</option>
-
+                                                @foreach ($getEmployee as $valueE)
+                                                    <option value="{{ $valueE->id }}">{{ $valueE->name }}</option>
+                                                @endforeach
                                             </select>
                                         </div>
                                     </div>
