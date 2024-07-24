@@ -38,7 +38,7 @@
                                         <label class="col-sm-2 col-form-label">ID
                                             <span style="color: red;">*</span></label>
                                         <div class="col-sm-10">
-                                            id
+                                            {{ $getRecord->id }}
                                         </div>
                                     </div>
 
@@ -46,7 +46,8 @@
                                         <label class="col-sm-2 col-form-label">Employee Name
                                             <span style="color: red;">*</span></label>
                                         <div class="col-sm-10">
-                                            id
+                                            {{ $getRecord->employee_id }}
+
                                         </div>
                                     </div>
 
@@ -54,7 +55,7 @@
                                         <label class="col-sm-2 col-form-label">Worked Days
                                             <span style="color: red;">*</span></label>
                                         <div class="col-sm-10">
-                                            id
+                                            {{ $getRecord->number_of_days_worked }}
                                         </div>
                                     </div>
 
@@ -62,7 +63,7 @@
                                         <label class="col-sm-2 col-form-label">Bonus
                                             <span style="color: red;">*</span></label>
                                         <div class="col-sm-10">
-                                            id
+                                            {{ $getRecord->bonus }}
                                         </div>
                                     </div>
 
@@ -70,7 +71,7 @@
                                         <label class="col-sm-2 col-form-label">Overtime
                                             <span style="color: red;">*</span></label>
                                         <div class="col-sm-10">
-                                            id
+                                            {{ $getRecord->overtime }}
                                         </div>
                                     </div>
 
@@ -78,7 +79,7 @@
                                         <label class="col-sm-2 col-form-label">Gross Salary
                                             <span style="color: red;">*</span></label>
                                         <div class="col-sm-10">
-                                            id
+                                            {{ $getRecord->gross_salary }}
                                         </div>
                                     </div>
 
@@ -86,7 +87,7 @@
                                         <label class="col-sm-2 col-form-label">Cash Advance
                                             <span style="color: red;">*</span></label>
                                         <div class="col-sm-10">
-                                            id
+                                            {{ $getRecord->cash_advance }}
                                         </div>
                                     </div>
 
@@ -94,7 +95,7 @@
                                         <label class="col-sm-2 col-form-label">Late Hours
                                             <span style="color: red;">*</span></label>
                                         <div class="col-sm-10">
-                                            id
+                                            {{ $getRecord->late_hours }}
                                         </div>
                                     </div>
 
@@ -102,7 +103,7 @@
                                         <label class="col-sm-2 col-form-label">Absent Days
                                             <span style="color: red;">*</span></label>
                                         <div class="col-sm-10">
-                                            id
+                                            {{ $getRecord->absent_days }}
                                         </div>
                                     </div>
 
@@ -110,7 +111,7 @@
                                         <label class="col-sm-2 col-form-label">SSS Contribution
                                             <span style="color: red;">*</span></label>
                                         <div class="col-sm-10">
-                                            id
+                                            {{ $getRecord->sss_contribution }}
                                         </div>
                                     </div>
 
@@ -118,7 +119,7 @@
                                         <label class="col-sm-2 col-form-label">Health Insurance
                                             <span style="color: red;">*</span></label>
                                         <div class="col-sm-10">
-                                            id
+                                            {{ $getRecord->insure_health }}
                                         </div>
                                     </div>
 
@@ -126,7 +127,7 @@
                                         <label class="col-sm-2 col-form-label">Total Deduction
                                             <span style="color: red;">*</span></label>
                                         <div class="col-sm-10">
-                                            id
+                                            {{ $getRecord->total_deduction }}
                                         </div>
                                     </div>
 
@@ -134,7 +135,7 @@
                                         <label class="col-sm-2 col-form-label">Net Pay
                                             <span style="color: red;">*</span></label>
                                         <div class="col-sm-10">
-                                            id
+                                            {{ $getRecord->net_pay }}
                                         </div>
                                     </div>
 
@@ -142,7 +143,7 @@
                                         <label class="col-sm-2 col-form-label">Payroll Monthly
                                             <span style="color: red;">*</span></label>
                                         <div class="col-sm-10">
-                                            id
+                                            {{ $getRecord->payroll_monthly }}
                                         </div>
                                     </div>
 
@@ -150,7 +151,7 @@
                                         <label class="col-sm-2 col-form-label">Created At
                                             <span style="color: red;">*</span></label>
                                         <div class="col-sm-10">
-                                            id
+                                            {{ date('d-m-Y H:i A', strtotime($getRecord->created_at)) }}
                                         </div>
                                     </div>
 
@@ -158,7 +159,7 @@
                                         <label class="col-sm-2 col-form-label">Updated At
                                             <span style="color: red;">*</span></label>
                                         <div class="col-sm-10">
-                                            id
+                                            {{ date('d-m-Y H:i A', strtotime($getRecord->updated_at)) }}
                                         </div>
                                     </div>
 
