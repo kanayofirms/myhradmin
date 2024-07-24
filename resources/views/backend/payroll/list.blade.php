@@ -97,13 +97,20 @@
                                     <thead>
                                         <tr>
                                             <th>ID</th>
-
-                                            <th>Created At</th>
+                                            <th>Employee Name</th>
+                                            {{-- <th>Created At</th> --}}
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-
+                                        @forelse ($getRecord as $value)
+                                            <tr>
+                                                <td>{{ $value->id }}</td>
+                                                <td>{{ $value->employee_id }}</td>
+                                                <td>View</td>
+                                            </tr>
+                                        @empty
+                                        @endforelse
                                     </tbody>
                                 </table>
                                 <div style="padding:10px; float:right;">
