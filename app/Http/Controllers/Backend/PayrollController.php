@@ -12,7 +12,8 @@ class PayrollController extends Controller
 {
     public function index(Request $request)
     {
-        return view('backend.payroll.list');
+        $data['getRecord'] = PayrollModel::getRecord();
+        return view('backend.payroll.list', $data);
     }
 
     public function add(Request $request)
