@@ -30,7 +30,7 @@
                                 <h3 class="card-title">Add Pay Roll</h3>
                             </div>
 
-                            <form action="{{ url('') }}" class="form-horizontal" method="post"
+                            <form action="{{ url('admin/payroll/add') }}" class="form-horizontal" method="post"
                                 enctype="multipart/form-data">
                                 {{ csrf_field() }}
                                 <div class="card card-body">
@@ -117,7 +117,7 @@
                                         <label class="col-sm-2 col-form-label">SSS Contribution
                                             <span style="color: red;">*</span></label>
                                         <div class="col-sm-10">
-                                            <input type="number" value="{{ old('sss_contribution') }}"
+                                            <input type="text" value="{{ old('sss_contribution') }}"
                                                 name="sss_contribution" class="form-control"
                                                 placeholder="Enter SSS Contribution" required>
                                         </div>
@@ -127,7 +127,7 @@
                                         <label class="col-sm-2 col-form-label">Health Insurance
                                             <span style="color: red;">*</span></label>
                                         <div class="col-sm-10">
-                                            <input type="number" value="{{ old('insure_health') }}"
+                                            <input type="text" value="{{ old('insure_health') }}"
                                                 name="insure_health" class="form-control"
                                                 placeholder="Enter Health Insurance" required>
                                         </div>
@@ -137,7 +137,7 @@
                                         <label class="col-sm-2 col-form-label">Total Deduction
                                             <span style="color: red;">*</span></label>
                                         <div class="col-sm-10">
-                                            <input type="number" value="{{ old('total_deduction') }}"
+                                            <input type="text" value="{{ old('total_deduction') }}"
                                                 name="total_deduction" class="form-control"
                                                 placeholder="Enter Total Deduction" required>
                                         </div>
