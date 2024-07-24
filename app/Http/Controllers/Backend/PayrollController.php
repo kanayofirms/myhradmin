@@ -16,6 +16,11 @@ class PayrollController extends Controller
         return view('backend.payroll.list', $data);
     }
 
+    public function view(Request $request, $id)
+    {
+        return view('backend.payroll.view');
+    }
+
     public function add(Request $request)
     {
         $data['getEmployee'] = User::where('is_role', '=', 0)->get();
