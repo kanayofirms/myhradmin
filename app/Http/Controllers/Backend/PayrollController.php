@@ -18,7 +18,8 @@ class PayrollController extends Controller
 
     public function view(Request $request, $id)
     {
-        return view('backend.payroll.view');
+        $data['getRecord'] = PayrollModel::find($id);
+        return view('backend.payroll.view', $data);
     }
 
     public function add(Request $request)
