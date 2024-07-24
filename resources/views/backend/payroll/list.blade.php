@@ -98,6 +98,10 @@
                                         <tr>
                                             <th>ID</th>
                                             <th>Employee Name</th>
+                                            <th>Days Worked</th>
+                                            <th>Bonus</th>
+                                            <th>Overtime</th>
+                                            <th>Gross Salary</th>
                                             {{-- <th>Created At</th> --}}
                                             <th>Action</th>
                                         </tr>
@@ -106,8 +110,15 @@
                                         @forelse ($getRecord as $value)
                                             <tr>
                                                 <td>{{ $value->id }}</td>
-                                                <td>{{ $value->employee_id }}</td>
-                                                <td>View</td>
+                                                <td>{{ $value->name }}</td>
+                                                <td>{{ $value->number_of_days_worked }}</td>
+                                                <td>{{ $value->bonus }}</td>
+                                                <td>{{ $value->overtime }}</td>
+                                                <td>{{ $value->gross_salary }}</td>
+                                                <td>
+                                                    <a href="{{ url('admin/payroll/view/' . $value->id) }}"
+                                                        class="btn btn-info">View</a>
+                                                </td>
                                             </tr>
                                         @empty
                                         @endforelse
