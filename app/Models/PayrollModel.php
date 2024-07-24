@@ -10,4 +10,12 @@ class PayrollModel extends Model
     use HasFactory;
 
     protected $table = 'payroll';
+
+    static public function getRecord()
+    {
+        $return = self::select('payroll.*')
+            ->orderBy('id', 'desc')
+            ->paginate(20);
+        return $return;
+    }
 }
