@@ -19,4 +19,9 @@ class PayrollModel extends Model
             ->paginate(20);
         return $return;
     }
+
+    public function get_employee_name()
+    {
+        return $this->belongsTo(User::class, 'employee_id');
+    }
 }
