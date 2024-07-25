@@ -41,9 +41,11 @@
                                         <div class="col-sm-10">
                                             <select name="employee_id" id="" class="form-control">
                                                 <option value="">Select Employee Name</option>
-                                                {{-- @foreach ($getEmployee as $valueE)
-                                                    <option value="{{ $valueE->id }}">{{ $valueE->name }}</option>
-                                                @endforeach --}}
+                                                @foreach ($getEmployee as $valueE)
+                                                    <option {{ $valueE->id == $getRecord->employee_id ? 'selected' : '' }}
+                                                        value="{{ $valueE->id }}">
+                                                        {{ $valueE->name }}</option>
+                                                @endforeach
                                             </select>
                                         </div>
                                     </div>
@@ -52,7 +54,7 @@
                                         <label class="col-sm-2 col-form-label">Worked Days
                                             <span style="color: red;">*</span></label>
                                         <div class="col-sm-10">
-                                            <input type="number" value="{{ old('number_of_days_worked') }}"
+                                            <input type="number" value="{{ $getRecord->number_of_days_worked }}"
                                                 name="number_of_days_worked" class="form-control"
                                                 placeholder="Enter Number Of Day Worked" required>
                                         </div>
@@ -62,7 +64,7 @@
                                         <label class="col-sm-2 col-form-label">Bonus
                                             <span style="color: red;">*</span></label>
                                         <div class="col-sm-10">
-                                            <input type="number" value="{{ old('bonus') }}" name="bonus"
+                                            <input type="number" value="{{ $getRecord->bonus }}" name="bonus"
                                                 class="form-control" placeholder="Enter Bonus" required>
                                         </div>
                                     </div>
@@ -71,7 +73,7 @@
                                         <label class="col-sm-2 col-form-label">Overtime
                                             <span style="color: red;">*</span></label>
                                         <div class="col-sm-10">
-                                            <input type="number" value="{{ old('overtime') }}" name="overtime"
+                                            <input type="number" value="{{ $getRecord->overtime }}" name="overtime"
                                                 class="form-control" placeholder="Enter Overtime" required>
                                         </div>
                                     </div>
@@ -80,7 +82,7 @@
                                         <label class="col-sm-2 col-form-label">Gross Salary
                                             <span style="color: red;">*</span></label>
                                         <div class="col-sm-10">
-                                            <input type="number" value="{{ old('gross_salary') }}" name="gross_salary"
+                                            <input type="number" value="{{ $getRecord->gross_salary }}" name="gross_salary"
                                                 class="form-control" placeholder="Enter Gross Salary" required>
                                         </div>
                                     </div>
@@ -90,7 +92,7 @@
                                         <label class="col-sm-2 col-form-label">Cash Advance
                                             <span style="color: red;">*</span></label>
                                         <div class="col-sm-10">
-                                            <input type="number" value="{{ old('cash_advance') }}" name="cash_advance"
+                                            <input type="number" value="{{ $getRecord->cash_advance }}" name="cash_advance"
                                                 class="form-control" placeholder="Enter Cash Advance" required>
                                         </div>
                                     </div>
@@ -99,7 +101,7 @@
                                         <label class="col-sm-2 col-form-label">Late Hours
                                             <span style="color: red;">*</span></label>
                                         <div class="col-sm-10">
-                                            <input type="number" value="{{ old('late_hours') }}" name="late_hours"
+                                            <input type="number" value="{{ $getRecord->late_hours }}" name="late_hours"
                                                 class="form-control" placeholder="Enter Late Hours" required>
                                         </div>
                                     </div>
@@ -108,7 +110,7 @@
                                         <label class="col-sm-2 col-form-label">Absent Days
                                             <span style="color: red;">*</span></label>
                                         <div class="col-sm-10">
-                                            <input type="number" value="{{ old('absent_days') }}" name="absent_days"
+                                            <input type="number" value="{{ $getRecord->absent_days }}" name="absent_days"
                                                 class="form-control" placeholder="Enter Absent Days" required>
                                         </div>
                                     </div>
@@ -117,7 +119,7 @@
                                         <label class="col-sm-2 col-form-label">SSS Contribution
                                             <span style="color: red;">*</span></label>
                                         <div class="col-sm-10">
-                                            <input type="text" value="{{ old('sss_contribution') }}"
+                                            <input type="text" value="{{ $getRecord->sss_contribution }}"
                                                 name="sss_contribution" class="form-control"
                                                 placeholder="Enter SSS Contribution" required>
                                         </div>
@@ -127,7 +129,7 @@
                                         <label class="col-sm-2 col-form-label">Health Insurance
                                             <span style="color: red;">*</span></label>
                                         <div class="col-sm-10">
-                                            <input type="text" value="{{ old('insure_health') }}"
+                                            <input type="text" value="{{ $getRecord->insure_health }}"
                                                 name="insure_health" class="form-control"
                                                 placeholder="Enter Health Insurance" required>
                                         </div>
@@ -137,7 +139,7 @@
                                         <label class="col-sm-2 col-form-label">Total Deduction
                                             <span style="color: red;">*</span></label>
                                         <div class="col-sm-10">
-                                            <input type="text" value="{{ old('total_deduction') }}"
+                                            <input type="text" value="{{ $getRecord->total_deduction }}"
                                                 name="total_deduction" class="form-control"
                                                 placeholder="Enter Total Deduction" required>
                                         </div>
@@ -147,7 +149,7 @@
                                         <label class="col-sm-2 col-form-label">Net Pay
                                             <span style="color: red;">*</span></label>
                                         <div class="col-sm-10">
-                                            <input type="number" value="{{ old('net_pay') }}" name="net_pay"
+                                            <input type="number" value="{{ $getRecord->net_pay }}" name="net_pay"
                                                 class="form-control" placeholder="Enter Net Pay" required>
                                         </div>
                                     </div>
@@ -156,7 +158,7 @@
                                         <label class="col-sm-2 col-form-label">Payroll Monthly
                                             <span style="color: red;">*</span></label>
                                         <div class="col-sm-10">
-                                            <input type="number" value="{{ old('payroll_monthly') }}"
+                                            <input type="number" value="{{ $getRecord->payroll_monthly }}"
                                                 name="payroll_monthly" class="form-control"
                                                 placeholder="Enter Payroll Monthly" required>
                                         </div>
