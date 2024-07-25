@@ -118,6 +118,9 @@
                                                 <td>
                                                     <a href="{{ url('admin/payroll/view/' . $value->id) }}"
                                                         class="btn btn-info">View</a>
+
+                                                    <a href="{{ url('admin/payroll/edit/' . $value->id) }}"
+                                                        class="btn btn-primary">Edit</a>
                                                 </td>
                                             </tr>
                                         @empty
