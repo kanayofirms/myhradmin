@@ -28,6 +28,11 @@ class PayrollController extends Controller
         return view('backend.payroll.add', $data);
     }
 
+    public function edit(Request $request, $id)
+    {
+        return view('backend.payroll.edit');
+    }
+
     public function add_post(Request $request)
     {
         // dd($request->all());
