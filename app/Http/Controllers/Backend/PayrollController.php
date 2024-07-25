@@ -30,7 +30,9 @@ class PayrollController extends Controller
 
     public function edit(Request $request, $id)
     {
-        return view('backend.payroll.edit');
+        $data['getRecord'] = PayrollModel::find($id);
+        $data['getEmployee'] = User::where('is_role', '=', 0)->get();
+        return view('backend.payroll.edit', $data);
     }
 
     public function add_post(Request $request)
