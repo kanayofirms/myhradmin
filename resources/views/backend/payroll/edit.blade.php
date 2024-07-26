@@ -30,8 +30,8 @@
                                 <h3 class="card-title">Edit Pay Roll</h3>
                             </div>
 
-                            <form action="{{ url('admin/payroll/edit/') }}" class="form-horizontal" method="post"
-                                enctype="multipart/form-data">
+                            <form action="{{ url('admin/payroll/edit/' . $getRecord->id) }}" class="form-horizontal"
+                                method="post" enctype="multipart/form-data">
                                 {{ csrf_field() }}
                                 <div class="card card-body">
 
