@@ -52,8 +52,32 @@
 
                                         <div class="form-group col-md-3">
                                             <label for="">Employee Name</label>
-                                            <input type="text" class="form-control" name="name" placeholder="John"
-                                                value="{{ Request()->name }}">
+                                            <input type="text" class="form-control" name="employee_id" placeholder="John"
+                                                value="{{ Request()->employee_id }}">
+                                        </div>
+
+                                        <div class="form-group col-md-3">
+                                            <label for="">Days Worked</label>
+                                            <input type="text" class="form-control" name="number_of_days_worked"
+                                                placeholder="30" value="{{ Request()->number_of_days_worked }}">
+                                        </div>
+
+                                        <div class="form-group col-md-3">
+                                            <label for="">Bonus</label>
+                                            <input type="text" class="form-control" name="bonus" placeholder="30"
+                                                value="{{ Request()->bonus }}">
+                                        </div>
+
+                                        <div class="form-group col-md-3">
+                                            <label for="">Overtime</label>
+                                            <input type="text" class="form-control" name="overtime" placeholder="30"
+                                                value="{{ Request()->overtime }}">
+                                        </div>
+
+                                        <div class="form-group col-md-3">
+                                            <label for="">Gross Salary</label>
+                                            <input type="text" class="form-control" name="gross_salary" placeholder="30"
+                                                value="{{ Request()->gross_salary }}">
                                         </div>
 
                                         <div class="form-group col-md-3">
@@ -68,16 +92,10 @@
                                                 value="{{ Request()->end_date }}">
                                         </div>
 
-                                        <div class="form-group col-md-3">
-                                            <label for="">Job Name</label>
-                                            <input type="text" class="form-control" name="job_title"
-                                                placeholder="Cloud Engineer" value="{{ Request()->job_title }}">
-                                        </div>
-
                                         <div class="form-group col-md-2">
                                             <button class="btn btn-primary" type="submit"
                                                 style="margin-top: 30px;">Search</button>
-                                            <a href="{{ url('admin/job_history') }}" class="btn btn-success"
+                                            <a href="{{ url('admin/payroll') }}" class="btn btn-success"
                                                 style="margin-top: 30px;">Reset</a>
 
                                         </div>
