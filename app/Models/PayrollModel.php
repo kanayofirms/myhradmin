@@ -12,7 +12,7 @@ class PayrollModel extends Model
 
     protected $table = 'payroll';
 
-    static public function getRecord()
+    static public function getRecord($request)
     {
         $return = self::select('payroll.*', 'users.name')
             ->join('users', 'users.id', '=', 'payroll.employee_id')
@@ -43,6 +43,10 @@ class PayrollModel extends Model
         //     $return = $return->where('payroll.gross_salary', 'LIKE', '%' . Request::get('gross_salary') . '%');
         // }
 
+        if (!empty(Request::get('start_date')) && !empty(Request::get('end_date'))) {
+            $return = $return->where('payroll.created_at', '>=', Request::get('start_date'))
+                ->where('payroll.created_at', '<=', Request::get('end_date'));
+        }
 
         //Search work stop
         $return = $return->paginate(20);
