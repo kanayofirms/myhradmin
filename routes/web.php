@@ -159,6 +159,8 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('/admin/payroll/edit/{id}', [PayrollController::class, 'edit']);
     Route::post('/admin/payroll/edit/{id}', [PayrollController::class, 'edit_update']);
     Route::get('admin/payroll/delete/{id}', [PayrollController::class, 'delete']);
+    //Excel Export
+    Route::get('admin/payroll_export', [PayrollController::class, 'payroll_export']);
 });
 
 Route::get('logout', [AuthController::class, 'logout']);
