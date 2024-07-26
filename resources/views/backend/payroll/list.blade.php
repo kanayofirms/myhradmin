@@ -117,10 +117,17 @@
                                                 <td>{{ $value->gross_salary }}</td>
                                                 <td>
                                                     <a href="{{ url('admin/payroll/view/' . $value->id) }}"
-                                                        class="btn btn-info">View</a>
+                                                        class="btn btn-info">View
+                                                    </a>
 
                                                     <a href="{{ url('admin/payroll/edit/' . $value->id) }}"
-                                                        class="btn btn-primary">Edit</a>
+                                                        class="btn btn-primary">Edit
+                                                    </a>
+
+                                                    <a href="{{ url('admin/payroll/delete/' . $value->id) }}"
+                                                        class="btn btn-danger"
+                                                        onclick="return confirm('Are you sure you want to delete?')">Delete
+                                                    </a>
                                                 </td>
                                             </tr>
                                         @empty
