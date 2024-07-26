@@ -12,13 +12,13 @@
                     </div><!-- /.col -->
                     <div class="col-sm-6" style="text-align:right;">
 
-                        <form action="{{ url('admin/job_history_export') }}
+                        <form action="{{ url('admin/payroll_export') }}
 
                         " method="get">
                             <input type="hidden" name="start_date" value="{{ Request()->start_date }}">
                             <input type="hidden" name="end_date" value="{{ Request()->end_date }}">
 
-                            <a href="{{ url('admin/job_history_export?start_date=' . Request::get('start_date') . '&end_date=' . Request::get('end_date')) }}"
+                            <a href="{{ url('admin/payroll_export?start_date=' . Request::get('start_date') . '&end_date=' . Request::get('end_date')) }}"
                                 class="btn btn-success">Excel Export</a>
                         </form>
                         {{-- <br> --}}
@@ -120,7 +120,7 @@
                                             <th>Bonus</th>
                                             <th>Overtime</th>
                                             {{-- <th>Gross Salary</th> --}}
-                                            {{-- <th>Created At</th> --}}
+                                            <th>Created At</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -144,6 +144,8 @@
                                                 <td>{{ $value->bonus }}</td>
                                                 <td>{{ $value->overtime }}</td>
                                                 {{-- <td>{{ $value->gross_salary }}</td> --}}
+                                                <td>{{ date('d-m-Y H:i A', strtotime($value->created_at)) }}</td>
+                                                {{-- <td>{{ date('d-m-Y H:i A', strtotime($value->updated_at)) }}</td> --}}
                                                 <td>
                                                     <a href="{{ url('admin/payroll/view/' . $value->id) }}"
                                                         class="btn btn-info">View
@@ -175,7 +177,7 @@
                                             <td>
                                                 {{ $totalovertime }}
                                             </td>
-                                            <th colspan="1"></th>
+                                            <th colspan="2"></th>
                                         </tr>
                                     </tbody>
                                 </table>
