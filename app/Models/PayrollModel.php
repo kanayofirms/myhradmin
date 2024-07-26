@@ -39,9 +39,9 @@ class PayrollModel extends Model
             $return = $return->where('payroll.overtime', 'LIKE', '%' . Request::get('overtime') . '%');
         }
 
-        if (!empty(Request::get('gross_salary'))) {
-            $return = $return->where('payroll.gross_salary', 'LIKE', '%' . Request::get('gross_salary') . '%');
-        }
+        // if (!empty(Request::get('gross_salary'))) {
+        //     $return = $return->where('payroll.gross_salary', 'LIKE', '%' . Request::get('gross_salary') . '%');
+        // }
 
 
         //Search work stop
