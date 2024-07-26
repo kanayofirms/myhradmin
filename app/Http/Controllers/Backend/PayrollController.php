@@ -5,14 +5,15 @@ namespace App\Http\Controllers\Backend;
 use App\Models\PayrollModel;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\ModelsPayrollModel;
+use App\Exports\PayrollExport;
+use Maatwebsite\Excel\Facades\Excel;
 use App\Models\User;
 
 class PayrollController extends Controller
 {
     public function index(Request $request)
     {
-        $data['getRecord'] = PayrollModel::getRecord();
+        $data['getRecord'] = PayrollModel::getRecord($request);
         return view('backend.payroll.list', $data);
     }
 
@@ -86,5 +87,10 @@ class PayrollController extends Controller
         $user->delete();
 
         return redirect()->back()->with('error', "Record successfully deleted");
+    }
+
+    public function payroll_export()
+    {
+        return Excel::download(new PayrollExport, 'payroll.xlsx');
     }
 }
