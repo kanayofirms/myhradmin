@@ -119,20 +119,31 @@
                                             <th>Days Worked</th>
                                             <th>Bonus</th>
                                             <th>Overtime</th>
-                                            <th>Gross Salary</th>
+                                            {{-- <th>Gross Salary</th> --}}
                                             {{-- <th>Created At</th> --}}
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        @php
+                                            $totalbonus = 0;
+                                            $totaldaysworked = 0;
+                                            $totalovertime = 0;
+                                            // $totalGrossSalary = 0;
+                                        @endphp
                                         @forelse ($getRecord as $value)
+                                            @php
+                                                $totaldaysworked = $totaldaysworked + $value->number_of_days_worked;
+                                                $totalbonus = $totalbonus + $value->bonus;
+                                                $totalovertime = $totalovertime + $value->overtime;
+                                            @endphp
                                             <tr>
                                                 <td>{{ $value->id }}</td>
                                                 <td>{{ $value->name }}</td>
                                                 <td>{{ $value->number_of_days_worked }}</td>
                                                 <td>{{ $value->bonus }}</td>
                                                 <td>{{ $value->overtime }}</td>
-                                                <td>{{ $value->gross_salary }}</td>
+                                                {{-- <td>{{ $value->gross_salary }}</td> --}}
                                                 <td>
                                                     <a href="{{ url('admin/payroll/view/' . $value->id) }}"
                                                         class="btn btn-info">View
@@ -153,6 +164,19 @@
                                                 <td colspan="100%">Record Not Found.</td>
                                             </tr>
                                         @endforelse
+                                        <tr>
+                                            <th colspan="2">Totall All</th>
+                                            <td>
+                                                {{ $totaldaysworked }}
+                                            </td>
+                                            <td>
+                                                {{ $totalbonus }}
+                                            </td>
+                                            <td>
+                                                {{ $totalovertime }}
+                                            </td>
+                                            <th colspan="1"></th>
+                                        </tr>
                                     </tbody>
                                 </table>
                                 <div style="padding:10px; float:right;">
