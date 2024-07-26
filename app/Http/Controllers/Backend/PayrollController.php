@@ -79,4 +79,12 @@ class PayrollController extends Controller
 
         return redirect('admin/payroll')->with('success', "Payroll successfully added.");
     }
+
+    public function delete($id)
+    {
+        $user = PayrollModel::find($id);
+        $user->delete();
+
+        return redirect()->back()->with('error', "Record successfully deleted");
+    }
 }
