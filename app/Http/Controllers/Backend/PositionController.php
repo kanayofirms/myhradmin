@@ -9,6 +9,6 @@ class PositionController extends Controller
 {
     public function index(Request $request)
     {
-        return view('backend.postion.list');
+        return view('backend.position.list');
     }
 }
