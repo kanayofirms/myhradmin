@@ -14,6 +14,9 @@ use App\Http\Controllers\Backend\DepartmentsController;
 use App\Http\Controllers\Backend\ManagerController;
 use App\Http\Controllers\Backend\MyAccountController;
 use App\Http\Controllers\Backend\PayrollController;
+use App\Http\Controllers\Backend\PositionController;
+
+
 
 
 
@@ -161,6 +164,9 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('admin/payroll/delete/{id}', [PayrollController::class, 'delete']);
     //Excel Export
     Route::get('admin/payroll_export', [PayrollController::class, 'payroll_export']);
+
+    //Position
+    Route::get('admin/position', [PositionController::class, 'index']);
 });
 
 Route::get('logout', [AuthController::class, 'logout']);
