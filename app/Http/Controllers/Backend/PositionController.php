@@ -11,4 +11,9 @@ class PositionController extends Controller
     {
         return view('backend.position.list');
     }
+
+    public function add(Request $request)
+    {
+        return view('backend.position.add');
+    }
 }
