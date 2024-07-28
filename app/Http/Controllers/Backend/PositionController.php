@@ -40,6 +40,7 @@ class PositionController extends Controller
 
     public function edit($id, Request $request)
     {
-        return view('backend.position.edit');
+        $data['getRecord'] = PositionModel::find($id);
+        return view('backend.position.edit', $data);
     }
 }
