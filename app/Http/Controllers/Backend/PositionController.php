@@ -37,4 +37,9 @@ class PositionController extends Controller
 
         return redirect('admin/position')->with('success', "Position successfully added.");
     }
+
+    public function edit($id, Request $request)
+    {
+        return view('backend.position.edit');
+    }
 }
