@@ -172,6 +172,8 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('admin/position/edit/{id}', [PositionController::class, 'edit']);
     Route::post('admin/position/edit/{id}', [PositionController::class, 'edit_update']);
     Route::get('admin/position/delete/{id}', [PositionController::class, 'delete']);
+    //Excel Export
+    Route::get('admin/position_export', [PositionController::class, 'position_export']);
 });
 
 Route::get('logout', [AuthController::class, 'logout']);
