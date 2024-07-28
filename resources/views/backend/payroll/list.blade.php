@@ -74,11 +74,11 @@
                                                 value="{{ Request()->overtime }}">
                                         </div>
 
-                                        <div class="form-group col-md-3">
+                                        {{-- <div class="form-group col-md-3">
                                             <label for="">Gross Salary</label>
                                             <input type="text" class="form-control" name="gross_salary" placeholder="30"
                                                 value="{{ Request()->gross_salary }}">
-                                        </div>
+                                        </div> --}}
 
                                         <div class="form-group col-md-3">
                                             <label for="">Start Date</label>
