@@ -12,13 +12,13 @@
                     </div><!-- /.col -->
                     <div class="col-sm-6" style="text-align:right;">
 
-                        <form action="{{ url('admin/payroll_export') }}
+                        <form action="{{ url('admin/position_export') }}
 
                         " method="get">
                             <input type="hidden" name="start_date" value="{{ Request()->start_date }}">
                             <input type="hidden" name="end_date" value="{{ Request()->end_date }}">
 
-                            <a href="{{ url('admin/payroll_export?start_date=' . Request::get('start_date') . '&end_date=' . Request::get('end_date')) }}"
+                            <a href="{{ url('admin/position_export?start_date=' . Request::get('start_date') . '&end_date=' . Request::get('end_date')) }}"
                                 class="btn btn-success">Excel Export</a>
                         </form>
                         {{-- <br> --}}
@@ -74,7 +74,7 @@
                                                 placeholder="30" value="{{ Request()->working_days_per_month }}">
                                         </div>
 
-                                        <div class="form-group col-md-3">
+                                        {{-- <div class="form-group col-md-3">
                                             <label for="">Start Date</label>
                                             <input type="date" class="form-control" name="start_date"
                                                 value="{{ Request()->start_date }}">
@@ -84,7 +84,7 @@
                                             <label for="">End Date</label>
                                             <input type="date" class="form-control" name="end_date"
                                                 value="{{ Request()->end_date }}">
-                                        </div>
+                                        </div> --}}
 
                                         <div class="form-group col-md-2">
                                             <button class="btn btn-primary" type="submit"
