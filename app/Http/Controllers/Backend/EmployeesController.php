@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\JobsModel;
 use App\Models\ManagerModel;
 use App\Models\DepartmentsModel;
+use App\Models\PositionModel;
 use Str;
 use File;
 
@@ -24,6 +25,7 @@ class EmployeesController extends Controller
 
     public function add(Request $request)
     {
+        $data['getPosition'] = PositionModel::get();
         $data['getManagers'] = ManagerModel::get();
         $data['getDepartments'] = DepartmentsModel::get();
         $data['getJobs'] = JobsModel::get();
@@ -54,6 +56,7 @@ class EmployeesController extends Controller
         $user->commission_pct = trim($request->commission_pct);
         $user->manager_id = trim($request->manager_id);
         $user->department_id = trim($request->department_id);
+        $user->position_id = trim($request->position_id);
         $user->is_role = 0; // 0 - Employees
 
         if (!empty($request->file('profile_image'))) {
