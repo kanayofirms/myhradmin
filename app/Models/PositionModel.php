@@ -15,7 +15,7 @@ class PositionModel extends Model
     {
         $return = self::select('position.*')
             ->orderBy('id', 'desc');
-        $return = $return->paginate(2);
+        $return = $return->paginate(20);
 
         return $return;
     }
