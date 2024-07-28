@@ -170,6 +170,7 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('admin/position/add', [PositionController::class, 'add']);
     Route::post('admin/position/add', [PositionController::class, 'add_post']);
     Route::get('admin/position/edit/{id}', [PositionController::class, 'edit']);
+    Route::post('admin/position/edit/{id}', [PositionController::class, 'edit_update']);
 });
 
 Route::get('logout', [AuthController::class, 'logout']);
