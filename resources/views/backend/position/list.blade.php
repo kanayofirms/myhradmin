@@ -51,27 +51,27 @@
                                         </div>
 
                                         <div class="form-group col-md-3">
-                                            <label for="">Employee Name</label>
-                                            <input type="text" class="form-control" name="employee_id" placeholder="John"
-                                                value="{{ Request()->employee_id }}">
+                                            <label for="">Position Name</label>
+                                            <input type="text" class="form-control" name="position_name"
+                                                placeholder="John" value="{{ Request()->position_name }}">
                                         </div>
 
                                         <div class="form-group col-md-3">
-                                            <label for="">Days Worked</label>
-                                            <input type="text" class="form-control" name="number_of_days_worked"
-                                                placeholder="30" value="{{ Request()->number_of_days_worked }}">
+                                            <label for="">Daily Rate</label>
+                                            <input type="text" class="form-control" name="daily_rate" placeholder="30"
+                                                value="{{ Request()->daily_rate }}">
                                         </div>
 
                                         <div class="form-group col-md-3">
-                                            <label for="">Bonus</label>
-                                            <input type="text" class="form-control" name="bonus" placeholder="30"
-                                                value="{{ Request()->bonus }}">
+                                            <label for="">Monthly Rate</label>
+                                            <input type="text" class="form-control" name="monthly_rate" placeholder="30"
+                                                value="{{ Request()->monthly_rate }}">
                                         </div>
 
                                         <div class="form-group col-md-3">
-                                            <label for="">Overtime</label>
-                                            <input type="text" class="form-control" name="overtime" placeholder="30"
-                                                value="{{ Request()->overtime }}">
+                                            <label for="">Working Days Per Month</label>
+                                            <input type="text" class="form-control" name="working_days_per_month"
+                                                placeholder="30" value="{{ Request()->working_days_per_month }}">
                                         </div>
 
                                         <div class="form-group col-md-3">
@@ -89,7 +89,7 @@
                                         <div class="form-group col-md-2">
                                             <button class="btn btn-primary" type="submit"
                                                 style="margin-top: 30px;">Search</button>
-                                            <a href="{{ url('admin/payroll') }}" class="btn btn-success"
+                                            <a href="{{ url('admin/position') }}" class="btn btn-success"
                                                 style="margin-top: 30px;">Reset</a>
 
                                         </div>
