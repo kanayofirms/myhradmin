@@ -43,4 +43,16 @@ class PositionController extends Controller
         $data['getRecord'] = PositionModel::find($id);
         return view('backend.position.edit', $data);
     }
+
+    public function edit_update($id, Request $request)
+    {
+        $user = PositionModel::find($id);
+        $user->position_name = trim($request->position_name);
+        $user->daily_rate = trim($request->daily_rate);
+        $user->monthly_rate = trim($request->monthly_rate);
+        $user->working_days_per_month = trim($request->working_days_per_month);
+        $user->save();
+
+        return redirect('admin/position')->with('success', "Position successfully updated.");
+    }
 }
