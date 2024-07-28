@@ -157,7 +157,7 @@
                                             <span style="color: red;">*</span></label>
                                         <div class="col-sm-10">
                                             <select name="position_id" class="form-control" required>
-                                                <option value="">Select Department Name</option>
+                                                <option value="">Select Position Name</option>
                                                 @foreach ($getPosition as $valueP)
                                                     <option value="{{ $valueP->id }}">{{ $valueP->position_name }}
                                                     </option>
