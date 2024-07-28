@@ -171,6 +171,7 @@ Route::group(['middleware' => 'admin'], function () {
     Route::post('admin/position/add', [PositionController::class, 'add_post']);
     Route::get('admin/position/edit/{id}', [PositionController::class, 'edit']);
     Route::post('admin/position/edit/{id}', [PositionController::class, 'edit_update']);
+    Route::get('admin/position/delete/{id}', [PositionController::class, 'delete']);
 });
 
 Route::get('logout', [AuthController::class, 'logout']);
