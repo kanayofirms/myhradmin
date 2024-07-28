@@ -151,6 +151,21 @@
                                             </select>
                                         </div>
                                     </div>
+
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label">Position Name
+                                            <span style="color: red;">*</span></label>
+                                        <div class="col-sm-10">
+                                            <select name="position_id" class="form-control" required>
+                                                <option value="">Select Department Name</option>
+                                                @foreach ($getPosition as $valueP)
+                                                    <option value="{{ $valueP->id }}">{{ $valueP->position_name }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+
                                 </div>
 
                                 <div class="card-footer">
