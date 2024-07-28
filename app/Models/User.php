@@ -90,4 +90,9 @@ class User extends Authenticatable
         return $this->belongsTo(DepartmentsModel::class, 'department_id');
     }
 
+    public function get_position_name_single()
+    {
+        return $this->belongsTo(PositionModel::class, 'position_id');
+    }
+
 }
