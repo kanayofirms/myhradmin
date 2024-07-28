@@ -120,26 +120,25 @@
                                     </thead>
                                     <tbody>
 
-                                        {{-- @forelse ($getRecord as $value) --}}
-                                        {{-- <tr>
+                                        @forelse ($getRecord as $value)
+                                            <tr>
                                                 <td>{{ $value->id }}</td>
-                                                <td>{{ $value->name }}</td>
-                                                <td>{{ $value->number_of_days_worked }}</td>
-                                                <td>{{ $value->bonus }}</td>
-                                                <td>{{ $value->overtime }}</td>
-                                                {{-- <td>{{ $value->gross_salary }}</td> --}}
-                                        {{-- <td>{{ date('d-m-Y H:i A', strtotime($value->created_at)) }}</td> --}}
-                                        {{-- <td>{{ date('d-m-Y H:i A', strtotime($value->updated_at)) }}</td> --}}
-                                        {{-- <td>
-                                                    <a href="{{ url('admin/payroll/view/' . $value->id) }}"
+                                                <td>{{ $value->position_name }}</td>
+                                                <td>{{ $value->daily_rate }}</td>
+                                                <td>{{ $value->monthly_rate }}</td>
+                                                <td>{{ $value->working_days_per_month }}</td>
+                                                <td>{{ date('d-m-Y H:i A', strtotime($value->created_at)) }}</td>
+                                                <td>{{ date('d-m-Y H:i A', strtotime($value->updated_at)) }}</td>
+                                                <td>
+                                                    {{-- <a href="{{ url('admin/payroll/view/' . $value->id) }}"
                                                         class="btn btn-info">View
-                                                    </a>
+                                                    </a> --}}
 
-                                                    <a href="{{ url('admin/payroll/edit/' . $value->id) }}"
+                                                    <a href="{{ url('admin/position/edit/' . $value->id) }}"
                                                         class="btn btn-primary">Edit
                                                     </a>
 
-                                                    <a href="{{ url('admin/payroll/delete/' . $value->id) }}"
+                                                    <a href="{{ url('admin/position/delete/' . $value->id) }}"
                                                         class="btn btn-danger"
                                                         onclick="return confirm('Are you sure you want to delete?')">Delete
                                                     </a>
@@ -149,12 +148,12 @@
                                             <tr>
                                                 <td colspan="100%">Record Not Found.</td>
                                             </tr>
-                                        @endforelse --}}
+                                        @endforelse
 
                                     </tbody>
                                 </table>
                                 <div style="padding:10px; float:right;">
-                                    {{-- {!! $getRecord->appends(Illuminate\Support\Facades\Request::except('page'))->links() !!} --}}
+                                    {!! $getRecord->appends(Illuminate\Support\Facades\Request::except('page'))->links() !!}
                                 </div>
                             </div>
                         </div>
