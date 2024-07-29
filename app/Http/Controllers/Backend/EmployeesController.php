@@ -23,6 +23,15 @@ class EmployeesController extends Controller
         return view('backend.employees.list', $data);
     }
 
+    public function image_delete($id, Request $request)
+    {
+        $deleteRecord = User::find($id);
+        $deleteRecord->profile_image = $request->profile_image;
+        $deleteRecord->save();
+
+        return redirect()->back()->with('error', "Record image successfully deleted.");
+    }
+
     public function add(Request $request)
     {
         $data['getPosition'] = PositionModel::get();
