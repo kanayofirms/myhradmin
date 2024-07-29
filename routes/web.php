@@ -66,6 +66,9 @@ Route::group(['middleware' => 'admin'], function () {
     Route::post('admin/employees/edit/{id}', [EmployeesController::class, 'edit_update']);
     Route::get('admin/employees/delete/{id}', [EmployeesController::class, 'delete']);
 
+    //Image Delete
+    Route::get('admin/employees/image_delete/{id}', [EmployeesController::class, 'image_delete']);
+
     //Job Side
 
     Route::get('admin/jobs', [JobsController::class, 'index']);
