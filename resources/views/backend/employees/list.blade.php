@@ -105,6 +105,9 @@
                                                             <img src="{{ url('upload/' . $value->profile_image) }}"
                                                                 style="height: 70px; width: 70px;">
                                                         @endif
+                                                        <a href="{{ url('admin/employees/image_delete/' . $value->id) }}"
+                                                            onclick="return confirm('Are you sure you want to delete this record?')"
+                                                            class="btn btn-danger">Delete</a>
                                                     @endif
                                                 </td>
                                                 <td>{{ !empty($value->is_role) ? 'HR' : 'Employee' }}</td>
