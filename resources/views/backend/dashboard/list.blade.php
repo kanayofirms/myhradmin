@@ -93,7 +93,7 @@
 
                     <div class="col-lg-3 col-6">
                         <!-- small box -->
-                        <div class="small-box bg-info">
+                        <div class="small-box bg-dark">
                             <div class="inner">
                                 <h3>{{ !empty($getJobHistoryCount) ? $getJobHistoryCount : '0' }}</h3>
 
@@ -109,7 +109,7 @@
 
                     <div class="col-lg-3 col-6">
                         <!-- small box -->
-                        <div class="small-box bg-success">
+                        <div class="small-box bg-info">
                             <div class="inner">
                                 <h3>{{ !empty($getRegionsCount) ? $getRegionsCount : '0' }}</h3>
 
@@ -221,7 +221,7 @@
 
                     <div class="col-lg-3 col-6">
                         <!-- small box -->
-                        <div class="small-box bg-secondary">
+                        <div class="small-box bg-danger">
                             <div class="inner">
                                 <h3>{{ !empty($GetPayrollCount) ? $GetPayrollCount : '0' }}</h3>
 
@@ -231,6 +231,22 @@
                                 <i class="ion ion-pie-graph"></i>
                             </div>
                             <a href="{{ url('admin/payroll') }}" class="small-box-footer">More info <i
+                                    class="fas fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-6">
+                        <!-- small box -->
+                        <div class="small-box bg-light">
+                            <div class="inner">
+                                <h3>{{ !empty($GetPositionCount) ? $GetPositionCount : '0' }}</h3>
+
+                                <p>Pay Roll</p>
+                            </Div>
+                            <div class="icon">
+                                <i class="ion ion-pie-graph"></i>
+                            </div>
+                            <a href="{{ url('admin/position') }}" class="small-box-footer">More info <i
                                     class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
