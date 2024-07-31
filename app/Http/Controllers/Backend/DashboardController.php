@@ -7,6 +7,7 @@ use App\Models\CountriesModel;
 use App\Models\DepartmentsModel;
 use App\Models\JobsModel;
 use App\Models\LocationsModel;
+use App\Models\ManagerModel;
 use App\Models\RegionsModel;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -29,6 +30,7 @@ class DashboardController extends Controller
         $data['getCountriesCount'] = CountriesModel::count();
         $data['getLocationsCount'] = LocationsModel::count();
         $data['getDepartmentsCount'] = DepartmentsModel::count();
+        $data['getManagerCount'] = ManagerModel::count();
 
         return view('backend.dashboard.list', $data);
     }
