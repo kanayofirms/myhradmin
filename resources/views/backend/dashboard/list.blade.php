@@ -95,7 +95,7 @@
                         <!-- small box -->
                         <div class="small-box bg-info">
                             <div class="inner">
-                                <h3>{{ !empty($getJobHistoryCount) ? $getJobHistoryCount : '' }}</h3>
+                                <h3>{{ !empty($getJobHistoryCount) ? $getJobHistoryCount : '0' }}</h3>
 
                                 <p>Job History</p>
                             </div>
@@ -159,14 +159,14 @@
                         <!-- small box -->
                         <div class="small-box bg-info">
                             <div class="inner">
-                                <h3>{{ !empty($getJobHistoryCount) ? $getJobHistoryCount : '' }}</h3>
+                                <h3>{{ !empty($getCountriesCount) ? $getCountriesCount : '0' }}</h3>
 
-                                <p>Job History</p>
+                                <p>Countries</p>
                             </div>
                             <div class="icon">
                                 <i class="ion ion-bag"></i>
                             </div>
-                            <a href="{{ url('admin/job_history') }}" class="small-box-footer">More info <i
+                            <a href="{{ url('admin/countries') }}" class="small-box-footer">More info <i
                                     class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
