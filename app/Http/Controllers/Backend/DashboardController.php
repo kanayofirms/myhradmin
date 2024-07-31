@@ -22,6 +22,7 @@ class DashboardController extends Controller
         $data['getJobHistoryCount'] = JobHistoryModel::count();
         $data['getRegionsCount'] = RegionsModel::count();
         $data['TodayRegion'] = RegionsModel::whereDate('created_at', Carbon::today())->count();
+        $data['YesterdayRegion'] = RegionsModel::whereDate('created_at', Carbon::yesterday())->count();
 
         return view('backend.dashboard.list', $data);
     }
