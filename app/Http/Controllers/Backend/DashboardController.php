@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Models\CountriesModel;
 use App\Models\JobsModel;
+use App\Models\LocationsModel;
 use App\Models\RegionsModel;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -25,6 +26,7 @@ class DashboardController extends Controller
         $data['TodayRegion'] = RegionsModel::whereDate('created_at', Carbon::today())->count();
         $data['YesterdayRegion'] = RegionsModel::whereDate('created_at', Carbon::yesterday())->count();
         $data['getCountriesCount'] = CountriesModel::count();
+        $data['getLocationsCount'] = LocationsModel::count();
 
         return view('backend.dashboard.list', $data);
     }
