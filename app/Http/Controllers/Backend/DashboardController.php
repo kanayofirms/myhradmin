@@ -11,6 +11,7 @@ class DashboardController extends Controller
     public function dashboard(Request $request)
     {
         $data['getEmployeesCount'] = User::count();
+        $data['getHRCount'] = User::where('is_role', '=', 1)->count();
         return view('backend.dashboard.list', $data);
     }
 }
