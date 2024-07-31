@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\JobsModel;
+use App\Models\RegionsModel;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\JobHistoryModel;
@@ -18,6 +19,7 @@ class DashboardController extends Controller
 
         $data['getTotalJobCount'] = JobsModel::count();
         $data['getJobHistoryCount'] = JobHistoryModel::count();
+        $data['getRegionsCount'] = RegionsModel::count();
 
         return view('backend.dashboard.list', $data);
     }
