@@ -59,7 +59,6 @@ class EmployeesController extends Controller
         $user->name = trim($request->name);
         $user->last_name = trim($request->last_name);
         $user->email = trim($request->email);
-        $user->password = Hash::make($request->password);
         $user->phone_number = trim($request->phone_number);
         $user->hire_date = trim($request->hire_date);
         $user->job_id = trim($request->job_id);
@@ -69,6 +68,7 @@ class EmployeesController extends Controller
         $user->department_id = trim($request->department_id);
         $user->position_id = trim($request->position_id);
         $user->is_role = 0; // 0 - Employees
+        $user->password = Hash::make($request->password);
 
         if (!empty($request->file('profile_image'))) {
             $file = $request->file('profile_image');
@@ -117,6 +117,10 @@ class EmployeesController extends Controller
         $user->department_id = trim($request->department_id);
         $user->position_id = trim($request->position_id);
         $user->is_role = 0; // 0 - Employees
+
+        if (!empty($request->password)) {
+            $user->password = Hash::make($request->password);
+        }
 
         if (!empty($request->file('profile_image'))) {
 
