@@ -9,6 +9,7 @@ use App\Models\JobsModel;
 use App\Models\LocationsModel;
 use App\Models\ManagerModel;
 use App\Models\PayrollModel;
+use App\Models\PositionModel;
 use App\Models\RegionsModel;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -33,6 +34,7 @@ class DashboardController extends Controller
         $data['getDepartmentsCount'] = DepartmentsModel::count();
         $data['getManagerCount'] = ManagerModel::count();
         $data['GetPayrollCount'] = PayrollModel::count();
+        $data['GetPositionCount'] = PositionModel::count();
 
         return view('backend.dashboard.list', $data);
     }
