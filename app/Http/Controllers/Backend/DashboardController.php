@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\JobsModel;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\JobHistoryModel;
 
 class DashboardController extends Controller
 {
@@ -16,6 +17,8 @@ class DashboardController extends Controller
         $data['getEMPCount'] = User::where('is_role', '=', 0)->count();
 
         $data['getTotalJobCount'] = JobsModel::count();
+        $data['getJobHistoryCount'] = JobHistoryModel::count();
+
         return view('backend.dashboard.list', $data);
     }
 }
