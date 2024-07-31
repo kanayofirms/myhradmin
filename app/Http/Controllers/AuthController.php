@@ -29,18 +29,18 @@ class AuthController extends Controller
     {
         // dd($request->all());
         $user = request()->validate([
-            'name'             => 'required',
-            'email'            => 'required|unique:users',
-            'password'         => 'required|min:6',
+            'name' => 'required',
+            'email' => 'required|unique:users',
+            'password' => 'required|min:6',
             'confirm_password' => 'required_with:password|same:password|min:6'
         ]);
 
 
-        $user                  = new User;
-        $user->name            = trim($request->name);
-        $user->email           = trim($request->email);
-        $user->password        = Hash::make($request->password);
-        $user->remember_token  = Str::random(50);
+        $user = new User;
+        $user->name = trim($request->name);
+        $user->email = trim($request->email);
+        $user->password = Hash::make($request->password);
+        $user->remember_token = Str::random(50);
         $user->save();
 
         return redirect('/')->with('success', 'Register Successfully.');
@@ -50,7 +50,7 @@ class AuthController extends Controller
     {
         $email = $request->input('email');
         $isExists = User::where('email', $email)->first();
-        if($isExists) {
+        if ($isExists) {
             return response()->json(array("exists" => true));
         } else {
             return response()->json(array("exists" => false));
@@ -59,10 +59,12 @@ class AuthController extends Controller
 
     public function login_post(Request $request)
     {
-        if(Auth::attempt(['email' => $request->email, 'password' => $request->password], true)) {
-            if(Auth::User()->is_role == "1") {
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password], true)) {
+            if (Auth::User()->is_role == "1") {
                 return redirect()->intended('admin/dashboard');
-            } else {
+            } else if (Auth::user()->is_role == "0") {
+                return redirect()->intended('employee/dashboard');
+            } {
                 return redirect('/')->with('error', 'No HR available... Please check');
             }
         } else {
