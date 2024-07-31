@@ -10,7 +10,7 @@ use App\Models\ManagerModel;
 use App\Models\DepartmentsModel;
 use App\Models\PositionModel;
 use Str;
-use File;
+use Hash;
 
 
 
@@ -41,12 +41,13 @@ class EmployeesController extends Controller
         return view('backend.employees.add', $data);
     }
 
-    public function add_insert(Request $request)
+    public function add_post(Request $request)
     {
         // dd($request->all());
         $user = request()->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users',
+            'password' => 'required',
             'hire_date' => 'required',
             'job_id' => 'required',
             'salary' => 'required',
@@ -58,6 +59,7 @@ class EmployeesController extends Controller
         $user->name = trim($request->name);
         $user->last_name = trim($request->last_name);
         $user->email = trim($request->email);
+        $user->password = Hash::make($request->password);
         $user->phone_number = trim($request->phone_number);
         $user->hire_date = trim($request->hire_date);
         $user->job_id = trim($request->job_id);
