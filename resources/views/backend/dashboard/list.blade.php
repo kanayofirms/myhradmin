@@ -189,7 +189,7 @@
 
                     <div class="col-lg-3 col-6">
                         <!-- small box -->
-                        <div class="small-box bg-primary">
+                        <div class="small-box bg-dark">
                             <div class="inner">
                                 <h3>{{ !empty($getDepartmentsCount) ? $getDepartmentsCount : '0' }}</h3>
 
@@ -203,6 +203,37 @@
                         </div>
                     </div>
 
+                    <div class="col-lg-3 col-6">
+                        <!-- small box -->
+                        <div class="small-box bg-secondary">
+                            <div class="inner">
+                                <h3>{{ !empty($getManagerCount) ? $getManagerCount : '0' }}</h3>
+
+                                <p>Managers</p>
+                            </Div>
+                            <div class="icon">
+                                <i class="ion ion-pie-graph"></i>
+                            </div>
+                            <a href="{{ url('admin/manager') }}" class="small-box-footer">More info <i
+                                    class="fas fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-6">
+                        <!-- small box -->
+                        <div class="small-box bg-secondary">
+                            <div class="inner">
+                                <h3>{{ !empty($GetPayrollCount) ? $GetPayrollCount : '0' }}</h3>
+
+                                <p>Pay Roll</p>
+                            </Div>
+                            <div class="icon">
+                                <i class="ion ion-pie-graph"></i>
+                            </div>
+                            <a href="{{ url('admin/payroll') }}" class="small-box-footer">More info <i
+                                    class="fas fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
 
                 </div>
                 <!-- /.row -->
