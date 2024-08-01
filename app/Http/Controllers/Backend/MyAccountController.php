@@ -45,4 +45,10 @@ class MyAccountController extends Controller
 
         return redirect('admin/my_account')->with('success', 'My Account Successfully Upated!');
     }
+
+    public function employee_account(Request $request)
+    {
+        $data['getRecord'] = User::find(Auth::user()->id);
+        return view('backend.employee.my_account.list', $data);
+    }
 }
