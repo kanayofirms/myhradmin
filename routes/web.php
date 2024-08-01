@@ -181,6 +181,7 @@ Route::group(['middleware' => 'admin'], function () {
 
 Route::group(['middleware' => 'employee'], function () {
     Route::get('employee/dashboard', [DashboardController::class, 'dashboard']);
+    Route::get('employee/my_account', [MyAccountController::class, 'employee_account']);
 });
 
 Route::get('logout', [AuthController::class, 'logout']);
