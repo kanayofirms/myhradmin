@@ -61,139 +61,141 @@
                  <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
 
-                 <li class="nav-item">
-                     <a href="{{ url('admin/dashboard') }}"
-                         class="nav-link
+                 @if (Auth::user()->is_role == '1')
+                     <li class="nav-item">
+                         <a href="{{ url('admin/dashboard') }}"
+                             class="nav-link
             @if (Request::segment(2) == 'dashboard') active @endif">
-                         <i class="nav-icon fas fa-tachometer-alt"></i>
-                         <p>
-                             Dashboard
-                         </p>
-                     </a>
-                 </li>
+                             <i class="nav-icon fas fa-tachometer-alt"></i>
+                             <p>
+                                 Dashboard
+                             </p>
+                         </a>
+                     </li>
 
-                 <li class="nav-item">
-                     <a href="{{ url('admin/employees') }}"
-                         class="nav-link
+                     <li class="nav-item">
+                         <a href="{{ url('admin/employees') }}"
+                             class="nav-link
             @if (Request::segment(2) == 'employees') active @endif">
-                         <i class="nav-icon fa fa-users"></i>
-                         <p>
-                             Employees
-                         </p>
-                     </a>
-                 </li>
+                             <i class="nav-icon fa fa-users"></i>
+                             <p>
+                                 Employees
+                             </p>
+                         </a>
+                     </li>
 
-                 <li class="nav-item">
-                     <a href="{{ url('admin/jobs') }}"
-                         class="nav-link
+                     <li class="nav-item">
+                         <a href="{{ url('admin/jobs') }}"
+                             class="nav-link
                      @if (Request::segment(2) == 'jobs') active @endif">
-                         <i class="nav-icon fa fa-briefcase"></i>
-                         <p>
-                             Jobs
-                         </p>
-                     </a>
-                 </li>
+                             <i class="nav-icon fa fa-briefcase"></i>
+                             <p>
+                                 Jobs
+                             </p>
+                         </a>
+                     </li>
 
-                 <li class="nav-item">
-                     <a href="{{ url('admin/job_history') }}"
-                         class="nav-link
+                     <li class="nav-item">
+                         <a href="{{ url('admin/job_history') }}"
+                             class="nav-link
                      @if (Request::segment(2) == 'job_history') active @endif">
-                         <i class="nav-icon fa fa-history"></i>
-                         <p>
-                             Jobs History
-                         </p>
-                     </a>
-                 </li>
+                             <i class="nav-icon fa fa-history"></i>
+                             <p>
+                                 Jobs History
+                             </p>
+                         </a>
+                     </li>
 
-                 <li class="nav-item">
-                     <a href="{{ url('admin/job_grades') }}"
-                         class="nav-link @if (Request::segment(2) == 'job_grades') active @endif">
-                         <i class="nav-icon fa fa-star"></i>
-                         <p>
-                             Job Grades
-                         </p>
-                     </a>
-                 </li>
+                     <li class="nav-item">
+                         <a href="{{ url('admin/job_grades') }}"
+                             class="nav-link @if (Request::segment(2) == 'job_grades') active @endif">
+                             <i class="nav-icon fa fa-star"></i>
+                             <p>
+                                 Job Grades
+                             </p>
+                         </a>
+                     </li>
 
-                 <li class="nav-item">
-                     <a href="{{ url('admin/regions') }}"
-                         class="nav-link @if (Request::segment(2) == 'regions') active @endif">
-                         <i class="nav-icon fa fa-asterisk"></i>
-                         <p>
-                             Regions
-                         </p>
-                     </a>
-                 </li>
+                     <li class="nav-item">
+                         <a href="{{ url('admin/regions') }}"
+                             class="nav-link @if (Request::segment(2) == 'regions') active @endif">
+                             <i class="nav-icon fa fa-asterisk"></i>
+                             <p>
+                                 Regions
+                             </p>
+                         </a>
+                     </li>
 
-                 <li class="nav-item">
-                     <a href="{{ url('admin/countries') }}"
-                         class="nav-link @if (Request::segment(2) == 'countries') active @endif">
-                         <i class="nav-icon fa fa-flag"></i>
-                         <p>
-                             Countries
-                         </p>
-                     </a>
-                 </li>
+                     <li class="nav-item">
+                         <a href="{{ url('admin/countries') }}"
+                             class="nav-link @if (Request::segment(2) == 'countries') active @endif">
+                             <i class="nav-icon fa fa-flag"></i>
+                             <p>
+                                 Countries
+                             </p>
+                         </a>
+                     </li>
 
-                 <li class="nav-item">
-                     <a href="{{ url('admin/locations') }}"
-                         class="nav-link @if (Request::segment(2) == 'locations') active @endif">
-                         <i class="nav-icon fa fa-map-marker-alt"></i>
-                         <p>
-                             Locations
-                         </p>
-                     </a>
-                 </li>
+                     <li class="nav-item">
+                         <a href="{{ url('admin/locations') }}"
+                             class="nav-link @if (Request::segment(2) == 'locations') active @endif">
+                             <i class="nav-icon fa fa-map-marker-alt"></i>
+                             <p>
+                                 Locations
+                             </p>
+                         </a>
+                     </li>
 
-                 <li class="nav-item">
-                     <a href="{{ url('admin/departments') }}"
-                         class="nav-link @if (Request::segment(2) == 'departments') active @endif">
-                         <i class="nav-icon fa fa-building"></i>
-                         <p>
-                             Department
-                         </p>
-                     </a>
-                 </li>
+                     <li class="nav-item">
+                         <a href="{{ url('admin/departments') }}"
+                             class="nav-link @if (Request::segment(2) == 'departments') active @endif">
+                             <i class="nav-icon fa fa-building"></i>
+                             <p>
+                                 Department
+                             </p>
+                         </a>
+                     </li>
 
-                 <li class="nav-item">
-                     <a href="{{ url('admin/manager') }}"
-                         class="nav-link @if (Request::segment(2) == 'manager') active @endif">
-                         <i class="nav-icon fa fa-user"></i>
-                         <p>
-                             Manager
-                         </p>
-                     </a>
-                 </li>
+                     <li class="nav-item">
+                         <a href="{{ url('admin/manager') }}"
+                             class="nav-link @if (Request::segment(2) == 'manager') active @endif">
+                             <i class="nav-icon fa fa-user"></i>
+                             <p>
+                                 Manager
+                             </p>
+                         </a>
+                     </li>
 
-                 <li class="nav-item">
-                     <a href="{{ url('admin/payroll') }}"
-                         class="nav-link @if (Request::segment(2) == 'payroll') active @endif">
-                         <i class="nav-icon fa fa-credit-card"></i>
-                         <p>
-                             Pay Roll
-                         </p>
-                     </a>
-                 </li>
+                     <li class="nav-item">
+                         <a href="{{ url('admin/payroll') }}"
+                             class="nav-link @if (Request::segment(2) == 'payroll') active @endif">
+                             <i class="nav-icon fa fa-credit-card"></i>
+                             <p>
+                                 Pay Roll
+                             </p>
+                         </a>
+                     </li>
 
-                 <li class="nav-item">
-                     <a href="{{ url('admin/position') }}"
-                         class="nav-link @if (Request::segment(2) == 'position') active @endif">
-                         <i class="nav-icon fa fa-user"></i>
-                         <p>
-                             Position
-                         </p>
-                     </a>
-                 </li>
+                     <li class="nav-item">
+                         <a href="{{ url('admin/position') }}"
+                             class="nav-link @if (Request::segment(2) == 'position') active @endif">
+                             <i class="nav-icon fa fa-user"></i>
+                             <p>
+                                 Position
+                             </p>
+                         </a>
+                     </li>
 
-                 <li class="nav-item">
-                     <a href="{{ url('admin/my_account') }}"
-                         class="nav-link @if (Request::segment(2) == 'my_account') active @endif">
-                         <i class="nav-icon fa fa-cog"></i>
-                         <p>
-                             My Account
-                         </p>
-                     </a>
-                 </li>
+                     <li class="nav-item">
+                         <a href="{{ url('admin/my_account') }}"
+                             class="nav-link @if (Request::segment(2) == 'my_account') active @endif">
+                             <i class="nav-icon fa fa-cog"></i>
+                             <p>
+                                 My Account
+                             </p>
+                         </a>
+                     </li>
+                 @endif
 
              </ul>
          </nav>
