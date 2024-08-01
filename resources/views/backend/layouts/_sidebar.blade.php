@@ -65,7 +65,7 @@
                      <li class="nav-item">
                          <a href="{{ url('admin/dashboard') }}"
                              class="nav-link
-            @if (Request::segment(2) == 'dashboard') active @endif">
+                               @if (Request::segment(2) == 'dashboard') active @endif">
                              <i class="nav-icon fas fa-tachometer-alt"></i>
                              <p>
                                  Dashboard
@@ -188,6 +188,29 @@
 
                      <li class="nav-item">
                          <a href="{{ url('admin/my_account') }}"
+                             class="nav-link @if (Request::segment(2) == 'my_account') active @endif">
+                             <i class="nav-icon fa fa-cog"></i>
+                             <p>
+                                 My Account
+                             </p>
+                         </a>
+                     </li>
+                 @endif
+
+                 @if (Auth::user()->is_role == '0')
+                     <li class="nav-item">
+                         <a href="{{ url('employee/dashboard') }}"
+                             class="nav-link
+                               @if (Request::segment(2) == 'dashboard') active @endif">
+                             <i class="nav-icon fas fa-tachometer-alt"></i>
+                             <p>
+                                 Dashboard
+                             </p>
+                         </a>
+                     </li>
+
+                     <li class="nav-item">
+                         <a href="{{ url('employee/my_account') }}"
                              class="nav-link @if (Request::segment(2) == 'my_account') active @endif">
                              <i class="nav-icon fa fa-cog"></i>
                              <p>
