@@ -117,6 +117,7 @@ class EmployeesController extends Controller
         $user->department_id = trim($request->department_id);
         $user->position_id = trim($request->position_id);
         $user->is_role = 0; // 0 - Employees
+        $user->interview = $request->interview;
 
         if (!empty($request->password)) {
             $user->password = Hash::make($request->password);
