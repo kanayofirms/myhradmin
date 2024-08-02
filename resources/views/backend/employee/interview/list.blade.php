@@ -106,32 +106,29 @@
                                         <tr>
                                             <th>ID</th>
                                             <th>Name</th>
-
+                                            <th>Salary</th>
+                                            <th>Interview</th>
                                             <th>Created At</th>
-                                            <th>Action</th>
+                                            <th>Updated At</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {{-- @forelse ($getRecord as $value)
-                                            <tr>
-                                                <td>{{ $value->id }}</td>
-                                                <td>{{ $value->manager_name }}</td>
-                                                <td>{{ $value->manager_email }}</td>
-                                                <td>{{ $value->manager_phone }}</td>
-                                                <td>{{ date('d-m-Y H:i A', strtotime($value->created_at)) }}</td>
-                                                <td>
-                                                    <a href="{{ url('admin/manager/edit/' . $value->id) }}"
-                                                        class="btn btn-primary">Edit</a>
-                                                    <a href="{{ url('admin/manager/delete/' . $value->id) }}"
-                                                        onclick="return confirm('Are you sure you want to delete?')"
-                                                        class="btn btn-danger">Delete</a>
-                                                </td>
-                                            </tr>
-                                        @empty
-                                            <tr>
-                                                <td colspan="100%">Record Not Found.</td>
-                                            </tr>
-                                        @endforelse --}}
+                                        <tr>
+                                            <td>{{ $getRecord->id }}</td>
+                                            <td>{{ $getRecord->name }}</td>
+                                            <td>{{ $getRecord->salary }}</td>
+                                            <td>
+                                                @if ($getRecord->interview == '0')
+                                                    Cancel
+                                                @elseif ($getRecord->interview == '1')
+                                                    Pending
+                                                @elseif ($getRecord->interview == '2')
+                                                    Completed
+                                                @endif
+                                            </td>
+                                            <td>{{ date('d-m-Y', strtotime($getRecord->created_at)) }}</td>
+                                            <td>{{ date('d-m-Y', strtotime($getRecord->updated_at)) }}</td>
+
                                     </tbody>
                                 </table>
                                 <div style="padding:10px; float:right;">
