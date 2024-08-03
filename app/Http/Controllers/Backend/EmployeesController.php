@@ -9,8 +9,11 @@ use App\Models\JobsModel;
 use App\Models\ManagerModel;
 use App\Models\DepartmentsModel;
 use App\Models\PositionModel;
+use App\Mail\EmployeesNewCreateMail;
 use Str;
 use Hash;
+use Mail;
+
 
 
 
@@ -68,7 +71,10 @@ class EmployeesController extends Controller
         $user->department_id = trim($request->department_id);
         $user->position_id = trim($request->position_id);
         $user->is_role = 0; // 0 - Employees
-        $user->password = Hash::make($request->password);
+
+        $random_password = $request->password;
+
+        $user->password = Hash::make($random_password);
 
         if (!empty($request->file('profile_image'))) {
             $file = $request->file('profile_image');
@@ -78,6 +84,9 @@ class EmployeesController extends Controller
             $user->profile_image = $filename;
         }
         $user->save();
+        $user->random_password = $random_password;
+
+        Mail::to($user->email)->send(new EmployeesNewCreateMail($user));
 
         return redirect('admin/employees')->with('success', 'Employees successfully registered.');
     }
