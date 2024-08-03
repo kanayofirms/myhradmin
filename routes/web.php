@@ -51,6 +51,7 @@ use App\Http\Controllers\Backend\InterviewController;
 
 Route::get('/', [AuthController::class, 'index']);
 Route::get('forgot-password', [AuthController::class, 'forgot_password']);
+Route::post('forgot-password/post', [AuthController::class, 'forgot_password_post']);
 Route::get('register', [AuthController::class, 'register']);
 Route::post('register_post', [AuthController::class, 'register_post']);
 Route::post('checkemail', [AuthController::class, 'CheckEmail']);
