@@ -1,5 +1,4 @@
-Hello,
-
+Hello, {{ $user->name }}
 <br>
 
 Your Password: - <b>{{ $user->random_password }}</b>
